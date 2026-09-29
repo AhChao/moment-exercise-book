@@ -10,6 +10,9 @@ export const exerciseCopy = {
   fixed: '固定',
   observe: '觀察',
   reflect: '反思',
+  concept: '概念',
+  predict: '預測',
+  earlierPredict: '先前的預測',
   results: '結果對照',
   frames: '畫格',
   shoot: '拍攝',
@@ -50,7 +53,8 @@ export function importReason(reasons: readonly PlanReason[]): string {
 export const frameAria = (n: number, label: string): string => `畫格 ${n}：${label}`
 export const nextLink = (title: string): string => `下一題：${title}`
 export const observeAria = '觀察記錄'
-export const reflectAria = (n: number): string => `反思記錄 ${n}`
+export const predictAria = (n: number): string => `預測記錄 ${n}`
+export const reflectAria =(n: number): string => `反思記錄 ${n}`
 export const targetLabel = {
   shutter: '快門',
   ev: '曝光補償',

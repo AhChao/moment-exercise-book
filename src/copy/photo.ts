@@ -33,6 +33,7 @@ export const dataLabel = {
   shutter: '快門',
   iso: 'ISO',
   aperture: '光圈',
+  ev: '曝光補償',
   focal: '焦段',
   lens: '鏡頭',
   time: '拍攝時間',

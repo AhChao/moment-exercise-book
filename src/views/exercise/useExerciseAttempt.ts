@@ -3,6 +3,7 @@ import { computed, reactive, ref, watch } from 'vue'
 import type { Ref } from 'vue'
 import type { Exercise } from '@/types'
 import { useLibrary } from '@/store'
+import { fitNotes, writtenPredictions } from './predictions'
 import { canComplete, slotPhotos } from './slots'
 
 export function useExerciseAttempt(exercise: Ref<Exercise | undefined>) {
@@ -31,6 +32,8 @@ export function useExerciseAttempt(exercise: Ref<Exercise | undefined>) {
   // Notes: seeded once per exercise, then written through on input.
   const observe = ref('')
   const reflect = ref<string[]>([])
+  const predict = ref<string[]>([])
+  const predictions = computed(() => writtenPredictions(predict.value))
   let seededFor = ''
   watch(
     [() => library.loaded.value, () => exercise.value?.id],
@@ -39,6 +42,7 @@ export function useExerciseAttempt(exercise: Ref<Exercise | undefined>) {
       seededFor = id
       observe.value = attempt.value?.observeNotes ?? ''
       reflect.value = exercise.value.reflect.map((_, i) => attempt.value?.reflectNotes[i] ?? '')
+      predict.value = fitNotes(attempt.value?.predictNotes, exercise.value.predict?.length ?? 0)
     },
     { immediate: true },
   )
@@ -59,10 +63,17 @@ export function useExerciseAttempt(exercise: Ref<Exercise | undefined>) {
     const c = counts()
     if (c) void library.saveNotes(c[0], c[1], c[2], { reflectNotes: next })
   }
+  function setPredict(i: number, v: string): void {
+    const next = predict.value.slice()
+    next[i] = v
+    predict.value = next
+    const c = counts()
+    if (c) void library.saveNotes(c[0], c[1], c[2], { predictNotes: next })
+  }
   function toggleComplete(): void {
     const c = counts()
     if (c && completeEnabled.value) void library.markCompleted(c[0], c[1], c[2], !completed.value)
   }
 
-  return { library, attempt, photos, completed, completeEnabled, thumbs, fulls, loadFulls, observe, reflect, setObserve, setReflect, toggleComplete }
+  return { library, attempt, photos, completed, completeEnabled, thumbs, fulls, loadFulls, observe, reflect, predict, predictions, setObserve, setReflect, setPredict, toggleComplete }
 }

@@ -13,6 +13,9 @@ export const MANUAL_SETTLE_MS = 1500
 /** White balance, focus and compensation need a moment to settle when exposure is automatic. */
 export const OTHERS_SETTLE_MS = 1000
 const WB_TOLERANCE_K = 150
+/** Read-back may quantise EV to the phone's step; beyond this the request was not taken. */
+const EV_TOLERANCE = 0.2
+const EV_REAPPLY_SETTLE_MS = 700
 
 export type ExifParser = (blob: Blob) => Promise<ExifInfo>
 
@@ -53,6 +56,30 @@ function buildApplied(spec: CaptureSpec, exif: ExifInfo | undefined, device: Dev
   return applied
 }
 
+/**
+ * Applies exposure compensation as its own call, waits, and reads the track back. If the phone
+ * did not take it, re-applies once. A track that reports no value cannot be checked and counts as ok.
+ */
+async function applyEv(device: Device, set: ConstraintSet, want: number): Promise<{ ok: boolean; got?: number }> {
+  const close = (got: number | undefined): boolean => got === undefined || Math.abs(got - want) <= EV_TOLERANCE
+  const put = async (): Promise<void> => {
+    try {
+      await device.apply(set)
+    } catch {
+      // surfaces as a read-back mismatch
+    }
+  }
+  await put()
+  await device.sleep(MANUAL_SETTLE_MS)
+  let got = device.settings().exposureCompensation
+  if (!close(got)) {
+    await put()
+    await device.sleep(EV_REAPPLY_SETTLE_MS)
+    got = device.settings().exposureCompensation
+  }
+  return { ok: close(got), got }
+}
+
 export async function captureWithDevice(
   device: Device,
   spec: CaptureSpec,
@@ -60,12 +87,41 @@ export async function captureWithDevice(
   onPhase: (phase: CapturePhase) => void = () => {},
   parse: ExifParser = parseExif,
 ): Promise<CaptureResult> {
-  const { exposure, others } = splitConstraints(spec, caps)
+  const { exposure, others, autoMode, ev, evValue } = splitConstraints(spec, caps)
   const prescribed = spec.shutterSec !== null || spec.iso !== null
+
+  if (!prescribed && ev && evValue !== null) {
+    // Mirrors the probe: zoom/wb/focus, auto mode, settle, EV as the LAST call, settle, read back.
+    let blob: Blob | undefined
+    let exif: ExifInfo | undefined
+    let mismatch = 'no photo taken'
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+      onPhase(attempt === 1 ? 'preparing' : 'retrying')
+      try {
+        await applyOthers(device, others)
+        if (autoMode) await applyOthers(device, [autoMode])
+        await device.sleep(AUTO_SETTLE_MS)
+        onPhase('settling')
+        const r = await applyEv(device, ev, evValue)
+        if (r.ok || attempt === MAX_ATTEMPTS) {
+          onPhase('shooting')
+          blob = await device.takePhoto()
+          exif = await parse(blob)
+          if (r.ok) return { blob, applied: buildApplied(spec, exif, device), verified: true, attempts: attempt }
+        }
+        mismatch = `ev: expected ${evValue}, got ${r.got}`
+      } catch (e) {
+        mismatch = message(e)
+      }
+      if (attempt < MAX_ATTEMPTS) await device.reopen()
+    }
+    if (!blob) throw new CameraError('failed', mismatch)
+    return { blob, applied: buildApplied(spec, exif, device), verified: false, attempts: MAX_ATTEMPTS, mismatch }
+  }
 
   if (!prescribed) {
     onPhase('preparing')
-    await applyOthers(device, others)
+    await applyOthers(device, autoMode ? [...others, autoMode] : others)
     onPhase('settling')
     await device.sleep(OTHERS_SETTLE_MS)
     onPhase('shooting')

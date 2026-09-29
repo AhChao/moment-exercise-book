@@ -66,6 +66,20 @@ describe('buildShotConstraints', () => {
     expect(buildShotConstraints(spec({ iso: 100, wbKelvin: 4000 }), zoomOnly)).toEqual([{ zoom: 1 }])
   })
 
+  it('orders automatic exposure as others, mode, then EV last as its own set', () => {
+    for (const build of [buildShotConstraints, buildPreviewConstraints]) {
+      const sets = build(spec({ ev: -1, zoom: 2 }), caps)
+      expect(sets.at(-1)).toEqual({ exposureCompensation: -1 })
+      expect(sets.at(-2)).toEqual({ exposureMode: 'continuous' })
+      expect(sets.filter((s) => 'exposureCompensation' in s)).toHaveLength(1)
+      expect(sets.findIndex((s) => 'zoom' in s)).toBeLessThan(sets.length - 2)
+    }
+  })
+
+  it('always requests EV 0 explicitly when ev is null', () => {
+    expect(buildShotConstraints(AUTO, caps).at(-1)).toEqual({ exposureCompensation: 0 })
+  })
+
   it('preview uses the same values as the shot', () => {
     const s = spec({ shutterSec: 0.01, iso: 400, zoom: 2 })
     expect(buildPreviewConstraints(s, caps)).toEqual(buildShotConstraints(s, caps))

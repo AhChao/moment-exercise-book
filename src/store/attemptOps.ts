@@ -19,7 +19,10 @@ export function blankAttempt(exerciseId: string, slotCount: number, now: number)
 /** Existing attempt (or a blank one) with slots padded/trimmed to slotCount. Returns a new object. */
 export function fitAttempt(existing: Attempt | undefined, exerciseId: string, slotCount: number, now: number): Attempt {
   const a = existing ?? blankAttempt(exerciseId, slotCount, now)
-  return { ...a, slots: padTo(a.slots, slotCount, null), reflectNotes: [...a.reflectNotes] }
+  const fitted: Attempt = { ...a, slots: padTo(a.slots, slotCount, null), reflectNotes: [...a.reflectNotes] }
+  // Older attempts have no predictNotes; leave the field absent rather than inventing it.
+  if (a.predictNotes) fitted.predictNotes = [...a.predictNotes]
+  return fitted
 }
 
 export function clearPhotoFromSlots(a: Attempt, photoId: string): Attempt | null {

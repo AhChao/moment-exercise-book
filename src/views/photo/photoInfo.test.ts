@@ -44,3 +44,14 @@ describe('photoInfo', () => {
     expect(captionOf({ ...base, exif: { hasExif: false, hasGps: false } })).toBe('')
   })
 })
+
+describe('exposure compensation row', () => {
+  it('shows the reported compensation next to ISO and omits it when absent', () => {
+    const base = { hasExif: true, hasGps: false, iso: 200, exposureTime: 1 / 60 }
+    const withEvRows = reviewRows(base, 'main', { ev: -1 })
+    expect(withEvRows.map((r) => r.key)).toEqual(['shutter', 'iso', 'ev', 'lens'])
+    expect(withEvRows.find((r) => r.key === 'ev')?.value).toBe('-1 EV')
+    expect(reviewRows(base, 'main', { ev: 0.5 }).find((r) => r.key === 'ev')?.value).toBe('+0.5 EV')
+    expect(reviewRows(base, 'main', {}).some((r) => r.key === 'ev')).toBe(false)
+  })
+})

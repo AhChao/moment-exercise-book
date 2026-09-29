@@ -14,7 +14,8 @@ import ControlPanel from './ControlPanel.vue'
 import ReviewScreen from './ReviewScreen.vue'
 import ShutterButton from './ShutterButton.vue'
 import { isSlowShot } from './buildSpec'
-import { useAutoIso } from './useAutoIso'
+import ExposureNote from './ExposureNote.vue'
+import { useAutoExposure } from './useAutoExposure'
 import { useCamera } from './useCamera'
 import { useControls } from './useControls'
 import { useShoot } from './useShoot'
@@ -27,10 +28,10 @@ const video = ref<HTMLVideoElement | null>(null)
 
 const cam = useCamera(video, () => {
   ctl.pushPreview()
-  void autoIso.run()
+  void autoExp.run()
 })
 const ctl = useControls(shot, cam.session)
-const autoIso = useAutoIso(video, cam.session, shot, (iso) => ctl.set('iso', iso))
+const autoExp = useAutoExposure(video, cam.session, shot, (key, value) => ctl.set(key, value))
 const shooter = useShoot(cam.session, ctl.spec)
 
 const expanded = ref(ctl.free.value)
@@ -91,7 +92,7 @@ const fileInput = picker.input // bound by name in the template
         </button>
         <span class="cap__label mx-mono">{{ shot?.label }}</span>
         <span v-if="cam.status.value === 'opening'" class="cap__opening">{{ captureCopy.opening }}</span>
-        <span v-else-if="autoIso.metering.value" class="cap__opening">{{ captureCopy.metering }}</span>
+        <span v-else-if="autoExp.metering.value" class="cap__opening">{{ captureCopy.metering }}</span>
       </header>
 
       <div v-if="!shooter.pending.value" class="cap__bottom">
@@ -117,9 +118,15 @@ const fileInput = picker.input // bound by name in the template
             @set="ctl.set"
           />
         </section>
+        <ExposureNote
+          v-if="autoExp.active.value"
+          :note="autoExp.note.value"
+          :disabled="!ready || shooter.busy.value || autoExp.metering.value"
+          @remeter="autoExp.run"
+        />
         <ShutterButton
           :busy="shooter.phase.value !== 'idle'"
-          :disabled="!ready || shooter.busy.value || autoIso.metering.value"
+          :disabled="!ready || shooter.busy.value || autoExp.metering.value"
           :status="status"
           :hint="slow ? captureCopy.slowHint : ''"
           @press="shooter.shoot"

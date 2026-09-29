@@ -34,6 +34,18 @@ export const captureCopy = {
   },
 } as const
 
+/** Shown when the phone cannot reach the requested brightness; each says what the picture will look like. */
+export const exposureNote = {
+  isoMin: '光線對這個快門過亮，ISO 已是最低，照片會比題目要求的亮',
+  isoMax: '光線過暗，ISO 已是最高，照片會比題目要求的暗',
+  shutterMin: '光線對這個 ISO 過亮，快門已是最快，照片會比題目要求的亮',
+  shutterMax: '光線過暗，快門已是最慢，照片會比題目要求的暗',
+} as const
+
+export type ExposureNoteKey = keyof typeof exposureNote
+
+export const remeter = '重新測光'
+
 export const controlLabel = {
   zoom: '倍率',
   ev: '曝光補償',

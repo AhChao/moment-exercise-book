@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { solveIso } from './meter'
+import { solveIso, solveShutter } from './meter'
 
 // Scene model: mean luma grows with log2(ISO), clipped to 0..255.
 const scene = (isoAt115: number) => async (iso: number) =>
@@ -38,5 +38,45 @@ describe('solveIso', () => {
     await solveIso(async (iso) => { seen.push(iso); return 10 }, { minIso: 100, maxIso: 800, maxSteps: 5 })
     expect(seen.length).toBeLessThanOrEqual(5)
     expect(seen.every((i) => i >= 100 && i <= 800)).toBe(true)
+  })
+})
+
+// Scene model: mean luma grows with log2(shutter time).
+const shutterScene = (secAt115: number) => async (sec: number) =>
+  Math.min(255, Math.max(0, 115 + 40 * Math.log2(sec / secAt115)))
+const RANGE = { minSec: 1 / 17000, maxSec: 16 }
+
+describe('solveShutter', () => {
+  it('finds a fast shutter for a bright scene', async () => {
+    const r = await solveShutter(shutterScene(1 / 1000), RANGE)
+    expect(r.converged).toBe(true)
+    expect(r.shutterSec).toBeGreaterThan(1 / 1400)
+    expect(r.shutterSec).toBeLessThan(1 / 700)
+  })
+
+  it('finds a slow shutter for a dim scene', async () => {
+    const r = await solveShutter(shutterScene(0.5), RANGE)
+    expect(r.converged).toBe(true)
+    expect(r.shutterSec).toBeGreaterThan(0.35)
+    expect(r.shutterSec).toBeLessThan(0.7)
+  })
+
+  it('stops at the slow limit when the scene is too dark', async () => {
+    const r = await solveShutter(async () => 4, RANGE)
+    expect(r.converged).toBe(false)
+    expect(r.shutterSec).toBeGreaterThan(4)
+  })
+
+  it('stops at the fast limit when the scene is too bright', async () => {
+    const r = await solveShutter(async () => 250, RANGE)
+    expect(r.converged).toBe(false)
+    expect(r.shutterSec).toBeLessThan(1 / 8000)
+  })
+
+  it('never measures outside the range', async () => {
+    const seen: number[] = []
+    await solveShutter(async (s) => { seen.push(s); return 10 }, { minSec: 0.01, maxSec: 0.1, maxSteps: 5 })
+    expect(seen.length).toBeLessThanOrEqual(5)
+    expect(seen.every((s) => s >= 0.01 - 1e-9 && s <= 0.1 + 1e-9)).toBe(true)
   })
 })

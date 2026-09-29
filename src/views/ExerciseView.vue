@@ -13,6 +13,8 @@ import ShotDetail from './exercise/ShotDetail.vue'
 import CompareView from './exercise/CompareView.vue'
 import NotesSection from './exercise/NotesSection.vue'
 import CheckList from './exercise/CheckList.vue'
+import ConceptCard from './exercise/ConceptCard.vue'
+import PredictSection from './exercise/PredictSection.vue'
 import { readCachedCaps } from './exercise/capsCache'
 import { checkLines } from './exercise/checkText'
 import { canCompare, clampShotIndex, filledIndexes } from './exercise/slots'
@@ -117,6 +119,8 @@ const lines = computed(() =>
       </span>
     </header>
 
+    <ConceptCard v-if="exercise.concept" :text="exercise.concept" />
+
     <section class="prose">
       <h2 class="mx-heading">{{ exerciseCopy.goal }}</h2>
       <p>{{ exercise.goal }}</p>
@@ -131,6 +135,13 @@ const lines = computed(() =>
     </section>
 
     <hr class="mx-rule" />
+
+    <PredictSection
+      v-if="exercise.predict?.length"
+      :prompts="exercise.predict"
+      :notes="a.predict.value"
+      @predict="a.setPredict"
+    />
 
     <section :aria-label="exerciseCopy.frames">
       <div v-if="compareOk" class="frames__bar">
@@ -176,6 +187,7 @@ const lines = computed(() =>
       :reflect-prompts="exercise.reflect"
       :observe="a.observe.value"
       :reflect="a.reflect.value"
+      :predictions="a.predictions.value"
       @observe="a.setObserve"
       @reflect="a.setReflect"
     />

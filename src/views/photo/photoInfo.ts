@@ -43,8 +43,18 @@ export function exifRows(exif: ExifInfo, lens: Lens): DataRow[] {
   return rows
 }
 
+const formatEv = (ev: number): string => `${ev > 0 ? '+' : ''}${Number(ev.toFixed(1))} EV`
+
+/** Compensation is not in the file's own data; it is the value the camera reported when the photo was taken. */
+function withEv(rows: DataRow[], ev: number | undefined): DataRow[] {
+  if (ev === undefined) return rows
+  const i = rows.findIndex((r) => r.key === 'iso')
+  const row: DataRow = { key: 'ev', label: dataLabel.ev, value: formatEv(ev) }
+  return i < 0 ? [...rows, row] : [...rows.slice(0, i + 1), row, ...rows.slice(i + 1)]
+}
+
 export function photoRows(meta: PhotoMeta): DataRow[] {
-  const rows = exifRows(meta.exif, meta.lens)
+  const rows = withEv(exifRows(meta.exif, meta.lens), meta.applied.ev)
   const when = formatExifTime(meta.exif.dateTimeOriginal) ?? (meta.source === 'camera' ? formatTimestamp(meta.createdAt) : null)
   if (when) rows.push({ key: 'time', label: dataLabel.time, value: when })
   rows.push({ key: 'source', label: dataLabel.source, value: sourceName[meta.source] })
@@ -58,7 +68,7 @@ export function reviewRows(exif: ExifInfo, lens: Lens, applied: CaptureResult['a
     exposureTime: exif.exposureTime ?? applied.shutterSec,
     iso: exif.iso ?? applied.iso,
   }
-  return exifRows(merged, lens)
+  return withEv(exifRows(merged, lens), applied.ev)
 }
 
 /** Short caption for the comparison view: shutter and ISO when known. */

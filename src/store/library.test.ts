@@ -158,6 +158,30 @@ describe('notes debounce', () => {
     expect((await repo.listAttempts())[0]).toMatchObject({ observeNotes: 'ab', reflectNotes: ['x', 'y'] })
   })
 
+  it('persists predictNotes on the same debounce and keeps them through later writes', async () => {
+    vi.useFakeTimers()
+    const lib = make()
+    await lib.load()
+    await lib.saveNotes('e1', 2, 1, { predictNotes: ['p1', 'p2'] })
+    expect(lib.attempts.value.e1.predictNotes).toEqual(['p1', 'p2'])
+    expect(putAttempt).not.toHaveBeenCalled()
+    await vi.advanceTimersByTimeAsync(400)
+    await lib.flush()
+    expect(putAttempt).toHaveBeenCalledTimes(1)
+    await lib.saveNotes('e1', 2, 1, { observeNotes: 'o' })
+    await lib.assignSlot('e1', 0, 2, ID_A)
+    await lib.markCompleted('e1', 2, 1, true)
+    expect((await repo.listAttempts())[0].predictNotes).toEqual(['p1', 'p2'])
+  })
+
+  it('leaves predictNotes absent on attempts that never had them', async () => {
+    vi.useFakeTimers()
+    const lib = make()
+    await lib.load()
+    await lib.saveNotes('e1', 1, 0, { observeNotes: 'x' })
+    expect(lib.attempts.value.e1.predictNotes).toBeUndefined()
+  })
+
   it('keeps separate timers per exercise', async () => {
     vi.useFakeTimers()
     const lib = make()

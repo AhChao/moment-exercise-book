@@ -193,12 +193,14 @@ export function createLibrary(deps: LibraryDeps): Library {
     async saveNotes(exerciseId, slotCount, reflectCount, patch) {
       const t = now()
       const cur = fitAttempt(attempts.value[exerciseId], exerciseId, slotCount, t)
-      setAttempt({
+      const next: Attempt = {
         ...cur,
         observeNotes: patch.observeNotes ?? cur.observeNotes,
         reflectNotes: padTo(patch.reflectNotes ?? cur.reflectNotes, reflectCount, ''),
         updatedAt: t,
-      })
+      }
+      if (patch.predictNotes) next.predictNotes = [...patch.predictNotes]
+      setAttempt(next)
       // Memory is current; the disk write waits for the typing to pause.
       const old = timers.get(exerciseId)
       if (old !== undefined) clearTimeout(old)

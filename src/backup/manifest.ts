@@ -55,7 +55,8 @@ function checkAttempt(v: unknown): Attempt {
   if (!Array.isArray(v.reflectNotes) || !v.reflectNotes.every(isStr)) return bad()
   if (!isNum(v.updatedAt)) return bad()
   if (v.completedAt !== null && !isNum(v.completedAt)) return bad()
-  return {
+  if (v.predictNotes !== undefined && (!Array.isArray(v.predictNotes) || !v.predictNotes.every(isStr))) return bad()
+  const out: Attempt = {
     exerciseId: v.exerciseId,
     slots: v.slots as (string | null)[],
     observeNotes: v.observeNotes,
@@ -63,6 +64,8 @@ function checkAttempt(v: unknown): Attempt {
     updatedAt: v.updatedAt,
     completedAt: v.completedAt as number | null,
   }
+  if (v.predictNotes !== undefined) out.predictNotes = v.predictNotes as string[]
+  return out
 }
 
 /** Validates parsed JSON and returns a cleaned manifest. */

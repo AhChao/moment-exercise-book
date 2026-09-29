@@ -5,9 +5,9 @@ import {
 } from './stops'
 
 describe('stop lists', () => {
-  it('shutter stops run 1/4000 s to 1 s ascending', () => {
-    expect(SHUTTER_STOPS[0]).toBeCloseTo(1 / 4000, 8)
-    expect(SHUTTER_STOPS[SHUTTER_STOPS.length - 1]).toBe(1)
+  it('shutter stops run 1/8000 s to 16 s ascending (the phone offers about 1/17500 s to 16 s)', () => {
+    expect(SHUTTER_STOPS[0]).toBeCloseTo(1 / 8000, 8)
+    expect(SHUTTER_STOPS[SHUTTER_STOPS.length - 1]).toBe(16)
     for (let i = 1; i < SHUTTER_STOPS.length; i++) expect(SHUTTER_STOPS[i]!).toBeGreaterThan(SHUTTER_STOPS[i - 1]!)
   })
 
@@ -23,15 +23,15 @@ describe('stop lists', () => {
     expect(SHUTTER_STOPS.map(formatShutter)).toEqual(expect.arrayContaining(['1/4000', '1/125', '1/30', '1/4', '0.5 s', '1 s']))
   })
 
-  it('ISO stops run 50 to 6400 in 1/3 stops', () => {
-    expect(ISO_STOPS[0]).toBe(50)
+  it('ISO stops run 30 to 6400 in about 1/3 stops (30 is the phone\'s lowest ISO)', () => {
+    expect(ISO_STOPS[0]).toBe(30)
     expect(ISO_STOPS[ISO_STOPS.length - 1]).toBe(6400)
     expect(ISO_STOPS).toContain(100)
     expect(ISO_STOPS).toContain(1600)
     for (let i = 1; i < ISO_STOPS.length; i++) {
       const gap = Math.log2(ISO_STOPS[i]! / ISO_STOPS[i - 1]!)
       expect(gap).toBeGreaterThan(0.28)
-      expect(gap).toBeLessThan(0.4)
+      expect(gap).toBeLessThan(0.45)
     }
   })
 })
@@ -40,7 +40,7 @@ describe('snapping', () => {
   it('snaps to the nearest stop on a log scale', () => {
     expect(snapToStop(ISO_STOPS, 110)).toBe(100)
     expect(snapToStop(ISO_STOPS, 1500)).toBe(1600)
-    expect(snapToStop(ISO_STOPS, 5)).toBe(50)
+    expect(snapToStop(ISO_STOPS, 5)).toBe(30)
     expect(snapToStop(ISO_STOPS, 99999)).toBe(6400)
     expect(snapToStop(SHUTTER_STOPS, 0.008)).toBeCloseTo(1 / 125, 8)
   })
@@ -48,7 +48,7 @@ describe('snapping', () => {
   it('steps along the list and stops at the ends', () => {
     expect(stepStop(ISO_STOPS, 100, 1)).toBe(125)
     expect(stepStop(ISO_STOPS, 100, -1)).toBe(80)
-    expect(stepStop(ISO_STOPS, 50, -3)).toBe(50)
+    expect(stepStop(ISO_STOPS, 30, -3)).toBe(30)
     expect(stepStop(ISO_STOPS, 6400, 5)).toBe(6400)
     expect(nearestStopIndex([], 1)).toBe(0)
   })

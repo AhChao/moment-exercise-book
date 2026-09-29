@@ -46,6 +46,24 @@ describe('parseManifest', () => {
   })
 })
 
+describe('parseManifest predictNotes', () => {
+  it('round-trips an attempt with predictNotes and accepts one without', () => {
+    const m = buildManifest([photoMeta(ID_A)], [attempt('e1', { predictNotes: ['a', ''] }), attempt('e2')], 5)
+    const parsed = parseManifest(JSON.parse(JSON.stringify(m)))
+    expect(parsed).toEqual(m)
+    expect(parsed.attempts[0].predictNotes).toEqual(['a', ''])
+    expect('predictNotes' in parsed.attempts[1]).toBe(false)
+  })
+
+  it('rejects predictNotes that is not an array of strings', () => {
+    for (const bad of ['x', [1], {}, null]) {
+      const m = good()
+      m.attempts[0].predictNotes = bad
+      expect(() => parseManifest(m)).toThrow('invalid-backup')
+    }
+  })
+})
+
 describe('assertFilesPresent', () => {
   it('requires a file for every photo entry', () => {
     const m = buildManifest([photoMeta(ID_A), photoMeta(ID_B)], [], 1)

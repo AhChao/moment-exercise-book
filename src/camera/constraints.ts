@@ -16,13 +16,22 @@ const clamp = (v: number, r: RangeCap): number => Math.min(r.max, Math.max(r.min
 export interface SplitConstraints {
   /** Manual exposure in ONE object, or null when exposure stays automatic. */
   exposure: ConstraintSet | null
-  /** Everything else, one property group per set. */
+  /** Zoom / white balance / focus, one property group per set. Applied before any exposure work. */
   others: ConstraintSet[]
+  /** {exposureMode:'continuous'}; automatic exposure only, null when the phone has no manual mode. */
+  autoMode: ConstraintSet | null
+  /** {exposureCompensation}; automatic exposure only, always present when caps.ev exists (0 when unset). */
+  ev: ConstraintSet | null
+  /** The clamped EV that `ev` requests, for read-back verification. */
+  evValue: number | null
 }
 
 export function splitConstraints(spec: CaptureSpec, caps: Capabilities): SplitConstraints {
   const prescribed = spec.shutterSec !== null || spec.iso !== null
   let exposure: ConstraintSet | null = null
+  let autoMode: ConstraintSet | null = null
+  let ev: ConstraintSet | null = null
+  let evValue: number | null = null
   const others: ConstraintSet[] = []
 
   if (prescribed) {
@@ -35,8 +44,11 @@ export function splitConstraints(spec: CaptureSpec, caps: Capabilities): SplitCo
       }
     }
   } else {
-    if (caps.canManualExposure) others.push({ exposureMode: 'continuous' })
-    if (caps.ev) others.push({ exposureCompensation: clamp(spec.ev ?? 0, caps.ev) })
+    if (caps.canManualExposure) autoMode = { exposureMode: 'continuous' }
+    if (caps.ev) {
+      evValue = clamp(spec.ev ?? 0, caps.ev)
+      ev = { exposureCompensation: evValue }
+    }
   }
 
   if (caps.zoom) others.push({ zoom: clamp(spec.zoom ?? 1, caps.zoom) })
@@ -54,12 +66,17 @@ export function splitConstraints(spec: CaptureSpec, caps: Capabilities): SplitCo
         : { focusMode: 'manual', focusDistance: clamp(spec.focusMeters, caps.focusMeters) },
     )
   }
-  return { exposure, others }
+  return { exposure, others, autoMode, ev, evValue }
 }
 
+/**
+ * Ordered list: manual exposure first (one object) when prescribed; otherwise zoom / wb / focus,
+ * then the exposure mode, and exposure compensation LAST as its own set (later calls can drop it).
+ */
 export function buildShotConstraints(spec: CaptureSpec, caps: Capabilities): ConstraintSet[] {
-  const { exposure, others } = splitConstraints(spec, caps)
-  return exposure ? [exposure, ...others] : others
+  const { exposure, others, autoMode, ev } = splitConstraints(spec, caps)
+  if (exposure) return [exposure, ...others]
+  return [...others, ...(autoMode ? [autoMode] : []), ...(ev ? [ev] : [])]
 }
 
 /** Live preview uses the same values as the shot: the preview tracks the photo. */
