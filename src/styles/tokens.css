@@ -1,0 +1,87 @@
+/*
+  The whole look of the app is decided here. Components read these variables and nothing else:
+  swap the palette, fonts or stroke by editing this file only.
+  Palette idea: cream printed page, dark brown ink, coloured-pencil accents, film-stock orange.
+*/
+:root {
+  /* paper */
+  --mx-paper: #efe4cb;
+  --mx-paper-deep: #e4d4ae;
+  --mx-paper-light: #f8f1de;
+  --mx-film: #2b211b;
+
+  /* ink */
+  --mx-ink: #3a2d26;
+  --mx-ink-soft: #6b5a4c;
+  --mx-ink-faint: #9c8b78;
+
+  /* coloured pencils (rgb triplets so they can take alpha) */
+  --mx-red-rgb: 180 83 60;
+  --mx-orange-rgb: 217 138 61;
+  --mx-yellow-rgb: 226 186 74;
+  --mx-green-rgb: 91 138 106;
+  --mx-teal-rgb: 75 138 138;
+  --mx-blue-rgb: 79 111 150;
+  --mx-purple-rgb: 122 95 143;
+  --mx-red: rgb(var(--mx-red-rgb));
+  --mx-orange: rgb(var(--mx-orange-rgb));
+  --mx-yellow: rgb(var(--mx-yellow-rgb));
+  --mx-green: rgb(var(--mx-green-rgb));
+  --mx-teal: rgb(var(--mx-teal-rgb));
+  --mx-blue: rgb(var(--mx-blue-rgb));
+  --mx-purple: rgb(var(--mx-purple-rgb));
+
+  /* type */
+  --mx-font-body: 'Noto Serif TC', 'Source Han Serif TC', 'Songti TC', 'PMingLiU', Georgia, serif;
+  --mx-font-hand: 'Kaiti TC', 'BiauKai', 'STKaiti', 'DFKai-SB', 'Noto Serif TC', Georgia, serif;
+  --mx-font-mono: 'Courier New', ui-monospace, Menlo, monospace;
+  --mx-text-sm: 0.8125rem;
+  --mx-text-md: 0.9375rem;
+  --mx-text-lg: 1.125rem;
+  --mx-text-xl: 1.5rem;
+  --mx-text-cover: 2.1rem;
+  --mx-leading: 1.65;
+
+  /* drawing */
+  --mx-stroke: 1.5px;
+  --mx-stroke-bold: 2.5px;
+  --mx-radius: 3px;
+  --mx-radius-round: 999px;
+  --mx-tilt: -0.4deg;
+  --mx-shadow: 0 1px 0 rgb(58 45 38 / 0.15), 0 6px 14px rgb(58 45 38 / 0.16);
+  --mx-shadow-lift: 0 2px 0 rgb(58 45 38 / 0.2), 0 12px 24px rgb(58 45 38 / 0.24);
+  --mx-page-width: 30rem;
+  --mx-tabbar-height: 4.25rem;
+  --mx-grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .32  0 0 0 0 .22  0 0 0 0 .12  0 0 0 .16 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  --mx-wavy-rule: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='6' viewBox='0 0 120 6'><path d='M0 3 Q 10 0.5 20 3 T 40 3 T 60 3 T 80 3 T 100 3 T 120 3' fill='none' stroke='%239c8b78' stroke-width='1.2' stroke-linecap='round'/></svg>");
+
+  /* component contract used by the shared modal / confirm / toast (collection `--ui-*` names) */
+  --ui-overlay: rgb(43 33 27 / 0.55);
+  --ui-surface-raised: var(--mx-paper-light);
+  --ui-surface-hover: var(--mx-paper-deep);
+  --ui-text: var(--mx-ink);
+  --ui-text-muted: var(--mx-ink-soft);
+  --ui-border: var(--mx-ink-faint);
+  --ui-radius-md: var(--mx-radius);
+  --ui-radius-sm: var(--mx-radius);
+  --ui-shadow-3: var(--mx-shadow-lift);
+  --ui-focus-ring: rgb(var(--mx-blue-rgb) / 0.55);
+  --ui-accent: var(--mx-red);
+  --ui-accent-hover: rgb(150 66 46);
+  --ui-on-accent: var(--mx-paper-light);
+  --ui-danger: rgb(156 47 42);
+  --ui-danger-hover: rgb(126 36 32);
+  --ui-on-danger: var(--mx-paper-light);
+  --ui-success: var(--mx-green);
+  --ui-on-success: var(--mx-paper-light);
+  --ui-warning: rgb(176 122 38);
+  --ui-on-warning: var(--mx-paper-light);
+  --ui-dur-fast: 120ms;
+  --ui-dur-base: 200ms;
+  --ui-ease: cubic-bezier(0.2, 0, 0, 1);
+  --ui-z-nav: 100;
+  --ui-z-modal: 1000;
+  --ui-z-popover: 1050;
+  --ui-z-busy: 1080;
+  --ui-z-toast: 1100;
+}

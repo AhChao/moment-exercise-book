@@ -1,0 +1,271 @@
+/*
+  Reusable "printed book + coloured pencil" primitives. Views compose these; they add layout only.
+  The wobbly outlines come from the #mx-rough SVG filter declared once in index.html and are
+  applied to a pseudo-element, so text and photos stay crisp.
+*/
+
+.mx-app { position: relative; z-index: 1; min-height: 100dvh; }
+
+.mx-page {
+  max-width: var(--mx-page-width);
+  margin: 0 auto;
+  padding: 1rem 1rem calc(var(--mx-tabbar-height) + 2rem + env(safe-area-inset-bottom));
+}
+
+.mx-page--flush { padding-bottom: 1rem; }
+
+/* ── card: a sheet of paper with a hand-drawn edge ───────────────────────── */
+.mx-card {
+  position: relative;
+  padding: 1rem 1.05rem;
+  background: var(--mx-paper-light);
+  border-radius: var(--mx-radius);
+  box-shadow: var(--mx-shadow);
+  transform: rotate(var(--mx-tilt));
+}
+.mx-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: var(--mx-stroke) solid var(--mx-ink-soft);
+  border-radius: var(--mx-radius);
+  filter: url(#mx-rough);
+  pointer-events: none;
+}
+.mx-card--flat { transform: none; }
+.mx-card--tilt-right { --mx-tilt: 0.5deg; }
+
+/* ── headings ────────────────────────────────────────────────────────────── */
+.mx-title { font-size: var(--mx-text-xl); }
+.mx-heading { font-size: var(--mx-text-lg); }
+.mx-mark {
+  background-image: linear-gradient(transparent 58%, rgb(var(--mx-yellow-rgb) / 0.6) 58% 92%, transparent 92%);
+  padding: 0 0.15em;
+}
+.mx-kicker {
+  font-family: var(--mx-font-mono);
+  font-size: var(--mx-text-sm);
+  letter-spacing: 0.08em;
+  color: var(--mx-ink-soft);
+}
+.mx-muted { color: var(--mx-ink-soft); }
+.mx-mono { font-family: var(--mx-font-mono); }
+
+.mx-rule { height: 6px; margin: 1rem 0; background: var(--mx-wavy-rule) repeat-x center / auto 6px; border: 0; }
+
+/* ── buttons ─────────────────────────────────────────────────────────────── */
+.mx-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--mx-font-hand);
+  font-size: var(--mx-text-lg);
+  font-weight: 700;
+  color: var(--mx-ink);
+  background: transparent;
+  border: 0;
+  border-radius: var(--mx-radius);
+  transition: transform var(--ui-dur-fast) var(--ui-ease);
+}
+.mx-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: var(--mx-stroke-bold) solid var(--mx-ink);
+  border-radius: var(--mx-radius);
+  filter: url(#mx-rough);
+  pointer-events: none;
+}
+.mx-btn:active { transform: translateY(1px) rotate(-0.3deg); }
+.mx-btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+.mx-btn--primary {
+  color: var(--ui-on-accent);
+  background:
+    repeating-linear-gradient(-45deg, transparent 0 3px, rgb(255 255 255 / 0.14) 3px 4px),
+    var(--mx-red);
+}
+.mx-btn--danger {
+  color: var(--ui-on-danger);
+  background:
+    repeating-linear-gradient(-45deg, transparent 0 3px, rgb(255 255 255 / 0.12) 3px 4px),
+    var(--ui-danger);
+}
+.mx-btn--quiet::before { border-color: var(--mx-ink-faint); border-width: var(--mx-stroke); }
+.mx-btn--block { display: flex; width: 100%; }
+.mx-btn--small { min-height: 2.25rem; padding: 0.3rem 0.8rem; font-size: var(--mx-text-md); }
+
+.mx-iconbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  color: var(--mx-ink);
+  background: transparent;
+  border: 0;
+  border-radius: var(--mx-radius-round);
+}
+.mx-iconbtn:active { background: rgb(var(--mx-yellow-rgb) / 0.35); }
+
+/* ── chips and stamps ────────────────────────────────────────────────────── */
+.mx-chip {
+  --tone: var(--mx-ink-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.05rem 0.6rem;
+  font-family: var(--mx-font-mono);
+  font-size: var(--mx-text-sm);
+  color: var(--tone);
+  background: rgb(255 255 255 / 0.35);
+  border: var(--mx-stroke) solid var(--tone);
+  border-radius: var(--mx-radius-round);
+}
+.mx-chip[data-tone='red'] { --tone: var(--mx-red); }
+.mx-chip[data-tone='green'] { --tone: var(--mx-green); }
+.mx-chip[data-tone='blue'] { --tone: var(--mx-blue); }
+.mx-chip[data-tone='yellow'] { --tone: rgb(160 122 30); }
+.mx-chip[data-tone='purple'] { --tone: var(--mx-purple); }
+
+.mx-stamp {
+  --tone: var(--mx-red);
+  display: inline-block;
+  padding: 0.05rem 0.55rem;
+  font-family: var(--mx-font-hand);
+  font-size: var(--mx-text-md);
+  font-weight: 700;
+  color: var(--tone);
+  border: var(--mx-stroke-bold) double var(--tone);
+  border-radius: var(--mx-radius);
+  transform: rotate(-5deg);
+  opacity: 0.9;
+}
+.mx-stamp[data-tone='green'] { --tone: var(--mx-green); }
+.mx-stamp[data-tone='blue'] { --tone: var(--mx-blue); }
+.mx-stamp[data-tone='yellow'] { --tone: rgb(160 122 30); }
+
+/* ── coloured-pencil progress bar ────────────────────────────────────────── */
+.mx-pencilbar {
+  position: relative;
+  height: 0.6rem;
+  overflow: hidden;
+  background: rgb(107 90 76 / 0.16);
+  border-radius: var(--mx-radius-round);
+}
+.mx-pencilbar > span {
+  display: block;
+  height: 100%;
+  background:
+    repeating-linear-gradient(-45deg, transparent 0 3px, rgb(255 255 255 / 0.25) 3px 4px),
+    var(--mx-green);
+  border-radius: var(--mx-radius-round);
+}
+
+/* ── photo presentation ──────────────────────────────────────────────────── */
+.mx-frame {
+  position: relative;
+  padding: 0.5rem 0.5rem 1.4rem;
+  background: var(--mx-paper-light);
+  box-shadow: var(--mx-shadow);
+  transform: rotate(var(--mx-tilt));
+}
+.mx-frame::before {
+  content: '';
+  position: absolute;
+  top: -0.55rem;
+  left: 50%;
+  width: 3.4rem;
+  height: 1.1rem;
+  background: rgb(var(--mx-yellow-rgb) / 0.55);
+  transform: translateX(-50%) rotate(-3deg);
+}
+.mx-frame > .mx-frame__image { aspect-ratio: 3 / 4; overflow: hidden; background: var(--mx-paper-deep); }
+.mx-frame > .mx-frame__image > img { width: 100%; height: 100%; object-fit: cover; }
+.mx-frame__caption { margin-top: 0.4rem; font-family: var(--mx-font-hand); font-size: var(--mx-text-md); text-align: center; }
+
+.mx-strip {
+  position: relative;
+  padding: 1.05rem 0.5rem;
+  background: var(--mx-film);
+  border-radius: 2px;
+}
+.mx-strip::before,
+.mx-strip::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0.5rem;
+  background: radial-gradient(circle, var(--mx-paper) 0.15rem, transparent 0.17rem) 0 0 / 0.9rem 0.5rem repeat-x;
+  opacity: 0.85;
+}
+.mx-strip::before { top: 0.25rem; }
+.mx-strip::after { bottom: 0.25rem; }
+
+/* ── form fields: lined notebook paper ───────────────────────────────────── */
+.mx-input {
+  display: block;
+  width: 100%;
+  min-height: 6.6rem;
+  padding: 0.1rem 0.25rem;
+  font-family: var(--mx-font-hand);
+  font-size: var(--mx-text-lg);
+  line-height: 1.65rem;
+  color: var(--mx-ink);
+  resize: vertical;
+  background:
+    repeating-linear-gradient(transparent 0 1.6rem, rgb(107 90 76 / 0.32) 1.6rem 1.65rem),
+    transparent;
+  border: 0;
+  border-radius: 0;
+}
+.mx-input::placeholder { color: var(--mx-ink-faint); }
+.mx-input:focus-visible { outline: none; background-color: rgb(var(--mx-yellow-rgb) / 0.16); }
+
+.mx-range { width: 100%; accent-color: var(--mx-red); }
+
+/* ── bottom tab bar: bookmarks sticking out of the page edge ─────────────── */
+.mx-tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--ui-z-nav);
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0 1rem env(safe-area-inset-bottom);
+  pointer-events: none;
+}
+.mx-tab {
+  --tone: var(--mx-red);
+  pointer-events: auto;
+  display: flex;
+  flex: 1 1 0;
+  max-width: 9.5rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  height: 3.6rem;
+  padding-top: 0.2rem;
+  font-family: var(--mx-font-hand);
+  font-size: var(--mx-text-md);
+  color: var(--mx-paper-light);
+  background:
+    repeating-linear-gradient(-45deg, transparent 0 3px, rgb(255 255 255 / 0.12) 3px 4px),
+    var(--tone);
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 -2px 8px rgb(58 45 38 / 0.22);
+  transform: translateY(0.7rem);
+  transition: transform var(--ui-dur-base) var(--ui-ease);
+}
+.mx-tab[data-tone='blue'] { --tone: var(--mx-blue); }
+.mx-tab[data-tone='green'] { --tone: var(--mx-green); }
+.mx-tab.router-link-active,
+.mx-tab[aria-current='page'] { transform: translateY(0); }
