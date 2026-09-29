@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1a5fd0">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Camera Probe v3</title>
+<link rel="stylesheet" href="probe.css">
+</head>
+<body>
+<h1>Camera Probe v3</h1>
+<p class="hint">請用 <b>Chrome</b> 開啟。這是最後一輪，做完就不會再請你測。每個測試完成後按它上方的「複製結果」，逐項貼回對話。</p>
+<div id="browser" class="hint"></div>
+
+<video id="preview" playsinline muted></video>
+
+<section>
+  <h2>1. 快門範圍</h2>
+  <p class="hint">場景：光線充足的室內，手機靠在東西上不動。最後兩項會用到 1/4 秒和 1 秒。約需 1 分鐘。</p>
+  <button data-run="shutterLadder">執行</button>
+  <pre id="out-shutterLadder"></pre>
+</section>
+
+<section>
+  <h2>2. 連續換參數</h2>
+  <p class="hint">場景同上，手機不動。</p>
+  <button data-run="toggleStrategy">執行</button>
+  <pre id="out-toggleStrategy"></pre>
+</section>
+
+<section>
+  <h2>3. 預覽是否即時反映</h2>
+  <p class="hint">場景同上，手機不動。</p>
+  <button data-run="previewWysiwyg">執行</button>
+  <pre id="out-previewWysiwyg"></pre>
+</section>
+
+<section>
+  <h2>4. 色溫</h2>
+  <p class="hint">場景：對準白紙或白牆，最好是黃燈下。</p>
+  <button data-run="whiteBalanceK">執行</button>
+  <pre id="out-whiteBalanceK"></pre>
+</section>
+
+<section>
+  <h2>5. 後製運算效能</h2>
+  <p class="hint">拍一張後在手機上測試處理速度，任何場景都可以。</p>
+  <button data-run="develop">執行</button>
+  <pre id="out-develop"></pre>
+</section>
+
+<section>
+  <h2>6. 大量照片儲存</h2>
+  <button data-run="idbStress">執行</button>
+  <pre id="out-idbStress"></pre>
+</section>
+
+<section>
+  <h2>7. 安裝與持久化</h2>
+  <p class="hint">若下方出現「安裝成 App」就按它；沒有的話用 Chrome 選單的「安裝應用程式」或「加到主畫面」。裝好後從桌面圖示開啟，按「儲存與持久化」，再複製結果。</p>
+  <button id="install" hidden>安裝成 App</button>
+  <button data-run="storage">儲存與持久化</button>
+  <pre id="out-storage"></pre>
+</section>
+
+<section>
+  <h2>8. 原生相機與相簿匯入</h2>
+  <p class="hint">請先在 Pixel 相機 App 裡拍好這幾張，再回來依序選：</p>
+  <p class="hint">a. 用 0.5 倍拍一張，然後從相簿選它。</p>
+  <label class="file">選 0.5 倍照片<input type="file" accept="image/*" data-file="pickUltrawide"></label>
+  <pre id="out-pickUltrawide"></pre>
+  <p class="hint">b. 用 5 倍拍一張，然後從相簿選它。</p>
+  <label class="file">選 5 倍照片<input type="file" accept="image/*" data-file="pickTele"></label>
+  <pre id="out-pickTele"></pre>
+  <p class="hint">c. 按下面按鈕開啟相機，在 Pixel 相機裡切到手動模式，設定 ISO 800、快門 1/60，拍一張。</p>
+  <label class="file">手動拍一張（叫起相機）<input type="file" accept="image/*" capture="environment" data-file="captureManual"></label>
+  <pre id="out-captureManual"></pre>
+  <p class="hint">d. 回到這裡，從相簿選出剛才那張（c 拍的）。</p>
+  <label class="file">選剛才 c 拍的那張<input type="file" accept="image/*" data-file="pickManualSame"></label>
+  <pre id="out-pickManualSame"></pre>
+</section>
+
+<section>
+  <h2>備註與送出</h2>
+  <textarea id="notes" rows="3" placeholder="有任何異常或想補充的寫在這裡"></textarea>
+  <button id="copy">複製全部（可能很長）</button>
+  <pre id="out-send"></pre>
+  <textarea id="fallback" rows="6" hidden readonly></textarea>
+</section>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
