@@ -4,6 +4,7 @@ import { importNote } from './exercise'
 
 export const captureCopy = {
   opening: '相機開啟中',
+  metering: '測光中',
   close: '關閉',
   shutter: '拍攝',
   slowHint: '手機請靠在穩固處',

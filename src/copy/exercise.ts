@@ -27,7 +27,6 @@ export const exerciseCopy = {
   placedToast: '已放入畫格',
   notImage: '這個檔案不是可用的照片',
   placeFailed: '照片放入畫格失敗',
-  compareEmpty: '至少兩個畫格有照片時可並排比較',
 } as const
 
 export const importNote = '此畫格改由手機相機 App 拍攝後，從相簿選取'

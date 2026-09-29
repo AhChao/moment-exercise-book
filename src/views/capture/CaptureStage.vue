@@ -14,6 +14,7 @@ import ControlPanel from './ControlPanel.vue'
 import ReviewScreen from './ReviewScreen.vue'
 import ShutterButton from './ShutterButton.vue'
 import { isSlowShot } from './buildSpec'
+import { useAutoIso } from './useAutoIso'
 import { useCamera } from './useCamera'
 import { useControls } from './useControls'
 import { useShoot } from './useShoot'
@@ -24,8 +25,12 @@ const router = useRouter()
 const shot = computed(() => props.exercise.shots[props.index])
 const video = ref<HTMLVideoElement | null>(null)
 
-const cam = useCamera(video, () => ctl.pushPreview())
+const cam = useCamera(video, () => {
+  ctl.pushPreview()
+  void autoIso.run()
+})
 const ctl = useControls(shot, cam.session)
+const autoIso = useAutoIso(video, cam.session, shot, (iso) => ctl.set('iso', iso))
 const shooter = useShoot(cam.session, ctl.spec)
 
 const expanded = ref(ctl.free.value)
@@ -86,6 +91,7 @@ const fileInput = picker.input // bound by name in the template
         </button>
         <span class="cap__label mx-mono">{{ shot?.label }}</span>
         <span v-if="cam.status.value === 'opening'" class="cap__opening">{{ captureCopy.opening }}</span>
+        <span v-else-if="autoIso.metering.value" class="cap__opening">{{ captureCopy.metering }}</span>
       </header>
 
       <div v-if="!shooter.pending.value" class="cap__bottom">
@@ -113,7 +119,7 @@ const fileInput = picker.input // bound by name in the template
         </section>
         <ShutterButton
           :busy="shooter.phase.value !== 'idle'"
-          :disabled="!ready || shooter.busy.value"
+          :disabled="!ready || shooter.busy.value || autoIso.metering.value"
           :status="status"
           :hint="slow ? captureCopy.slowHint : ''"
           @press="shooter.shoot"
