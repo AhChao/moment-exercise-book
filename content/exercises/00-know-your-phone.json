@@ -1,0 +1,62 @@
+{
+  "chapter": {"id": "00-know-your-phone", "order": 0, "title": "認識這支手機", "blurb": "光圈是鏡頭固定的硬限制，快門與 ISO 是可以調整的軟限制。先分清哪些條件無法改變、哪些可以控制，再開始練習。", "level": 1},
+  "exercises": [
+    {
+      "id": "00-know-your-phone-01-fixed-aperture",
+      "title": "固定的光圈",
+      "level": 1,
+      "concept": "每顆鏡頭的光圈固定，主鏡頭約 f/1.7、長焦約 f/3.1，無法調整。進光量與光圈值的平方成反比，(3.1 ÷ 1.7)² 約為 3.3，長焦在相同快門與 ISO 下少了約 3.3 倍的光，也就是暗約 1.7 級。",
+      "goal": "確認光圈是鏡頭固定的硬限制：快門與 ISO 完全相同時，光圈較小的鏡頭拍出較暗的照片。",
+      "scene": "明亮的室內，如開著燈的客廳或靠近窗邊（避開直射陽光）的桌面，桌上放一個色彩單純的物品。這種光線下，1/30 + ISO 200 使主鏡頭亮約一級，長焦約略偏暗。整張照片發白時，改到較暗處；漆黑時，改到較亮處。",
+      "fixed": ["取景中心", "手機位置（靠在穩固處）", "光線", "前兩張的快門 1/30 與 ISO 200"],
+      "shots": [
+        {"label": "1x 主鏡頭 f/1.7", "capture": {"shutterSec": 0.0333, "iso": 200, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機靠在穩固處，快門 1/30、ISO 200，取景中心對準物品。這一張是亮度基準。"},
+        {"label": "5x 長焦 f/3.1", "capture": {"shutterSec": 0.0333, "iso": 200, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "手機位置與取景中心不動，快門 1/30、ISO 200 維持不變，只把倍率改為 5x。理論上進光少約 1.7 級。"},
+        {"label": "5x 長焦，ISO 提高", "capture": {"shutterSec": 0.0333, "iso": 640, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "快門維持 1/30，ISO 改為 640。ISO 約提高 3.2 倍，剛好補回長焦少掉的光，亮度應接近第一張。"}
+      ],
+      "predict": ["預期 1x 與 5x 兩張哪一張較暗，暗幾級", "預期 5x 要把 ISO 提高多少，亮度才追得上 1x"],
+      "observe": ["1x 與 5x 兩張哪一張較暗，暗多少", "快門與 ISO 完全相同，亮度仍不同的原因", "第三張的亮度是否接近第一張", "在照片檢視中把同一處放大並排比較，第三張為補回亮度付出的代價（雜訊、細節）"],
+      "reflect": ["在暗處拍遠方時，長焦的光圈小會造成哪些限制？", "光圈無法調整，剩下哪些控制項可以用來補光？"],
+      "needs": ["manualExposure", "tele", "tripodOrRest"],
+      "checks": [{"shot": 0, "field": "lens", "op": "==", "value": "main"}, {"shot": 1, "field": "lens", "op": "==", "value": "tele"}, {"shot": 0, "field": "shutterSec", "op": "between", "value": [0.025, 0.042]}, {"shot": 1, "field": "shutterSec", "op": "between", "value": [0.025, 0.042]}, {"shot": 0, "field": "iso", "op": "==", "value": 200}, {"shot": 1, "field": "iso", "op": "==", "value": 200}, {"shot": 2, "field": "iso", "op": "between", "value": [500, 800]}],
+      "sources": ["作者自撰文章「從拍不好月亮開始，搞懂曝光三要素與手機多鏡頭設計」", "Bryan Peterson, Understanding Exposure"]
+    },
+    {
+      "id": "00-know-your-phone-02-what-phone-hides",
+      "title": "手機藏起來的處理",
+      "level": 1,
+      "concept": "手機相機 App 會替使用者決定快門、ISO、降噪與銳化，只留下「拍什麼」讓人選擇。自己指定快門、亮度交給測光的照片，可以和手機相機 App 的照片並排，看出這些處理改變了什麼。",
+      "goal": "比較同一場景在本 App 與手機相機 App 拍出的差別，看出手機自動處理的部分。",
+      "scene": "光線偏暗的室內靜物，如只開一盞燈的桌面，畫面中要有暗部、布料或書背文字等細節。這種光線下，快門 1/60 時 ISO 預期在 800 到 1600 之間，雜訊比較容易看出來。沒有暗處時，可用手遮住部分光源。",
+      "fixed": ["取景", "手機位置（靠在穩固處）", "光線"],
+      "shots": [
+        {"label": "本 App，快門 1/60", "capture": {"shutterSec": 0.0167, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/60，ISO 依場景亮度自動配合，使亮度正常。手機靠穩，之後在拍攝資料查看實際的 ISO。"},
+        {"label": "手機相機 App", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "此畫格改由手機相機 App 拍攝後，從相簿選取。使用預設的自動模式，手機位置與取景與上一張相同。"}
+      ],
+      "predict": ["預期兩張的整體亮度是否相同", "預期哪一張的暗部雜訊較少"],
+      "observe": ["兩張的整體亮度與暗部亮度差別", "在照片檢視中把暗部的同一處放大並排比較，雜訊與細節的差別", "拍攝資料中兩張的快門與 ISO 各是多少", "手機相機 App 的照片有哪些是自己沒有指定、卻已被處理過的地方"],
+      "reflect": ["哪一張較接近當時肉眼看到的畫面？", "自己指定快門後，取得了什麼、放棄了什麼？"],
+      "needs": ["manualExposure", "tripodOrRest"],
+      "checks": [{"shot": 0, "field": "shutterSec", "op": "between", "value": [0.012, 0.022]}],
+      "sources": ["作者自撰文章「從拍不好月亮開始，搞懂曝光三要素與手機多鏡頭設計」"]
+    },
+    {
+      "id": "00-know-your-phone-03-read-shooting-data",
+      "title": "讀懂拍攝資料",
+      "level": 1,
+      "concept": "每張照片都附有拍攝資料，記下實際使用的快門、ISO、焦段與鏡頭。之後的每一章都以這些數字判斷一張照片為什麼長成這樣。",
+      "goal": "在長焦的最大原生倍率拍一張，讀出快門、ISO、焦段與鏡頭，確認這支手機提供的鏡頭。",
+      "scene": "任何光線充足的場景，桌面上放一個物品即可。拍攝資料若顯示的不是長焦，代表這支手機在此倍率使用的是其他鏡頭，這也是有用的結果。",
+      "fixed": ["場景", "手機位置"],
+      "shots": [
+        {"label": "5x 長焦", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "倍率設為 5x，其餘交給手機自動決定，拍完後在照片檢視中打開拍攝資料。"}
+      ],
+      "predict": ["預期鏡頭欄位顯示哪一顆鏡頭", "預期焦段是多少 mm，與主鏡頭相比約幾倍"],
+      "observe": ["鏡頭欄位顯示的是主鏡頭、超廣角還是長焦", "焦段是多少 mm，與主鏡頭的焦段相差幾倍", "快門與 ISO 由手機決定的數值", "拍攝資料中沒有出現的項目"],
+      "reflect": ["哪些數字之後最常需要查看？"],
+      "needs": ["tele"],
+      "checks": [{"shot": 0, "field": "lens", "op": "==", "value": "tele"}],
+      "sources": ["作者自撰文章「從拍不好月亮開始，搞懂曝光三要素與手機多鏡頭設計」"]
+    }
+  ]
+}

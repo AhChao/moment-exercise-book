@@ -1,82 +1,91 @@
 {
-  "chapter": {"id": "02-exposure-basics", "order": 2, "title": "曝光三要素", "blurb": "快門、ISO 與亮度的關係，每次只改變一個設定。", "level": 1},
+  "chapter": {"id": "02-exposure-basics", "order": 2, "title": "曝光三要素", "blurb": "快門、ISO 與亮度的關係。每一項都能讓照片變亮，也各自要付出代價，每次只改變一個設定。", "level": 1},
   "exercises": [
     {
       "id": "02-exposure-basics-01-shutter",
       "title": "快門",
       "level": 1,
+      "concept": "ISO 固定時，快門每快一級，進光量減半，畫面暗一級。快門慢則畫面亮，代價是手震與動態模糊；快門快則能凍結動作，代價是變暗。",
       "goal": "看懂快門如何改變亮度、手震與動態模糊。",
-      "scene": "一般亮度的室內窗邊靜物，避開直射陽光，旁邊放一個會動的東西（如晃動的植物）。1/500 的照片會偏黑，這正是要觀察的現象。沒有窗邊與植物時，改在開燈的桌面上拍，動的東西改為以手擺動的紙條。",
+      "scene": "一般亮度的室內靜物，如開著天花板燈的桌面，旁邊放一個會動的東西（如晃動的植物）。第一張 1/30 + ISO 100 預期亮度接近正常；整張發白時退離光源，明顯偏暗時靠近光源，再開始拍。1/125 預期暗約兩級，1/500 暗約四級，畫面偏黑是要觀察的現象。沒有植物時，改以手擺動的紙條。",
       "fixed": ["ISO 100", "取景", "手機位置"],
       "shots": [
-        {"label": "1/30", "capture": {"shutterSec": 0.0333, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/30、ISO 100。手肘貼身或手機靠穩再拍，動的東西會出現模糊。"},
-        {"label": "1/125", "capture": {"shutterSec": 0.008, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把快門改為 1/125，ISO、取景與位置維持不動。"},
-        {"label": "1/500", "capture": {"shutterSec": 0.002, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把快門改為 1/500，其餘不動。亮度預期會下降，記下下降的程度。"}
+        {"label": "1/30（基準）", "capture": {"shutterSec": 0.0333, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/30、ISO 100。手肘貼身或手機靠穩再拍，動的東西會出現模糊。"},
+        {"label": "1/125（約暗兩級）", "capture": {"shutterSec": 0.008, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把快門改為 1/125，ISO、取景與位置維持不動。"},
+        {"label": "1/500（約暗四級）", "capture": {"shutterSec": 0.002, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把快門改為 1/500，其餘不動。亮度預期會下降，記下下降的程度。"}
       ],
-      "observe": ["三張的亮度依序如何變化", "哪一張出現手震或動態模糊", "快門快到什麼程度，畫面已經太暗"],
+      "predict": ["預期三張的亮度依序如何變化，1/500 會暗幾級", "預期哪一張會出現手震或動態模糊"],
+      "observe": ["三張的亮度依序如何變化", "哪一張出現手震或動態模糊", "快門快到什麼程度，畫面已經太暗", "每一張為快門付出的代價（手震、動態模糊或變暗）", "在照片檢視中把會動的東西放大並排比較，三張的模糊程度"],
       "reflect": ["手持時，快門慢到多少開始不穩？"],
       "needs": ["manualExposure"],
       "checks": [{"shot": 0, "field": "shutterSec", "op": "between", "value": [0.025, 0.042]}, {"shot": 2, "field": "shutterSec", "op": "between", "value": [0.0015, 0.0028]}, {"shot": 0, "field": "iso", "op": "==", "value": 100}],
-      "sources": ["Bryan Peterson, Understanding Exposure", "PictureCorrect, Exercise to Understand the Exposure Triangle", "Oh My Camera, 6 Exercises to Master Shutter Speed"]
+      "sources": ["Bryan Peterson, Understanding Exposure", "PictureCorrect, Exercise to Understand the Exposure Triangle", "Oh My Camera, 6 Exercises to Master Shutter Speed", "作者自撰文章「從拍不好月亮開始，搞懂曝光三要素與手機多鏡頭設計」"]
     },
     {
       "id": "02-exposure-basics-02-iso",
       "title": "ISO",
       "level": 1,
-      "goal": "看懂 ISO 以雜訊換取亮度的關係。",
-      "scene": "光線偏暗的室內靜物，例如只開一盞燈的房間。房間太亮時，改在背光的角落拍。沒有暗處時，可用手遮住部分光源。光線越亮，ISO 400 與 ISO 1600 的照片越容易過亮。",
+      "concept": "ISO 是把感光元件收到的訊號放大，ISO 加倍，亮度提高一級。放大訊號的同時，微弱的雜訊也一起被放大，細節因此被蓋過。",
+      "goal": "看懂 ISO 以雜訊與細節換取亮度的關係。",
+      "scene": "一般亮度的室內靜物，如開著天花板燈的桌面。這種光線下，快門 1/125 時正常亮度約需 ISO 400，暗兩級約為 ISO 100，亮兩級約為 ISO 1600。光線更亮或更暗時，ISO 的數字會跟著移動，三張的亮度差距仍是兩級。",
       "fixed": ["快門 1/125", "取景", "手機位置"],
       "shots": [
-        {"label": "ISO 100", "capture": {"shutterSec": 0.008, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/125、ISO 100，畫面會偏暗，作為亮度與雜訊的基準。"},
-        {"label": "ISO 400", "capture": {"shutterSec": 0.008, "iso": 400, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門維持 1/125，只把 ISO 改為 400。"},
-        {"label": "ISO 1600", "capture": {"shutterSec": 0.008, "iso": 1600, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門維持 1/125，ISO 改為 1600，之後放大檢視暗部。"}
+        {"label": "暗兩級（ISO 最低）", "capture": {"shutterSec": 0.008, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/125，亮度比正常暗兩級，ISO 由手機依場景算出，一般室內約為 ISO 100。畫面會偏暗，作為亮度與雜訊的基準。", "exposureStops": -2},
+        {"label": "正常亮度", "capture": {"shutterSec": 0.008, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門維持 1/125，亮度改為正常，一般室內 ISO 約為 400。", "exposureStops": 0},
+        {"label": "亮兩級（ISO 最高）", "capture": {"shutterSec": 0.008, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門維持 1/125，亮度比正常亮兩級，一般室內 ISO 約為 1600。拍完後放大檢視暗部。", "exposureStops": 2}
       ],
-      "observe": ["亮度的變化", "放大到暗部，雜訊從哪一張開始明顯", "細節是否被雜訊蓋過"],
+      "predict": ["預期每張之間的亮度差幾級，ISO 相差幾倍", "預期雜訊從哪一張開始明顯"],
+      "observe": ["亮度的變化與拍攝資料中 ISO 的關係", "在照片檢視中把暗部的同一處放大並排比較，雜訊從哪一張開始明顯", "ISO 提高換得亮度，付出的代價是雜訊還是細節", "細節是否被雜訊蓋過"],
       "reflect": ["可以接受的最高 ISO 大約是多少？"],
       "needs": ["manualExposure"],
-      "checks": [{"shot": 0, "field": "iso", "op": "==", "value": 100}, {"shot": 2, "field": "iso", "op": "==", "value": 1600}, {"shot": 1, "field": "shutterSec", "op": "between", "value": [0.006, 0.01]}],
-      "sources": ["Bryan Peterson, Understanding Exposure", "Tom Ang, Digital Photography Masterclass"]
+      "checks": [{"shot": 0, "field": "shutterSec", "op": "between", "value": [0.006, 0.01]}, {"shot": 1, "field": "shutterSec", "op": "between", "value": [0.006, 0.01]}, {"shot": 2, "field": "shutterSec", "op": "between", "value": [0.006, 0.01]}],
+      "sources": ["Bryan Peterson, Understanding Exposure", "Tom Ang, Digital Photography Masterclass", "作者自撰文章「從拍不好月亮開始，搞懂曝光三要素與手機多鏡頭設計」"]
     },
     {
       "id": "02-exposure-basics-03-shutter-x-iso",
       "title": "快門 x ISO",
       "level": 2,
-      "goal": "理解不同快門與 ISO 的組合可得到相同亮度，但畫面特性不同。",
-      "scene": "一般亮度室內的同一個靜物，旁邊放一個會動的東西。三張亮度不一致時，微調 ISO。沒有會動的東西時，改以手擺動的紙條。",
-      "fixed": ["取景", "光線", "手機位置"],
+      "concept": "快門快一級，ISO 就要高一級，亮度才會相同。亮度相同時，慢快門把代價轉到模糊，高 ISO 把代價轉到雜訊與細節。手機的降噪與銳化會讓差異變得細小。",
+      "goal": "理解不同快門與 ISO 的組合可得到相同亮度，但畫面特性與付出的代價不同。",
+      "scene": "一般亮度室內的同一個靜物，旁邊放一個會動的東西。這種光線下，三張的 ISO 預期依序約為 100、400、1600。沒有會動的東西時，改以手擺動的紙條。",
+      "fixed": ["取景", "光線", "手機位置", "亮度（ISO 自動配合）"],
       "shots": [
-        {"label": "1/30 + ISO 100", "capture": {"shutterSec": 0.0333, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機靠穩，快門 1/30、ISO 100，作為亮度基準。"},
-        {"label": "1/125 + ISO 400", "capture": {"shutterSec": 0.008, "iso": 400, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門快兩級、ISO 高兩級，亮度應與基準接近，取景與位置不動。"},
-        {"label": "1/500 + ISO 1600", "capture": {"shutterSec": 0.002, "iso": 1600, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "再快兩級、ISO 再高兩級，亮度仍應接近基準。"}
+        {"label": "1/30，亮度正常", "capture": {"shutterSec": 0.0333, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機靠穩，快門 1/30，ISO 由手機配合到正常亮度，作為亮度基準。", "exposureStops": 0},
+        {"label": "1/125，亮度正常", "capture": {"shutterSec": 0.008, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門快兩級，ISO 會高兩級，亮度應與基準相同，取景與位置不動。", "exposureStops": 0},
+        {"label": "1/500，亮度正常", "capture": {"shutterSec": 0.002, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "再快兩級，ISO 再高兩級，亮度仍應與基準相同。", "exposureStops": 0}
       ],
-      "observe": ["三張亮度是否接近", "同樣亮度下，照片有哪些不同", "雜訊與動態模糊各出現在哪一張"],
+      "predict": ["預期三張亮度是否相同", "預期哪一張最模糊，哪一張的細節最少"],
+      "observe": ["三張亮度是否接近", "拍攝資料中三張的 ISO 與快門的關係", "每一張付出的代價（手震、動態模糊、雜訊、細節）", "整張照片看不出差異時，在照片檢視中把同一處放大並排比較，差別會落在邊緣的銳利度上", "雜訊與動態模糊各出現在哪一張"],
       "reflect": ["遇到同樣的光線，會選哪一組搭配？"],
-      "needs": ["manualExposure"],
-      "checks": [{"shot": 0, "field": "iso", "op": "==", "value": 100}, {"shot": 1, "field": "iso", "op": "==", "value": 400}, {"shot": 2, "field": "iso", "op": "==", "value": 1600}],
-      "sources": ["Bryan Peterson, Understanding Exposure", "Alan Ranger, Exposure Triangle Mastery Practice Assignment"]
+      "needs": ["manualExposure", "tripodOrRest"],
+      "checks": [{"shot": 0, "field": "shutterSec", "op": "between", "value": [0.025, 0.042]}, {"shot": 1, "field": "shutterSec", "op": "between", "value": [0.006, 0.01]}, {"shot": 2, "field": "shutterSec", "op": "between", "value": [0.0015, 0.0028]}],
+      "sources": ["Bryan Peterson, Understanding Exposure", "Alan Ranger, Exposure Triangle Mastery Practice Assignment", "作者自撰文章「從拍不好月亮開始，搞懂曝光三要素與手機多鏡頭設計」"]
     },
     {
       "id": "02-exposure-basics-04-freeze-water",
       "title": "凍結流動的水",
       "level": 2,
-      "goal": "以不同快門觀察移動的水被凍結或拉成線的差別。",
-      "scene": "一般亮度室內的水龍頭流水（避開直射陽光的窗邊），或把水倒入杯中。沒有水時，改以搖晃的植物。手機靠在穩固處。",
-      "fixed": ["取景", "手機位置", "亮度（ISO 隨快門調整）"],
+      "concept": "快門決定水在畫面中是線條還是水滴。快門越快，要維持同樣的亮度，ISO 就得越高，凍結動作的代價由雜訊支付。",
+      "goal": "以不同快門觀察移動的水被凍結或拉成線的差別，以及維持亮度需要付出的代價。",
+      "scene": "一般亮度以上的室內水龍頭流水（避開直射陽光的窗邊），或把水倒入杯中。這種光線下，1/1000 時 ISO 預期在 3000 以上；光線更暗時，ISO 會到達上限，照片會偏暗，此時改到較亮處。沒有水時，改以搖晃的植物。手機靠在穩固處。",
+      "fixed": ["取景", "手機位置", "亮度（ISO 自動配合）"],
       "shots": [
-        {"label": "1/30 + ISO 100", "capture": {"shutterSec": 0.0333, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/30、ISO 100，水流會拖出線條。手機靠穩，取景對準水流。"},
-        {"label": "1/250 + ISO 800", "capture": {"shutterSec": 0.004, "iso": 800, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/250、ISO 800，水流開始出現定格的水滴。取景與位置不動。"},
-        {"label": "1/1000 + ISO 3200", "capture": {"shutterSec": 0.001, "iso": 3200, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/1000、ISO 3200，水滴幾乎完全凍結，放大檢視雜訊。"}
+        {"label": "1/30，亮度正常", "capture": {"shutterSec": 0.0333, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/30，ISO 由手機配合，水流會拖出線條。手機靠穩，取景對準水流。", "exposureStops": 0},
+        {"label": "1/250，亮度正常", "capture": {"shutterSec": 0.004, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/250，水流開始出現定格的水滴。ISO 會比上一張高約三級，取景與位置不動。", "exposureStops": 0},
+        {"label": "1/1000，亮度正常", "capture": {"shutterSec": 0.001, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/1000，水滴幾乎完全凍結，ISO 高出更多，拍完後放大檢視雜訊。", "exposureStops": 0}
       ],
-      "observe": ["水在三張中的形態差別", "凍結動作換來的代價", "哪一張的水感最符合喜好"],
+      "predict": ["預期三張水流的形態", "預期 1/1000 那張的 ISO 比 1/30 那張高幾倍"],
+      "observe": ["水在三張中的形態差別", "拍攝資料中三張 ISO 的變化", "凍結動作換來的代價，在照片檢視中放大同一處，比較雜訊與水滴邊緣", "哪一張的水感最符合喜好"],
       "reflect": ["流動的東西偏好凍結還是拖出線條，原因為何？"],
       "needs": ["manualExposure", "movingSubject", "tripodOrRest"],
-      "checks": [{"shot": 1, "field": "shutterSec", "op": "between", "value": [0.003, 0.005]}, {"shot": 2, "field": "iso", "op": ">=", "value": 2000}],
+      "checks": [{"shot": 0, "field": "shutterSec", "op": "between", "value": [0.025, 0.042]}, {"shot": 1, "field": "shutterSec", "op": "between", "value": [0.003, 0.005]}, {"shot": 2, "field": "shutterSec", "op": "between", "value": [0.0007, 0.0014]}],
       "sources": ["Bryan Peterson, Understanding Exposure", "Oh My Camera, 6 Exercises to Master Shutter Speed"]
     },
     {
       "id": "02-exposure-basics-05-white-paper-trap",
       "title": "白紙變灰",
       "level": 1,
+      "concept": "自動曝光把整個畫面的平均亮度當成中灰，所以大片白色會被壓成灰色。曝光補償 +1 到 +2 把亮度拉回白色，補得過多則紙面紋理消失。",
       "goal": "了解自動曝光會把大片白色拉成灰色，需要用曝光補償修正。",
       "scene": "一張白紙（或白牆）鋪滿整個畫面。手邊有黑色物品時，可再照同樣步驟拍一組。沒有白紙時，改用白色牆面或白色盤子。",
       "fixed": ["取景", "手機位置", "光線"],
@@ -85,7 +94,8 @@
         {"label": "曝光補償 +1", "capture": {"shutterSec": null, "iso": null, "ev": 1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "位置與取景不動，曝光補償改為 +1。"},
         {"label": "曝光補償 +2", "capture": {"shutterSec": null, "iso": null, "ev": 2, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償改為 +2，觀察白紙在哪個值最接近肉眼看到的白。"}
       ],
-      "observe": ["補償 0 的白紙是白色還是灰色", "補償到哪個值最接近肉眼看到的白", "再往上補償，畫面出現什麼變化"],
+      "predict": ["預期補償 0 的白紙是白色還是灰色", "預期哪個補償值最接近肉眼所見的白"],
+      "observe": ["補償 0 的白紙是白色還是灰色", "補償到哪個值最接近肉眼看到的白", "再往上補償，畫面出現什麼變化", "補償過多時付出的代價（紙面紋理與亮部細節）"],
       "reflect": ["拍雪地、白牆或黑色物品時，應如何調整曝光補償？"],
       "needs": ["exposureComp"],
       "checks": [],

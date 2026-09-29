@@ -142,3 +142,53 @@
 - 11-motion-04-camera-blur、11-motion-06-traffic-shutter：數值不變（E 遠高於 1，前提是夜晚光點場景），場景由「傍晚」「日落後」改為「天黑後」「天色全暗後」。
 - 12-night-04-long-exposure：數值不變（1/15、1/2、1 秒 + ISO 100，E = 2 / 15 / 30 於一般室內），場景的替代方案改為幾乎全暗的房間、拍向遠處小燈，並註明光線越亮 1 秒的照片越容易過亮。
 - 12-night-02-shutter-vs-iso：數值不變（E = 4，兩張相等），場景為夜晚或只留一盞燈的暗房間，不修改。
+
+## Redesign K2b
+
+規則：每張的亮度都有目的。課題是快門對動態的影響時，指定快門、ISO 留空、exposureStops 0（亮度正確，代價顯示為雜訊或模糊）；課題是快門與 ISO 的交換時，兩張都只指定快門、exposureStops 0。所有 ISO 檢查移除（ISO 不再指定）。此前的絕對值組合（E = 快門秒數 x ISO x 0.3）在未知亮度的夜景無法保證結果，全部取消。
+
+- 11-motion-01-freeze-walk：舊為三張只指定快門（亮度由測光決定但未宣告）；新為快門相同、exposureStops 0，場景與 fixed 明示亮度維持正常、快門越快 ISO 越高。
+- 11-motion-02-panning：同上，加 exposureStops 0；場景說明強光下 1/30 使 ISO 觸及下限而偏亮。
+- 11-motion-03-silky-water：舊 1/4 + ISO 30 絕對值（E = 2.25，偏亮）改為快門 1/4、ISO 留空、exposureStops 0；ISO 檢查移除，場景說明光線過亮時 ISO 到達下限。
+- 11-motion-04-camera-blur：舊 1/4、1/2 + ISO 100（E 約 7.5 至 15，未受控）改為只指定快門、exposureStops 0；fixed 的 ISO 100 移除。
+- 11-motion-05-peak-moment：快門 1/1000 不變，加 exposureStops 0；場景說明光不足時 ISO 觸及上限而偏暗。
+- 11-motion-06-traffic-shutter：舊 1 秒 + ISO 30 改為只指定快門、exposureStops 0，ISO 檢查移除；場景與 observe 說明 1/1000 在夜晚可能因 ISO 上限而偏暗（凍結動作的代價）。
+- 12-night-02-shutter-vs-iso：舊 1/250 + ISO 3200 與 1/15 + ISO 200（E 約 3.8 與 4，過亮）改為 1/250 與 1/15，ISO 留空、exposureStops 0（等亮度，ISO 相差 16 倍即四級）；ISO 檢查改為快門檢查。
+- 12-night-03-night-motion：1/30 與 1/250 加 exposureStops 0，明示等亮度、ISO 差三級。
+- 12-night-04-long-exposure：舊 1/15、1/2、1 秒 + ISO 100（E = 2 / 15 / 30，越拍越亮）改為只指定快門、exposureStops 0；課題改為等亮度下加長快門能降低 ISO 與雜訊；ISO 檢查移除。
+- 新增 12-night-07-bright-light-dark-sky：月亮或亮光在暗空中。曝光補償 0 / -1 / -2（ev，快門與 ISO 皆留空，無 exposureStops）加一個只做後製的畫格（陰影 +40，用上一張）。含 concept 與 predict，備案場景為路燈、招牌或檯燈。依據：手機為暗空測光，亮物燒白；降低曝光保住細節，再提亮陰影找回暗部。
+- 未變動：12-night-01、05、06（僅用 ev 或不指定曝光，本來就沒有無目的的亮度）。
+
+總題數 91。
+
+## Redesign K2a
+
+依作者文章「從拍不好月亮開始，搞懂曝光三要素與手機多鏡頭設計」重整第 00 至 05 章：每項曝光設定都能讓照片變亮，也各自付出代價；手機把「怎麼拍」藏起來；硬限制（固定光圈）與軟限制（快門、ISO）要分開。
+
+### 新增
+
+- 00 章 00-know-your-phone（順序 0，難度 1）：
+  - 00-know-your-phone-01-fixed-aperture：1x 與 5x 使用完全相同的絕對值 1/30 + ISO 200（曝光指數 E = 2，主鏡頭亮約一級；長焦少 (3.1/1.7)² = 3.3 倍光，E 約 0.6，暗 1.7 級）。第三張長焦 ISO 640（約 3.2 倍，E 換算 1.94）補回亮度。
+  - 00-know-your-phone-02-what-phone-hides：本 App 快門 1/60、ISO 自動配合（stops 0）對照手機相機 App 從相簿選取的照片（capture 全為 null）。場景為偏暗室內，ISO 預期 800 至 1600。
+  - 00-know-your-phone-03-read-shooting-data：5x 一張，讀出快門、ISO、焦段、鏡頭。
+- 05-focal-perspective-06-cannot-fit：超廣角「拍不下」，0.5x 與 1x 各一張，皆無手動曝光值。
+- 05-focal-perspective-07-cannot-reach：長焦「拍不到」，1x 與 5x 皆快門 1/60、ISO 自動配合（stops 0）。理論上 5x 的 ISO 約為 1x 的 3.3 倍（1.7 級），以拍攝資料驗證。
+
+新增後共 5 題（含 00 章 3 題）。
+
+### 異動的既有題（id 不變）
+
+- 全部 02、03、04 題與 01、05 全部題：新增 concept 與 predict；observe 加入「付出的代價」，曝光相關題並加入「在照片檢視中把同一處放大並排比較」一行。
+- 01-ability-check-02-steady-hands：三張快門 1/15、ISO 自動，加 exposureStops 0（亮度相同，代價顯示為手震）。
+- 01-ability-check-04-same-bright-two-ways：由絕對值 1/60 + ISO 200 與 1/15 + ISO 50 改為快門 1/60 與 1/15、ISO 自動、stops 0；亮度在任何光線下都相同，預期 ISO 約 200 與 50。移除 ISO 的 checks。
+- 02-exposure-basics-02-iso：改為快門 1/125，stops -2、0、+2（一般室內 ISO 約 100、400、1600，與原種子數字一致）。checks 改為三張快門。
+- 02-exposure-basics-03-shutter-x-iso：快門 1/30、1/125、1/500，ISO 自動，stops 0（一般室內 ISO 約 100、400、1600）。移除 ISO 的 checks。
+- 02-exposure-basics-04-freeze-water：快門 1/30、1/250、1/1000，ISO 自動，stops 0。移除 ISO 的 check，改檢查三張快門。
+- 05 章全部題：blurb 與 concept 改為「每顆鏡頭解決一個問題」，並提到價格（超廣角約 f/2.2、長焦約 f/3.1，進光少於主鏡頭 f/1.7）；有 0.5x 的畫格維持不指定任何手動曝光值；05-01、05-03、05-04 的 observe 加入以拍攝資料比較快門與 ISO。
+
+### 仍為絕對值的種子題
+
+- 02-exposure-basics-01-shutter（種子 1）：維持 ISO 100 與 1/30、1/125、1/500。理由：這題同時要看亮度、手震與動態模糊，快門每快一級暗一級（1/125 約暗 2.06 級，1/500 約暗 4.06 級）本身就是要觀察的現象；改為 stops 會讓亮度差消失。場景已改為「第一張 1/30 + ISO 100 接近正常，過亮或過暗先移動位置」，保證基準張正常。
+- 00-know-your-phone-01-fixed-aperture：兩張需要完全相同的絕對值才能顯示光圈差。
+
+種子 2、3、4 已轉為 stops 形式（種子 4 的曝光補償題 03 章、01-03、01-05 本來就用曝光補償，不適用 stops）。03 章全部題使用曝光補償（ev）或後製，不指定快門與 ISO，因此沒有 exposureStops。
