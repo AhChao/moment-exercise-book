@@ -29,6 +29,7 @@ async function openHandle(): Promise<Handle> {
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ video: VIDEO, audio: false })
     const track = stream.getVideoTracks()[0]
+    if (!track) throw new CameraError('unavailable', 'no video track')
     return { stream, track, ic: new ImageCapture(track) }
   } catch (e) {
     throw toCameraError(e)

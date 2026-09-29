@@ -33,6 +33,13 @@ function readManifest(files: Record<string, Uint8Array>) {
   }
 }
 
+/** The manifest was validated against the archive, so a missing entry means the archive changed underneath us. */
+function photoBytes(files: Record<string, Uint8Array>, id: string): Uint8Array {
+  const bytes = files[photoPath(id)]
+  if (!bytes) throw new Error('invalid-backup')
+  return bytes
+}
+
 export async function importBackup(file: File, mode: ImportMode, deps: ImportDeps = {}): Promise<BackupSummary> {
   const repo = deps.repo ?? getRepository()
   const makeThumb = deps.makeThumb ?? makeThumbnail
@@ -47,7 +54,7 @@ export async function importBackup(file: File, mode: ImportMode, deps: ImportDep
   // file cannot leave a replace half-done.
   const thumbs = new Map<string, Blob>()
   for (const meta of incoming) {
-    const clean = stripGps(files[photoPath(meta.id)])
+    const clean = stripGps(photoBytes(files, meta.id))
     thumbs.set(meta.id, await makeThumb(new Blob([clean as BlobPart], { type: 'image/jpeg' })))
   }
 
@@ -65,7 +72,7 @@ export async function importBackup(file: File, mode: ImportMode, deps: ImportDep
   if (mode === 'replace') await repo.clearAll()
   let bytes = 0
   for (const meta of incoming) {
-    const clean = stripGps(files[photoPath(meta.id)])
+    const clean = stripGps(photoBytes(files, meta.id))
     const stored: PhotoMeta = { ...meta, bytes: clean.length, exif: { ...meta.exif, hasGps: false } }
     await repo.putPhoto(stored, {
       original: new Blob([clean as BlobPart], { type: 'image/jpeg' }),

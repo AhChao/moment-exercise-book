@@ -43,10 +43,10 @@ export function applyDevelop(data: Uint8ClampedArray, dev: DevelopSpec): void {
   const bMul = 1 - w
 
   for (let i = 0; i < data.length; i += 4) {
-    const r = data[i]
-    const g = data[i + 1]
-    const b = data[i + 2]
-    const off = offset[(54 * r + 183 * g + 19 * b) >> 8]
+    const r = data[i]!
+    const g = data[i + 1]!
+    const b = data[i + 2]!
+    const off = offset[(54 * r + 183 * g + 19 * b) >> 8]!
     // Uint8ClampedArray assignment rounds and clamps to 0..255.
     data[i] = (r * gain + off) * rMul
     data[i + 1] = g * gain + off

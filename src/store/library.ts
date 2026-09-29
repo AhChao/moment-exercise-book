@@ -54,7 +54,7 @@ export function createLibrary(deps: LibraryDeps): Library {
   const timers = new Map<string, ReturnType<typeof setTimeout>>()
 
   // Values read back from a ref are reactive proxies, which IndexedDB cannot clone: unwrap before persisting.
-  const rawAttempt = (id: string): Attempt => toRaw(attempts.value[id])
+  const rawAttempt = (id: string): Attempt => toRaw(attempts.value[id]!)
 
   function setAttempt(a: Attempt): void {
     attempts.value = { ...attempts.value, [a.exerciseId]: a }

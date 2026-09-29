@@ -1,5 +1,5 @@
-// Offline shell. __SW_VERSION__ and __SW_PRECACHE__ are stamped at build time
-// (vite.config.ts); the file is not registered in dev, where they are unset.
+// Offline shell. The version and the precache list below are stamped at build time
+// (vite.config.ts); the file is not registered in dev, where they stay unset.
 const VERSION = '__SW_VERSION__'
 const PRECACHE = __SW_PRECACHE__
 const CACHE = `meb-${VERSION}`
