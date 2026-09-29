@@ -6,7 +6,7 @@
       "title": "快門",
       "level": 1,
       "goal": "看懂快門如何改變亮度、手震與動態模糊。",
-      "scene": "明亮窗邊或戶外陰影下的靜物，旁邊放一個會動的東西（如晃動的植物）。光線偏暗時，1/500 的照片會偏黑，這正是要觀察的現象。沒有窗邊與植物時，改在開燈的桌面上拍，動的東西改為以手擺動的紙條。",
+      "scene": "一般亮度的室內窗邊靜物，避開直射陽光，旁邊放一個會動的東西（如晃動的植物）。1/500 的照片會偏黑，這正是要觀察的現象。沒有窗邊與植物時，改在開燈的桌面上拍，動的東西改為以手擺動的紙條。",
       "fixed": ["ISO 100", "取景", "手機位置"],
       "shots": [
         {"label": "1/30", "capture": {"shutterSec": 0.0333, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/30、ISO 100。手肘貼身或手機靠穩再拍，動的東西會出現模糊。"},
@@ -24,10 +24,10 @@
       "title": "ISO",
       "level": 1,
       "goal": "看懂 ISO 以雜訊換取亮度的關係。",
-      "scene": "室內偏暗處的靜物（燈下的桌面）。房間太亮時，改在背光的角落拍。沒有暗處時，可用手遮住部分光源。",
+      "scene": "光線偏暗的室內靜物，例如只開一盞燈的房間。房間太亮時，改在背光的角落拍。沒有暗處時，可用手遮住部分光源。光線越亮，ISO 400 與 ISO 1600 的照片越容易過亮。",
       "fixed": ["快門 1/125", "取景", "手機位置"],
       "shots": [
-        {"label": "ISO 100", "capture": {"shutterSec": 0.008, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/125、ISO 100，作為亮度與雜訊的基準。"},
+        {"label": "ISO 100", "capture": {"shutterSec": 0.008, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/125、ISO 100，畫面會偏暗，作為亮度與雜訊的基準。"},
         {"label": "ISO 400", "capture": {"shutterSec": 0.008, "iso": 400, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門維持 1/125，只把 ISO 改為 400。"},
         {"label": "ISO 1600", "capture": {"shutterSec": 0.008, "iso": 1600, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門維持 1/125，ISO 改為 1600，之後放大檢視暗部。"}
       ],
@@ -42,7 +42,7 @@
       "title": "快門 x ISO",
       "level": 2,
       "goal": "理解不同快門與 ISO 的組合可得到相同亮度，但畫面特性不同。",
-      "scene": "明亮室內的同一個靜物，旁邊放一個會動的東西。三張亮度不一致時，微調 ISO。沒有會動的東西時，改以手擺動的紙條。",
+      "scene": "一般亮度室內的同一個靜物，旁邊放一個會動的東西。三張亮度不一致時，微調 ISO。沒有會動的東西時，改以手擺動的紙條。",
       "fixed": ["取景", "光線", "手機位置"],
       "shots": [
         {"label": "1/30 + ISO 100", "capture": {"shutterSec": 0.0333, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機靠穩，快門 1/30、ISO 100，作為亮度基準。"},
@@ -60,7 +60,7 @@
       "title": "凍結流動的水",
       "level": 2,
       "goal": "以不同快門觀察移動的水被凍結或拉成線的差別。",
-      "scene": "明亮窗邊的水龍頭流水，或把水倒入杯中。沒有水時，改以搖晃的植物。手機靠在穩固處。",
+      "scene": "一般亮度室內的水龍頭流水（避開直射陽光的窗邊），或把水倒入杯中。沒有水時，改以搖晃的植物。手機靠在穩固處。",
       "fixed": ["取景", "手機位置", "亮度（ISO 隨快門調整）"],
       "shots": [
         {"label": "1/30 + ISO 100", "capture": {"shutterSec": 0.0333, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/30、ISO 100，水流會拖出線條。手機靠穩，取景對準水流。"},

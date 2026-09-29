@@ -42,11 +42,11 @@
       "title": "水的絲綢感",
       "level": 2,
       "goal": "看懂慢快門如何把水拉成柔順的線。",
-      "scene": "陰暗處或室內的水龍頭、噴泉或水流。光線太亮時，慢快門會過曝，因此選昏暗處或天色暗時。沒有水流時，改用倒水入杯，並把房間燈光調暗。",
+      "scene": "昏暗處的水龍頭、噴泉或水流，例如只開一盞燈的室內，或天色全暗後的戶外。光線明亮時，1/4 的照片會非常亮，白天的室內與戶外都不適合。沒有水流時，改用倒水入杯，並把房間燈光調暗。",
       "fixed": ["取景", "手機位置", "手機靠在穩固處"],
       "shots": [
         {"label": "1/125", "capture": {"shutterSec": 0.008, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/125，水滴形狀清楚，作為對照。取景固定。"},
-        {"label": "1/15", "capture": {"shutterSec": 0.0667, "iso": 30, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/15、ISO 30。此快門較慢，手機必須靠在穩固處，取景不變。"},
+        {"label": "1/15", "capture": {"shutterSec": 0.0667, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/15，ISO 由手機自動決定。此快門較慢，手機必須靠在穩固處，取景不變。"},
         {"label": "1/4", "capture": {"shutterSec": 0.25, "iso": 30, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/4、ISO 30。手機必須放在穩固處，並以計時拍攝，避免按快門時晃動。"}
       ],
       "observe": ["水的質感如何變化", "背景的靜止物是否也跟著模糊", "亮度是否改變"],
@@ -60,7 +60,7 @@
       "title": "刻意移動手機",
       "level": 3,
       "goal": "把晃動變成創作手法，畫出光的軌跡。",
-      "scene": "傍晚或夜晚有光點的地方（路燈、招牌、車燈），拍攝前先擦乾淨鏡頭。手機靠在桌沿或欄杆上，以沿著支撐面輕推的方式移動。沒有戶外光點時，改在暗房間拍向檯燈。",
+      "scene": "天黑後有光點的地方（路燈、招牌、車燈），拍攝前先擦乾淨鏡頭。手機靠在桌沿或欄杆上，以沿著支撐面輕推的方式移動。沒有戶外光點時，改在暗房間拍向檯燈。",
       "fixed": ["取景", "起始位置", "ISO 100"],
       "shots": [
         {"label": "1/4 靜止", "capture": {"shutterSec": 0.25, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/4，手機必須靠在穩固處，完全不動，作為對照。"},
@@ -97,7 +97,7 @@
       "title": "車流的三種快門",
       "level": 2,
       "goal": "以同一段車流，比較快門凍結、拖影與光軌的差別。",
-      "scene": "傍晚或夜晚的路口、天橋或馬路邊，手機靠在欄杆等穩固處，站在安全位置。天色太亮時，慢快門會過曝，因此選日落後。沒有車流時，改拍樓下走動的行人腳步，不拍可辨識的臉。",
+      "scene": "夜晚的路口、天橋或馬路邊，手機靠在欄杆等穩固處，站在安全位置。天色未全暗時，快門 1 秒的照片會過亮，因此選天色全暗後。沒有車流時，改拍樓下走動的行人腳步，不拍可辨識的臉。",
       "fixed": ["取景", "手機位置（靠在穩固處）"],
       "shots": [
         {"label": "1/1000", "capture": {"shutterSec": 0.001, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/1000，車輛被定格，ISO 由手機自動決定。取景固定。"},

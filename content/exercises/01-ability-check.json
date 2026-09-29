@@ -23,17 +23,17 @@
       "title": "手震測試",
       "level": 1,
       "goal": "找出手持時快門 1/15 的清晰程度，以及不同姿勢造成的差別。",
-      "scene": "室內明亮處或窗邊的靜物。光線偏暗時，ISO 400 會使照片偏暗，屬正常結果。沒有窗邊時，改在開燈的桌面上拍。",
-      "fixed": ["快門 1/15", "ISO 400", "取景", "與靜物的距離"],
+      "scene": "室內光線一般或偏暗處的靜物。光線很亮時，快門 1/15 會使照片非常亮，因此較暗的室內位置更合適，例如離窗邊有一段距離的桌面。沒有合適位置時，改在只開一盞燈的桌面上拍。",
+      "fixed": ["快門 1/15", "ISO 由手機自動決定", "取景", "與靜物的距離"],
       "shots": [
-        {"label": "1/15 站著單手", "capture": {"shutterSec": 0.0667, "iso": 400, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "雙腳站開，單手持機直接按快門。此張刻意不靠任何物體，作為手持對照，其餘張數才靠穩。"},
-        {"label": "1/15 雙手貼身", "capture": {"shutterSec": 0.0667, "iso": 400, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "雙手握機、手肘夾緊身體，吐氣時輕按快門。此張仍為手持，用來與上一張比較姿勢的差別。"},
-        {"label": "1/15 靠著撐住", "capture": {"shutterSec": 0.0667, "iso": 400, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門較慢，手機需靠在桌面或牆上等穩固處，手肘也貼著支撐面，再輕按快門。"}
+        {"label": "1/15 站著單手", "capture": {"shutterSec": 0.0667, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "雙腳站開，單手持機直接按快門。此張刻意不靠任何物體，作為手持對照，其餘張數才靠穩。"},
+        {"label": "1/15 雙手貼身", "capture": {"shutterSec": 0.0667, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "雙手握機、手肘夾緊身體，吐氣時輕按快門。此張仍為手持，用來與上一張比較姿勢的差別。"},
+        {"label": "1/15 靠著撐住", "capture": {"shutterSec": 0.0667, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門較慢，手機需靠在桌面或牆上等穩固處，手肘也貼著支撐面，再輕按快門。"}
       ],
       "observe": ["三張的清晰度差別", "放大後邊緣是否出現拖影", "哪一種姿勢的拖影最少"],
       "reflect": ["哪一種姿勢適合作為手持拍攝的預設？"],
       "needs": ["manualExposure"],
-      "checks": [{"shot": 0, "field": "shutterSec", "op": "between", "value": [0.05, 0.085]}, {"shot": 0, "field": "iso", "op": "==", "value": 400}],
+      "checks": [{"shot": 0, "field": "shutterSec", "op": "between", "value": [0.05, 0.085]}],
       "sources": ["Tom Ang, Digital Photography Masterclass", "Ansel Adams, The Camera"]
     },
     {
@@ -59,16 +59,16 @@
       "title": "同樣亮，兩種做法",
       "level": 2,
       "goal": "確認能以快門與 ISO 的搭配做出相同的亮度。",
-      "scene": "明亮室內的靜物。快門每慢一級，ISO 降一級，兩張亮度才會接近；亮度仍有落差時，微調 ISO。沒有明亮的窗邊時，改在開燈的桌面上拍。",
+      "scene": "一般亮度室內的靜物，光線不宜過亮，也不宜偏暗。快門每慢一級，ISO 降一級，兩張亮度才會接近；亮度仍有落差時，微調 ISO。畫面偏亮時可降低 ISO，偏暗時可提高 ISO。沒有合適的位置時，改在開燈的桌面上拍。",
       "fixed": ["取景", "光線", "手機位置（靠在穩固處）"],
       "shots": [
-        {"label": "1/60 + ISO 800", "capture": {"shutterSec": 0.0167, "iso": 800, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機靠在穩固處，快門 1/60、ISO 800 拍攝，作為亮度基準。"},
-        {"label": "1/15 + ISO 200", "capture": {"shutterSec": 0.0667, "iso": 200, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "此快門較慢，手機必須靠在穩固處。快門慢兩級、ISO 降兩級，亮度應與上一張接近，其餘不動。"}
+        {"label": "1/60 + ISO 200", "capture": {"shutterSec": 0.0167, "iso": 200, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機靠在穩固處，快門 1/60、ISO 200 拍攝，作為亮度基準。"},
+        {"label": "1/15 + ISO 50", "capture": {"shutterSec": 0.0667, "iso": 50, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "此快門較慢，手機必須靠在穩固處。快門慢兩級、ISO 降兩級，亮度應與上一張接近，其餘不動。"}
       ],
       "observe": ["兩張亮度是否接近", "雜訊較多的是哪一張", "較模糊的是哪一張"],
       "reflect": ["兩張亮度不一致時，應調整快門還是 ISO？"],
       "needs": ["manualExposure", "tripodOrRest"],
-      "checks": [{"shot": 0, "field": "iso", "op": "==", "value": 800}, {"shot": 1, "field": "iso", "op": "==", "value": 200}],
+      "checks": [{"shot": 0, "field": "iso", "op": "==", "value": 200}, {"shot": 1, "field": "iso", "op": "==", "value": 50}],
       "sources": ["Bryan Peterson, Understanding Exposure"]
     },
     {
