@@ -4,6 +4,9 @@ import { useRoute, useRouter } from 'vue-router'
 import { renderDeveloped } from '@/develop/render'
 import { useLibrary } from '@/store'
 import Icon from '@/ui/Icon.vue'
+import PhotoLightbox from '@/ui/lightbox/PhotoLightbox.vue'
+import { useLightbox } from '@/ui/lightbox/useLightbox'
+import { openAria } from '@/copy/lightbox'
 import { confirmDialog } from '@/ui/useConfirm'
 import { toast } from '@/ui/useToast'
 import { photoCopy } from '@/copy/photo'
@@ -25,6 +28,7 @@ const dv = useDevelop(meta, canvas)
 const suggestion = computed(() => decodeSuggest(route.query.suggest))
 const rows = computed(() => (meta.value ? photoRows(meta.value) : []))
 const saving = ref(false)
+const lb = useLightbox() // single-photo viewer for zoom inspection
 
 function back(): void {
   if (window.history.state?.back) router.back()
@@ -70,7 +74,9 @@ async function remove(): Promise<void> {
     </header>
 
     <figure class="mat">
-      <canvas v-show="!dv.failed.value" ref="canvas" class="mat__canvas" role="img" :aria-label="photoCopy.imageAlt" />
+      <button v-show="!dv.failed.value" type="button" class="mat__open" :aria-label="openAria(photoCopy.imageAlt)" @click="lb.open([{ id: meta.id }], meta.id)">
+        <canvas ref="canvas" class="mat__canvas" role="img" :aria-label="photoCopy.imageAlt" />
+      </button>
       <p v-if="dv.failed.value" class="mx-muted mat__fail">{{ photoCopy.showFailed }}</p>
     </figure>
 
@@ -86,6 +92,13 @@ async function remove(): Promise<void> {
         <Icon name="trash" />{{ photoCopy.remove }}
       </button>
     </div>
+
+    <PhotoLightbox
+      v-if="lb.state.value"
+      :items="lb.state.value.items"
+      :start-id="lb.state.value.startId"
+      @close="lb.close"
+    />
   </main>
 </template>
 
@@ -94,7 +107,8 @@ async function remove(): Promise<void> {
 .photo__bar { display: flex; align-items: center; gap: 0.2rem; }
 .photo__back { font-family: var(--mx-font-hand); font-weight: 700; }
 .mat { margin: 0; padding: 0.7rem; background: var(--mx-paper-light); box-shadow: var(--mx-shadow); }
-.mat__canvas { width: 100%; height: auto; background: var(--mx-paper-deep); }
+.mat__open { display: block; width: 100%; padding: 0; background: transparent; border: 0; cursor: zoom-in; }
+.mat__canvas { display: block; width: 100%; height: auto; background: var(--mx-paper-deep); }
 .mat__fail { padding: 2rem 0; text-align: center; }
 .photo__actions { display: grid; gap: 0.7rem; }
 </style>

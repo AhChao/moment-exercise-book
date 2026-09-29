@@ -1,50 +1,30 @@
 <script setup lang="ts">
-// Thumbnail that resolves its object URL through the library only once it scrolls near the viewport.
-import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { useLibrary } from '@/store'
+// Thumbnail that resolves its URL (with the photo's adjustment applied) only once it scrolls near the viewport.
+import { onBeforeUnmount, onMounted, ref } from 'vue'
+import { useDevelopedUrl } from './developed/useDevelopedUrl'
 
 const props = defineProps<{ photoId: string; alt?: string }>()
 
-const library = useLibrary()
 const root = ref<HTMLElement | null>(null)
-const src = ref('')
-let visible = false
+const visible = ref(false)
+const src = useDevelopedUrl(() => props.photoId, 'thumb', visible)
 let observer: IntersectionObserver | null = null
-let token = 0
-
-async function load() {
-  if (!visible) return
-  const mine = ++token
-  try {
-    const url = await library.photoUrl(props.photoId, 'thumb')
-    if (mine === token) src.value = url
-  } catch {
-    if (mine === token) src.value = ''
-  }
-}
 
 onMounted(() => {
   if (typeof IntersectionObserver === 'undefined' || !root.value) {
-    visible = true
-    void load()
+    visible.value = true
     return
   }
   observer = new IntersectionObserver(
     (entries) => {
       if (entries.some((e) => e.isIntersecting)) {
-        visible = true
+        visible.value = true
         observer?.disconnect()
-        void load()
       }
     },
     { rootMargin: '200px' },
   )
   observer.observe(root.value)
-})
-
-watch(() => props.photoId, () => {
-  src.value = ''
-  void load()
 })
 
 onBeforeUnmount(() => observer?.disconnect())

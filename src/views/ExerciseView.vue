@@ -15,7 +15,10 @@ import NotesSection from './exercise/NotesSection.vue'
 import CheckList from './exercise/CheckList.vue'
 import { readCachedCaps } from './exercise/capsCache'
 import { checkLines } from './exercise/checkText'
-import { canCompare, clampShotIndex } from './exercise/slots'
+import { canCompare, clampShotIndex, filledIndexes } from './exercise/slots'
+import PhotoLightbox from '@/ui/lightbox/PhotoLightbox.vue'
+import { useLightbox } from '@/ui/lightbox/useLightbox'
+import type { PhotoMeta } from '@/types'
 import { placeFile } from './exercise/placeFile'
 import { useExerciseAttempt } from './exercise/useExerciseAttempt'
 import { useFilePicker } from './exercise/useFilePicker'
@@ -59,9 +62,28 @@ function onTap(i: number): void {
   else start(i)
 }
 
-const thumbOf = (i: number): string | undefined => {
+// Viewer over the filled frames in frame order. Closing selects the frame that was showing last.
+const lb = useLightbox()
+function openViewer(photoId: string): void {
+  const ex = exercise.value
+  if (!ex) return
+  const items = filledIndexes(a.photos.value).map((i) => ({
+    id: (a.photos.value[i] as PhotoMeta).id,
+    label: ex.shots[i]?.label ?? '',
+  }))
+  lb.open(items, photoId)
+}
+function openFrame(i: number): void {
   const p = a.photos.value[i]
-  return p ? a.thumbs[p.id] : undefined
+  if (!p) return
+  select(i)
+  openViewer(p.id)
+}
+function closeViewer(reason: 'dismiss' | 'adjust'): void {
+  const id = lb.close()
+  if (reason === 'adjust') return
+  const i = a.photos.value.findIndex((p) => p?.id === id)
+  if (i >= 0) select(i)
 }
 
 const compare = ref(false)
@@ -120,8 +142,7 @@ const lines = computed(() =>
         v-if="compare && compareOk"
         :shots="exercise.shots"
         :photos="a.photos.value"
-        :urls="a.fulls"
-        :thumbs="a.thumbs"
+        @open="openViewer"
       />
       <ul v-else class="frames">
         <li v-for="(shot, i) in exercise.shots" :key="i">
@@ -129,10 +150,10 @@ const lines = computed(() =>
             :shot="shot"
             :index="i"
             :photo="a.photos.value[i] ?? null"
-            :thumb="thumbOf(i)"
             :selected="i === selected"
             :from-album="plans[i]?.mode === 'import'"
             @tap="onTap(i)"
+            @open="openFrame(i)"
           />
         </li>
       </ul>
@@ -174,6 +195,14 @@ const lines = computed(() =>
         {{ nextLink(next.title) }}<Icon name="chevron-right" />
       </RouterLink>
     </footer>
+
+    <PhotoLightbox
+      v-if="lb.state.value"
+      :items="lb.state.value.items"
+      :start-id="lb.state.value.startId"
+      @change="lb.onChange"
+      @close="closeViewer"
+    />
   </main>
 </template>
 

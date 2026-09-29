@@ -4,6 +4,8 @@ import { useLibrary } from '@/store'
 import { chapters, chapterOfExercise } from '@/content/loader'
 import { useRouteQuery } from '@/lib/route-query'
 import EmptyState from '@/ui/EmptyState.vue'
+import PhotoLightbox from '@/ui/lightbox/PhotoLightbox.vue'
+import { useLightbox } from '@/ui/lightbox/useLightbox'
 import FilterChips, { type ChipOption } from './album/FilterChips.vue'
 import PhotoGrid from './album/PhotoGrid.vue'
 import { LENS_FILTERS, filterPhotos, normalizeLens, photosByChapter } from './album/filterPhotos'
@@ -35,6 +37,10 @@ const chapterOptions = computed<ChipOption[]>(() => [
     .filter((c) => byChapter.value.has(c.id) || c.id === chapterQuery.value)
     .map((c) => ({ value: c.id, label: c.title })),
 ])
+
+// Viewer over the currently filtered photos; the adjustment link lives inside it.
+const lb = useLightbox()
+const openViewer = (photoId: string): void => lb.open(shown.value.map((p) => ({ id: p.id })), photoId)
 
 function clearFilters() {
   lensQuery.value = ''
@@ -68,7 +74,7 @@ function clearFilters() {
         :options="chapterOptions"
         :label="album.chapterFilter"
       />
-      <PhotoGrid v-if="shown.length" :photos="shown" class="mx-album__grid" />
+      <PhotoGrid v-if="shown.length" :photos="shown" class="mx-album__grid" @open="openViewer" />
       <EmptyState
         v-else
         :title="album.emptyFiltered.title"
@@ -76,6 +82,13 @@ function clearFilters() {
         @action="clearFilters"
       />
     </template>
+
+    <PhotoLightbox
+      v-if="lb.state.value"
+      :items="lb.state.value.items"
+      :start-id="lb.state.value.startId"
+      @close="lb.close"
+    />
   </main>
 </template>
 
