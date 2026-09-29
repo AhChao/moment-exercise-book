@@ -42,7 +42,7 @@ export interface LibraryApi {
     exerciseId: string,
     slotCount: number,
     reflectCount: number,
-    patch: { observeNotes?: string; reflectNotes?: string[] },
+    patch: { observeNotes?: string; reflectNotes?: string[]; predictNotes?: string[] },
   ): Promise<void>
   markCompleted(exerciseId: string, slotCount: number, reflectCount: number, done: boolean): Promise<void>
 

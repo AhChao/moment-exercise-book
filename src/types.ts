@@ -35,6 +35,14 @@ export interface Shot {
   capture: CaptureSpec
   develop: DevelopSpec | null
   hint: string
+  /**
+   * Brightness of this shot in stops relative to a properly exposed picture of the SAME scene
+   * (0 = properly exposed, -2 = two stops darker, +2 = two stops brighter). It only applies when
+   * exactly one of shutterSec / iso is prescribed: the app meters the scene for the free one and
+   * scales it by 2^stops (one stop = doubling of ISO or of the shutter time). Absent = 0.
+   * Prescribing both shutterSec and iso is an "absolute" shot and this field is ignored.
+   */
+  exposureStops?: number
 }
 
 export type CheckField = 'iso' | 'shutterSec' | 'focalLength35' | 'lens'
@@ -55,6 +63,10 @@ export interface Exercise {
   scene: string
   fixed: string[]
   shots: Shot[]
+  /** Two or three sentences of core idea shown above the goal (the mental model). Optional. */
+  concept?: string
+  /** Prompts answered BEFORE shooting ("which frame will be brightest?"). Optional. */
+  predict?: string[]
   observe: string[]
   reflect: string[]
   needs: Need[]
@@ -139,6 +151,8 @@ export interface Attempt {
   observeNotes: string
   /** one entry per exercise.reflect prompt */
   reflectNotes: string[]
+  /** one entry per exercise.predict prompt; absent on attempts saved before predictions existed */
+  predictNotes?: string[]
   updatedAt: number
   completedAt: number | null
 }

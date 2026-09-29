@@ -29,6 +29,10 @@ for (const f of readdirSync(dir).filter(f => f.endsWith('.json')).sort()) {
       if (c2.zoom === 0.5 && !e.needs?.includes('ultrawide')) errs.push(`${p}: 0.5x without ultrawide need`)
       if (c2.zoom >= 5 && !e.needs?.includes('tele')) errs.push(`${p}: >=5x without tele need`)
     }
+    if (e.concept !== undefined && (typeof e.concept !== 'string' || e.concept.length < 10 || e.concept.length > 220)) errs.push(`${p}: concept must be 10-220 chars`)
+    if (e.predict !== undefined && !(Array.isArray(e.predict) && e.predict.length >= 1 && e.predict.length <= 3 && e.predict.every(x => typeof x === 'string' && x.length > 3))) errs.push(`${p}: predict must be 1-3 strings`)
+    for (const [i, sh] of (e.shots || []).entries()) if (sh.exposureStops !== undefined && !(typeof sh.exposureStops === 'number' && Math.abs(sh.exposureStops) <= 4)) errs.push(`${p}: shot${i} exposureStops out of range`)
+    for (const [i, sh] of (e.shots || []).entries()) if (sh.exposureStops !== undefined && sh.capture && (sh.capture.shutterSec == null) === (sh.capture.iso == null)) errs.push(`${p}: shot${i} exposureStops needs exactly one of shutterSec/iso prescribed`)
     for (const n of e.needs || []) if (!NEEDS.has(n)) errs.push(`${p}: bad need ${n}`)
     for (const ch of e.checks || []) {
       if (!['iso','shutterSec','focalLength35','lens'].includes(ch.field)) errs.push(`${p}: check field ${ch.field}`)
