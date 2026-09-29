@@ -1,5 +1,6 @@
 import { readdirSync, readFileSync } from 'node:fs'
-const dir = '/Users/stevenchao/Documents/Repos_self/moment-exercise-book/content/exercises/'
+import { fileURLToPath } from 'node:url'
+const dir = fileURLToPath(new URL('../content/exercises/', import.meta.url))
 const NEEDS = new Set(['manualExposure','exposureComp','manualWB','manualFocus','tele','ultrawide','develop','tripodOrRest','night','person','movingSubject'])
 const CAP = ['shutterSec','iso','ev','wbKelvin','zoom','focusMeters']
 const errs = []; const ids = new Set(); let total = 0
