@@ -4,7 +4,7 @@ export type IconName =
   | 'book' | 'album' | 'gear' | 'camera' | 'chevron-left' | 'chevron-right' | 'close' | 'check'
   | 'plus' | 'trash' | 'pencil' | 'download' | 'upload' | 'sun' | 'timer' | 'grain' | 'thermo'
   | 'focus' | 'zoom' | 'flash' | 'info' | 'layers' | 'refresh' | 'film' | 'lock' | 'home'
-  | 'minus' | 'fit'
+  | 'minus' | 'fit' | 'share'
 
 export const icons: Record<IconName, string> = {
   book:
@@ -51,4 +51,5 @@ export const icons: Record<IconName, string> = {
   home: '<path d="M3.8 11.2L12 4.6l8.2 6.6M6.2 9.6V20h4.4v-5.4h2.8V20h4.4V9.6"/>',
   minus: '<path d="M4.8 12.1h14.4"/>',
   fit: '<path d="M4 9V4.6h4.4M15.6 4.6H20V9M20 15v4.4h-4.4M8.4 19.4H4V15"/><rect x="8.6" y="8.8" width="6.8" height="6.4" rx="0.8"/>',
+  share: '<path d="M12 15V4.4M8 8.2l4-4 4 4M5.4 12.2v7.2h13.2v-7.2"/>',
 }

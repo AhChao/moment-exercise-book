@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, defineAsyncComponent, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useRouteQuery } from '@/lib/route-query'
 import { chapterOfExercise, exerciseById, nextExercise } from '@/content/loader'
@@ -24,6 +24,10 @@ import type { PhotoMeta } from '@/types'
 import { placeFile } from './exercise/placeFile'
 import { useExerciseAttempt } from './exercise/useExerciseAttempt'
 import { useFilePicker } from './exercise/useFilePicker'
+import { share as shareCopy } from '@/copy/share'
+import { buildSources } from '@/share/ui/sources'
+
+const ExportDialog = defineAsyncComponent(() => import('@/share/ui/ExportDialog.vue'))
 
 const route = useRoute()
 const router = useRouter()
@@ -97,6 +101,13 @@ watch(compare, (on) => {
   if (on) a.loadFulls()
 })
 
+const exportOpen = ref(false)
+const exportSources = computed(() =>
+  exercise.value
+    ? buildSources([exercise.value], chapter.value?.title ?? '', a.library.attempts.value, a.library.photos.value)
+    : [],
+)
+
 const lines = computed(() =>
   exercise.value ? checkLines(judgeExercise(exercise.value, a.photos.value), exercise.value.shots) : [],
 )
@@ -112,7 +123,12 @@ const lines = computed(() =>
       </RouterLink>
       <div class="head__row">
         <h1 class="mx-title">{{ exercise.title }}</h1>
-        <span v-if="a.completed.value" class="mx-stamp" data-tone="green">{{ exerciseCopy.doneStamp }}</span>
+        <div class="head__side">
+          <span v-if="a.completed.value" class="mx-stamp" data-tone="green">{{ exerciseCopy.doneStamp }}</span>
+          <button type="button" class="mx-iconbtn" :aria-label="shareCopy.exportLabel" @click="exportOpen = true">
+            <Icon name="share" />
+          </button>
+        </div>
       </div>
       <span class="dots" role="img" :aria-label="levelAria(exercise.level)">
         <i v-for="n in 3" :key="n" class="dots__dot" :class="{ 'dots__dot--on': n <= exercise.level }" />
@@ -208,6 +224,8 @@ const lines = computed(() =>
       </RouterLink>
     </footer>
 
+    <ExportDialog v-if="exportOpen" v-model:open="exportOpen" scope="exercise" :scope-id="exercise.id" :sources="exportSources" />
+
     <PhotoLightbox
       v-if="lb.state.value"
       :items="lb.state.value.items"
@@ -222,6 +240,7 @@ const lines = computed(() =>
 .head { display: grid; gap: 0.4rem; margin-bottom: 1rem; }
 .head__chapter { display: inline-flex; align-items: center; min-height: 2.75rem; }
 .head__row { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; }
+.head__side { display: flex; align-items: center; gap: 0.5rem; }
 .dots { display: inline-flex; gap: 0.3rem; }
 .dots__dot { width: 0.7rem; height: 0.7rem; border: var(--mx-stroke) solid var(--mx-orange); border-radius: var(--mx-radius-round); }
 .dots__dot--on { background: var(--mx-orange); }
