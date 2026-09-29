@@ -14,7 +14,7 @@
         {"label": "對焦遠物", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機維持原位，只改點選遠處的物品，待對焦框穩定後拍攝。"}
       ],
       "predict": ["預期兩張各自清楚的是哪一個物品", "預期點選之後畫面亮度是否改變"],
-      "observe": ["兩張照片各自清楚的是哪一個物品", "另一個物品模糊到什麼程度", "哪一張的主角較明確"],
+      "observe": ["兩張照片各自清楚的是哪一個物品", "另一個物品模糊到什麼程度", "沒被點選的物體發生了什麼，選擇對焦點換來清楚的同時放棄了什麼", "哪一張的主角較明確"],
       "reflect": ["平常拍照是否會刻意選擇對焦點？", "點選之後畫面亮度是否也跟著改變？"],
       "needs": [],
       "checks": [],
@@ -84,17 +84,17 @@
       "title": "同一場景，三種意圖",
       "level": 3,
       "concept": "同一個場景可以用亮度傳達不同的情緒。亮的畫面輕盈，暗的畫面沉穩，設定的選擇應當跟著想表達的內容走。",
-      "goal": "檢視是否能有目的地組合設定，並說明每個選擇的理由。",
+      "goal": "三張各拍一種心情，並說得出每個設定為什麼這樣選。",
       "scene": "任何喜歡的場景，同一處拍三個意圖不同的版本。場景不限，室內無窗時，改以桌面上的擺設。",
       "fixed": ["同一場景", "同一段時間內拍完"],
       "shots": [
         {"label": "偏亮明快", "capture": {"shutterSec": null, "iso": null, "ev": 1, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "曝光補償 +1，做出明亮輕盈的版本；倍率與角度自選，之後兩張沿用。"},
         {"label": "偏暗沉穩", "capture": {"shutterSec": null, "iso": null, "ev": -1, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "曝光補償 -1，做出暗一些、有重量感的版本；倍率與角度與上一張相同。"},
-        {"label": "自選", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "曝光補償回到 0，倍率、角度擇一改變，另做出第三種意圖。"}
+        {"label": "自選（曝光補償 0）", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "曝光補償維持預設的 0，倍率、角度擇一改變，另做出第三種意圖。"}
       ],
       "predict": ["預期三張各自傳達的情緒"],
       "observe": ["三張傳達的情緒差在哪裡", "為了做出差別，調整了哪些設定", "每一種意圖付出的代價（亮部、陰影或細節）"],
-      "reflect": ["哪個設定用起來最沒把握，就從對應章節開始練習。"],
+      "reflect": ["哪個設定用起來最沒把握？"],
       "needs": ["exposureComp"],
       "checks": [],
       "sources": ["Michael Freeman, The Photographer's Eye", "Photography Launchpad, 25 Photography Exercises"]

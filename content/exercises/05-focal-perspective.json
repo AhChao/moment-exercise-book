@@ -7,10 +7,10 @@
       "level": 1,
       "concept": "超廣角解決「拍不下」，長焦解決「拍不到」，主鏡頭則什麼都能拍。三顆鏡頭站在同一個位置，透視相同，差別只在視野大小與進光量。",
       "goal": "看懂倍率只改變視野大小，不改變透視，並認出每顆鏡頭用什麼換來它的視野。",
-      "scene": "人站在固定位置，手機靠在架子或書堆上固定不動。人物以取得同意者為限；沒有人時，改用一個擺件。0.5x 以手機內建相機拍攝後匯入。長焦的光圈約 f/3.1，小於主鏡頭的 f/1.7，光線偏暗時 5x 需要更高的 ISO 或更慢的快門。",
+      "scene": "人站在固定位置，手機靠在架子或書堆上固定不動。人物以取得同意者為限；沒有人時，改用一個擺件。0.5x 以手機內建相機拍攝後從相簿選取。長焦的光圈約 f/3.1，小於主鏡頭的 f/1.7，光線偏暗時 5x 需要更高的 ISO 或更慢的快門。",
       "fixed": ["人與手機的位置", "取景中心"],
       "shots": [
-        {"label": "0.5x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機切到 0.5x 拍攝，再匯入。手機位置與人物站位不動。"},
+        {"label": "0.5x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機切到 0.5x 拍攝，再從相簿選取。手機位置與人物站位不動。"},
         {"label": "1x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機維持原位，只把倍率改為 1x，人物站位不動。"},
         {"label": "5x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "手機維持原位，只把倍率改為 5x，取景中心仍對準同一點。"}
       ],
@@ -27,10 +27,10 @@
       "level": 2,
       "concept": "要讓主體在畫面中大小一致，超廣角必須走近，長焦必須退遠。距離改變了透視，臉型與背景的關係隨之改變。",
       "goal": "看懂讓人物大小一致時，倍率如何改變臉型、背景大小與透視。",
-      "scene": "拍同一個人（取得同意），身後有明顯的背景物，如牆面、樹或建築。沒有人時，改用一盆植物，背景放一排書。0.5x 以手機內建相機拍攝後匯入。",
+      "scene": "拍同一個人（取得同意），身後有明顯的背景物，如牆面、樹或建築。沒有人時，改用一盆植物，背景放一排書。0.5x 以手機內建相機拍攝後從相簿選取。",
       "fixed": ["人物在畫面中的大小", "人物位置", "姿勢"],
       "shots": [
-        {"label": "0.5x 靠近", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機的 0.5x 拍攝後匯入，走近到人物約占畫面高度三分之二。"},
+        {"label": "0.5x 靠近", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機的 0.5x 拍攝後從相簿選取，走近到人物約占畫面高度三分之二。"},
         {"label": "1x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率改為 1x，往後退到人物大小與第一張相同，人物站位與姿勢不動。"},
         {"label": "5x 遠離", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "倍率改為 5x，再往後退到人物大小仍與第一張相同。"}
       ],
@@ -88,10 +88,10 @@
       "level": 3,
       "concept": "長焦把遠近拉在一起，前後距離看起來縮短；超廣角相反，把前後距離拉開。同一排物體在兩端呈現出截然不同的疏密。",
       "goal": "以一排重複的物體，看懂高倍率如何把前後距離壓扁。",
-      "scene": "一排路燈、樹、柱子或車輛，由近到遠排列。沒有戶外場景時，改用室內一列椅子。0.5x 以手機內建相機拍攝後匯入。",
+      "scene": "一排路燈、樹、柱子或車輛，由近到遠排列。沒有戶外場景時，改用室內一列椅子。0.5x 以手機內建相機拍攝後從相簿選取。",
       "fixed": ["第一個物體在畫面中的大小", "取景方向"],
       "shots": [
-        {"label": "0.5x 廣角", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機的 0.5x 拍攝後匯入，貼近第一個物體，讓後方物體排成縱深。"},
+        {"label": "0.5x 廣角", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機的 0.5x 拍攝後從相簿選取，貼近第一個物體，讓後方物體排成縱深。"},
         {"label": "1x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率改為 1x，往後退到第一個物體與上一張同樣大，取景方向不變。"},
         {"label": "5x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "倍率改為 5x，再往後退到第一個物體仍同樣大。"}
       ],
@@ -106,12 +106,12 @@
       "id": "05-focal-perspective-06-cannot-fit",
       "title": "拍不下的空間",
       "level": 1,
-      "concept": "超廣角的價值是裝下正常鏡頭裝不下的畫面。視野變大的同時，畫面邊緣的物體被拉伸，每個物體在畫面中也變小，光圈約 f/2.2，進光也比主鏡頭少。",
+      "concept": "超廣角是為了裝下主鏡頭裝不下的空間。邊緣的東西會被拉長，每樣東西都變小，光圈也只有約 f/2.2，進光比主鏡頭少。",
       "goal": "看懂超廣角解決「拍不下」的問題，以及它換來視野所付出的代價。",
-      "scene": "窄小的空間或大型的物體，如房間一角、書櫃前的走道，或整面牆，背後已無退路，退到牆邊仍拍不完整。0.5x 以手機內建相機拍攝後匯入。",
+      "scene": "窄小的空間或大型的物體，如房間一角、書櫃前的走道，或整面牆，背後已無退路，退到牆邊仍拍不完整。0.5x 以手機內建相機拍攝後從相簿選取。",
       "fixed": ["手機位置", "取景中心", "光線"],
       "shots": [
-        {"label": "0.5x 超廣角", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機切到 0.5x 拍攝，再匯入。站在無法再後退的位置，對準空間或物體的中心。"},
+        {"label": "0.5x 超廣角", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機切到 0.5x 拍攝，再從相簿選取。站在無法再後退的位置，對準空間或物體的中心。"},
         {"label": "1x 主鏡頭", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機位置與取景中心不動，只把倍率改為 1x。"}
       ],
       "predict": ["預期哪一張能把整個空間拍進來", "預期畫面邊緣的物體是否變形"],

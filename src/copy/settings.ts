@@ -11,7 +11,7 @@ export const settings = {
     protectedNote: '受保護的資料不會在手機空間不足時被自動清除。',
     protect: '保護資料',
     protectDone: '資料已受保護',
-    protectDenied: '尚未取得保護。將練習本加入主畫面後再試，較容易取得。',
+    protectDenied: '尚未取得保護。加入主畫面後通常較容易取得。',
     install: '加入主畫面',
     installDone: '已加入主畫面',
   },

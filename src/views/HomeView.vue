@@ -6,6 +6,7 @@ import EmptyState from '@/ui/EmptyState.vue'
 import CoverHeader from './home/CoverHeader.vue'
 import ContinueCard from './home/ContinueCard.vue'
 import ChapterCard from './home/ChapterCard.vue'
+import DeviceNotice from './home/DeviceNotice.vue'
 import { chapterProgress, findContinue, type ChapterWithExercises } from './home/progress'
 import { common } from '@/copy/common'
 import { home } from '@/copy/home'
@@ -18,6 +19,7 @@ const next = computed(() => findContinue(book, library.attempts.value))
 <template>
   <main class="mx-page">
     <CoverHeader />
+    <DeviceNotice />
 
     <p v-if="!library.loaded.value" class="mx-muted mx-home__loading" role="status">{{ common.loading }}</p>
     <template v-else>
@@ -34,8 +36,8 @@ const next = computed(() => findContinue(book, library.attempts.value))
       <hr class="mx-rule" />
       <h2 class="mx-heading mx-home__contents">{{ home.contents }}</h2>
       <ul class="mx-home__list">
-        <li v-for="entry in book" :key="entry.chapter.id">
-          <ChapterCard :chapter="entry.chapter" :progress="chapterProgress(entry.exercises, library.attempts.value)" />
+        <li v-for="(entry, index) in book" :key="entry.chapter.id">
+          <ChapterCard :number="index + 1" :chapter="entry.chapter" :progress="chapterProgress(entry.exercises, library.attempts.value)" />
         </li>
       </ul>
     </template>

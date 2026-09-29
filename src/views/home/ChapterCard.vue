@@ -5,14 +5,14 @@ import { chapterNumber } from '@/copy/home'
 import { progress as progressText } from '@/copy/common'
 import { percent, type Progress } from './progress'
 
-const props = defineProps<{ chapter: Chapter; progress: Progress }>()
+const props = defineProps<{ chapter: Chapter; progress: Progress; number: number }>()
 const fill = computed(() => `${percent(props.progress)}%`)
 </script>
 
 <template>
   <RouterLink :to="`/chapter/${chapter.id}`" class="mx-card mx-chaptercard">
     <div class="mx-chaptercard__head">
-      <span class="mx-mono mx-muted">{{ chapterNumber(chapter.order) }}</span>
+      <span class="mx-mono mx-muted">{{ chapterNumber(number) }}</span>
       <h3 class="mx-heading">{{ chapter.title }}</h3>
     </div>
     <p class="mx-muted mx-chaptercard__blurb">{{ chapter.blurb }}</p>

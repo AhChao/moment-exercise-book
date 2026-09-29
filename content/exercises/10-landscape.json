@@ -24,12 +24,12 @@
       "title": "前景、中景、遠景",
       "level": 2,
       "goal": "看懂加入前景能為風景帶來深度。",
-      "scene": "有遠山、樹或建築的開闊場景，旁邊有石頭、花或欄杆可當前景。沒有前景物時，改用自己的鞋尖或背包放在畫面下方。0.5x 以手機內建相機拍攝後匯入。",
+      "scene": "有遠山、樹或建築的開闊場景，旁邊有石頭、花或欄杆可當前景。沒有前景物時，改用自己的鞋尖或背包放在畫面下方。0.5x 以手機內建相機拍攝後從相簿選取。",
       "fixed": ["遠景位置", "曝光"],
       "shots": [
         {"label": "只有遠景", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，站在原位拍遠景，畫面下方不放前景。"},
         {"label": "加入前景", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率仍為 1x，蹲低靠近前景物，讓它落在畫面下方，遠景維持原位。"},
-        {"label": "前景放大", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機的 0.5x 拍攝後匯入，前景物更近、更大，遠景位置與上一張相同。"}
+        {"label": "前景放大", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機的 0.5x 拍攝後從相簿選取，前景物更近、更大，遠景位置與上一張相同。"}
       ],
       "observe": ["哪一張的空間感最強", "前景是幫忙還是搶戲"],
       "reflect": ["身邊的每個景色，是否都找得到前景？"],

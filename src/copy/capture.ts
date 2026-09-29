@@ -7,7 +7,7 @@ export const captureCopy = {
   metering: '測光中',
   close: '關閉',
   shutter: '拍攝',
-  slowHint: '手機請靠在穩固處',
+  slowHint: '慢快門，手機需靠在穩固處',
   panelOpen: '展開拍攝設定',
   panelClose: '收合拍攝設定',
   panelTitle: '拍攝設定',
@@ -19,7 +19,7 @@ export const captureCopy = {
   discard: '放棄',
   reviewTitle: '拍攝結果',
   reviewAlt: '剛拍下的照片',
-  unverified: '拍攝值與要求略有差異',
+  unverified: '實際拍到的數值與題目略有差異',
   savedToast: '已放入畫格',
   saveFailed: '照片存入失敗',
   captureFailed: '拍攝未完成',
@@ -68,7 +68,7 @@ export const exposing = (shutter: string): string => `曝光 ${shutter}`
 export const errorTitle: Record<CameraErrorCode, string> = {
   denied: '未取得相機使用權限',
   unavailable: '這支手機目前沒有可用的相機',
-  unsupported: '這支手機無法在此拍攝',
+  unsupported: '此瀏覽器無法在此拍攝',
   failed: '相機目前無法使用',
 }
 export const errorBody = importNote

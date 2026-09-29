@@ -1,6 +1,6 @@
 # Moment Exercise Book 練習內容
 
-共 16 章、90 題。每題 1 至 4 張、單一變數對照，附觀察與反思問題。JSON 位於 exercises/ 之下，每章一個檔案。
+共 17 章、96 題。第 06 至 16 章尚未補上 concept 與 predict，僅 12-night-07 已有。每題 1 至 4 張、單一變數對照，附觀察與反思問題。JSON 位於 exercises/ 之下，每章一個檔案。
 
 ## 章節
 
@@ -119,7 +119,7 @@
 ## 取捨與判斷
 
 - 光圈固定，景深題一律改用距離與倍率。
-- 0.5x 的畫面只能以手機內建相機拍攝後匯入，這類拍攝無法指定快門與 ISO，因此有 0.5x 的題目，該張的 shutterSec、iso、ev、wbKelvin、focusMeters 一律為 null，needs 含 ultrawide；ultrawide 張數的 checks 只用 lens。
+- 0.5x 的畫面只能以手機內建相機拍攝後從相簿選取，這類拍攝無法指定快門與 ISO，因此有 0.5x 的題目，該張的 shutterSec、iso、ev、wbKelvin、focusMeters 一律為 null，needs 含 ultrawide；ultrawide 張數的 checks 只用 lens。
 - 手動對焦距離最大 3.77 m，遠距離題（05-04、10-03）的 focusMeters 為 null。
 - 快門 1/15 以上的慢快門，hint 一律註明手機需靠在穩固處。手持對照張（01-02）與刻意移動手機的 11-04，以「靠在穩固處後沿支撐面移動」的方式處理。
 - 手機在白天強光下慢快門會過曝：動態與水流題的場景都註明選陰暗處或傍晚；快門 1/17000 以上不使用。
@@ -159,7 +159,7 @@
 - 新增 12-night-07-bright-light-dark-sky：月亮或亮光在暗空中。曝光補償 0 / -1 / -2（ev，快門與 ISO 皆留空，無 exposureStops）加一個只做後製的畫格（陰影 +40，用上一張）。含 concept 與 predict，備案場景為路燈、招牌或檯燈。依據：手機為暗空測光，亮物燒白；降低曝光保住細節，再提亮陰影找回暗部。
 - 未變動：12-night-01、05、06（僅用 ev 或不指定曝光，本來就沒有無目的的亮度）。
 
-總題數 91。
+總題數 96。
 
 ## Redesign K2a
 
