@@ -1,0 +1,150 @@
+{
+  "chapter": {"id": "08-composition", "order": 8, "title": "構圖", "blurb": "每次只改變位置或角度，觀察畫面如何被重新安排。", "level": 1},
+  "exercises": [
+    {
+      "id": "08-composition-01-placement",
+      "title": "主體放哪裡",
+      "level": 1,
+      "goal": "比較主體置中與偏移的視覺效果。",
+      "scene": "單獨一個主體（花、杯子、招牌）在乾淨的背景前。沒有乾淨背景時，改用白牆或素色桌布。",
+      "fixed": ["主體大小", "背景", "倍率"],
+      "shots": [
+        {"label": "置中", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "主體放在畫面正中央，開啟九宮格線對位。主體大小固定。"},
+        {"label": "左三分", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機水平移動，讓主體落在左側三分之一線上，距離與倍率不變。"},
+        {"label": "右下交叉點", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "讓主體落在右下的九宮格交叉點，距離與倍率不變。"}
+      ],
+      "observe": ["哪一張最穩定，哪一張最有動感", "空出來的那一側傳達什麼"],
+      "reflect": ["平常是否習慣置中？原因為何？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "08-composition-02-negative-space",
+      "title": "填滿與留白",
+      "level": 1,
+      "goal": "看懂留白如何改變主體的份量與情緒。",
+      "scene": "天空下的一棵樹、牆上的窗、桌面上的小物，周圍有大片乾淨空間。沒有這類場景時，改用桌面上的單一物品，周圍留空。",
+      "fixed": ["主體", "光線"],
+      "shots": [
+        {"label": "填滿畫面", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "倍率 2x，主體占畫面七成以上，位置固定。"},
+        {"label": "適度留白", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率改為 1x，主體約占畫面三成，站位不變。"},
+        {"label": "大量留白", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率維持 1x，往後退，主體只占畫面一小塊。"}
+      ],
+      "observe": ["主體的份量如何變化", "留白帶來的感覺（安靜、孤單、輕鬆）"],
+      "reflect": ["想傳達什麼，才選擇這個留白量？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "08-composition-03-viewpoint",
+      "title": "高度與角度",
+      "level": 1,
+      "goal": "看懂只改變拍攝高度，主體的氣勢與周圍關係就會改變。",
+      "scene": "一個立體的主體，例如椅子、盆栽、寵物或建築角落。沒有合適主體時，改用桌上的水杯。",
+      "fixed": ["主體", "與主體的距離大致相同"],
+      "shots": [
+        {"label": "低角度", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "蹲下或把手機貼近地面，由下往上拍，與主體的水平距離不變。"},
+        {"label": "平視", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機與主體同高，水平拍攝，距離不變。"},
+        {"label": "俯拍", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "站直並把手臂舉高，由上往下拍，距離不變；需站上椅子時，先確認椅子穩固。"}
+      ],
+      "observe": ["主體看起來高大還是渺小", "三張的背景各換成了什麼"],
+      "reflect": ["平常最常用哪一個高度？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Bryan Peterson, Learning to See Creatively"]
+    },
+    {
+      "id": "08-composition-04-clean-background",
+      "title": "背景乾淨了嗎",
+      "level": 2,
+      "goal": "養成拍攝前檢查背景與畫面邊緣的習慣。",
+      "scene": "任何主體，背景最好有電線、雜物或行人走過。沒有雜亂背景時，改在桌面堆幾件雜物當背景。",
+      "fixed": ["主體", "倍率"],
+      "shots": [
+        {"label": "不檢查", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "站在原位直接拍，不做任何調整。"},
+        {"label": "移一步", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "側移一步，避開背景雜物，主體大小與倍率不變。"},
+        {"label": "換角度", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "蹲低或改變高度，找到更乾淨的背景，倍率不變。"}
+      ],
+      "observe": ["哪些東西看起來像從主體「長出來」", "畫面邊緣是否切到不該切的部分", "哪一種方式最簡單有效"],
+      "reflect": ["拍攝前先檢查哪三個位置？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "08-composition-05-leading-lines",
+      "title": "引導線與框中框",
+      "level": 2,
+      "goal": "以線條與邊框，把視線帶到主體。",
+      "scene": "走廊、階梯、欄杆、道路，或有門窗的牆。沒有這類場景時，改用室內的門框與地板接縫。",
+      "fixed": ["主體", "站位大致相同"],
+      "shots": [
+        {"label": "無引導", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "從側面拍，線條沒有指向主體。"},
+        {"label": "引導線", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "移到線條匯向主體的位置，主體大小與上一張接近。"},
+        {"label": "框中框", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "透過門窗或拱形框住主體，倍率不變。"}
+      ],
+      "observe": ["視線先落在哪裡", "線條與邊框如何改變畫面的深度"],
+      "reflect": ["身邊哪些地方常有現成的線條？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Bryan Peterson, Learning to See Creatively"]
+    },
+    {
+      "id": "08-composition-06-symmetry-break",
+      "title": "對稱與打破對稱",
+      "level": 3,
+      "goal": "比較完全對稱、輕微偏移與加入破格元素的效果。",
+      "scene": "建築、走廊、倒影或桌面擺設等對稱的場景。沒有對稱場景時，改把桌上物品左右對稱排列。",
+      "fixed": ["場景", "倍率"],
+      "shots": [
+        {"label": "正中對稱", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "站在中軸線上，讓左右對稱，手機保持水平。"},
+        {"label": "略偏一側", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "橫向移一步，讓對稱稍微被破壞，倍率不變。"},
+        {"label": "加入破格", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "回到中軸線，把一個不同的物品（人、鞋、杯子）放進畫面。"}
+      ],
+      "observe": ["哪一張最平靜，哪一張最有張力", "破格元素吸引多少注意力"],
+      "reflect": ["什麼情況需要平靜，什麼情況需要張力？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "08-composition-07-approach-distance",
+      "title": "由遠到近，逐步靠近",
+      "level": 2,
+      "goal": "看懂同一個主體在不同距離下，畫面會分別講出環境、關係與細節。",
+      "scene": "一個立體的主體，如盆栽、單車、雕像或桌上的擺設，周圍有可退後的空間。空間不足時，改拍桌上的主體，以手機逐步靠近。",
+      "fixed": ["主體", "拍攝高度", "倍率 1x"],
+      "shots": [
+        {"label": "遠：約 6 步", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "退到離主體約 6 步，讓周圍環境入鏡，倍率 1x，拍攝高度固定。"},
+        {"label": "中遠：約 3 步", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "往前走到約 3 步，倍率與拍攝高度不變。"},
+        {"label": "近：約 1 步", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "再往前走到約 1 步，主體占滿畫面，其餘不變。"},
+        {"label": "貼近局部", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "貼近到手機離主體約 20 cm，只留一個有趣的局部，倍率仍為 1x。"}
+      ],
+      "observe": ["四張各自說了什麼", "哪一個距離的畫面最出乎意料", "哪一個距離最常被略過"],
+      "reflect": ["拍任何主體時，會不會把距離走完一遍再決定？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Bryan Peterson, Learning to See Creatively"]
+    },
+    {
+      "id": "08-composition-08-orientation",
+      "title": "橫幅與直幅",
+      "level": 1,
+      "goal": "比較同一個主體用橫幅、直幅與極端偏移的效果。",
+      "scene": "一個有高度或有延伸的主體，如樹、門、走廊、瓶花。沒有合適主體時，改用桌上直立的瓶子。",
+      "fixed": ["主體", "與主體的距離", "倍率"],
+      "shots": [
+        {"label": "橫幅", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機橫持，主體放在畫面中間，距離與倍率固定。"},
+        {"label": "直幅", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把手機轉為直持，主體仍在畫面中間，其餘不動。"},
+        {"label": "直幅 主體偏邊", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "維持直持，把主體推到畫面最邊緣，另一側留出大片空間。"}
+      ],
+      "observe": ["哪一種方向讓主體更完整", "邊緣偏移帶來的感覺是緊張還是舒服", "背景的多寡如何變化"],
+      "reflect": ["拍攝前是否習慣先決定橫持或直持？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Learning with Experts, Michael Freeman course"]
+    }
+  ]
+}

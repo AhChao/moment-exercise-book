@@ -1,0 +1,112 @@
+{
+  "chapter": {"id": "04-white-balance", "order": 4, "title": "白平衡", "blurb": "色溫設定改變白色物體與整體色調，「接近真實」與「有氣氛」是兩種不同的選擇。", "level": 1},
+  "exercises": [
+    {
+      "id": "04-white-balance-01-wb",
+      "title": "白平衡",
+      "level": 1,
+      "goal": "看懂三種色溫設定下，白色物體與整體色調的相對變化。",
+      "scene": "室內黃色燈光下，桌上放一張白紙或白色物品。沒有黃色燈光時，改用檯燈照向白紙。色溫設定與呈現的顏色並非一對一，照片顏色看起來不對時，該張可重拍。",
+      "fixed": ["取景", "手機位置", "光線"],
+      "shots": [
+        {"label": "偏冷 3000K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 3000, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "色溫設為 3000K，白紙填滿畫面的一半以上，取景與光線固定。"},
+        {"label": "中間 4500K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 4500, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把色溫改為 4500K，手機位置不動。"},
+        {"label": "偏暖 6000K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 6000, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把色溫改為 6000K，其餘與前兩張相同。"}
+      ],
+      "observe": ["白紙在三張中各是什麼顏色", "三張的整體色調如何相對變化", "哪一張的白紙最接近肉眼看到的白"],
+      "reflect": ["肉眼看到的白色與照片中的白色是否一致？"],
+      "needs": ["manualWB"],
+      "checks": [],
+      "sources": ["Tom Ang, Digital Photography Masterclass", "揚安攝影教室, 白平衡教學懶人包"]
+    },
+    {
+      "id": "04-white-balance-02-mood",
+      "title": "白平衡氛圍",
+      "level": 2,
+      "goal": "分辨「接近真實」與「有氣氛」是兩種不同的色溫選擇。",
+      "scene": "黃昏或夜景，畫面中有天空色或燈光。沒有戶外場景時，改在窗邊拍向傍晚的天色。照片顏色看起來不對時，該張可重拍。",
+      "fixed": ["取景", "手機位置", "曝光"],
+      "shots": [
+        {"label": "較低 3200K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 3200, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "色溫設為 3200K，取景與位置固定。拍完後與下一張比較哪一張較冷。"},
+        {"label": "較高 6500K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 6500, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把色溫改為 6500K，其餘不動。拍完後與上一張比較哪一張較暖。"}
+      ],
+      "observe": ["哪一張比較接近肉眼所見的「真實」", "哪一張比較「有感覺」", "兩張各自傳達的情緒"],
+      "reflect": ["想讓看的人感受到什麼，才選擇這個色溫？"],
+      "needs": ["manualWB"],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Tom Ang, Digital Photography Masterclass", "揚安攝影教室, 白平衡教學懶人包"]
+    },
+    {
+      "id": "04-white-balance-03-mixed-light",
+      "title": "混合光源",
+      "level": 2,
+      "goal": "理解兩種光源同時存在時，白平衡只能遷就其中一種。",
+      "scene": "窗光與室內黃燈同時存在的房間，取景同時包含兩種光照到的區域。只有單一光源時，改以檯燈搭配窗光。照片顏色看起來不對時，該張可重拍。",
+      "fixed": ["取景", "手機位置", "曝光"],
+      "shots": [
+        {"label": "低 3000K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 3000, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "色溫設為 3000K，取景包含黃燈與窗光各照到的區域。"},
+        {"label": "中 5000K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 5000, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把色溫改為 5000K，取景與位置不動。"},
+        {"label": "高 6500K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 6500, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把色溫改為 6500K，其餘與前兩張相同。"}
+      ],
+      "observe": ["每一張中，哪一塊區域的白色看起來最中性", "另一塊區域偏向什麼顏色", "是否有一個設定使兩邊都勉強可以接受"],
+      "reflect": ["混合光下要遷就哪一種光？"],
+      "needs": ["manualWB"],
+      "checks": [],
+      "sources": ["Tom Ang, Digital Photography Masterclass"]
+    },
+    {
+      "id": "04-white-balance-04-shade-blue",
+      "title": "陰影中的白色",
+      "level": 2,
+      "goal": "比較晴天陰影中的白色物體，在不同色溫設定下的顏色差別。",
+      "scene": "晴天戶外被建築遮住的陰影區，有白牆或白色衣物。陰天或沒有戶外場景時，改在窗邊背光處拍白色物品。照片顏色看起來不對時，該張可重拍。",
+      "fixed": ["取景", "手機位置", "曝光"],
+      "shots": [
+        {"label": "低 4500K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 4500, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "色溫設為 4500K，白色物體完整位於陰影中。"},
+        {"label": "中 5500K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 5500, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把色溫改為 5500K，物體與取景不動。"},
+        {"label": "高 7000K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 7000, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把色溫改為 7000K，其餘與前兩張相同。"}
+      ],
+      "observe": ["白色物體在三張中各是什麼顏色", "哪一張的陰影看起來最中性", "陰影與亮處的顏色差在哪一張最小"],
+      "reflect": ["偏好冷調的乾淨感，還是暖調的舒適感？"],
+      "needs": ["manualWB"],
+      "checks": [],
+      "sources": ["Tom Ang, Digital Photography Masterclass", "Light Science & Magic"]
+    },
+    {
+      "id": "04-white-balance-05-shoot-vs-develop",
+      "title": "拍攝時色溫與後製暖度",
+      "level": 3,
+      "goal": "比較拍攝時設定色溫與後製調整暖度，兩種做法的顏色差別。",
+      "scene": "黃昏、夜景或室內暖色燈光下的靜物。沒有暖色光源時，改用檯燈照向桌面的物品。照片顏色看起來不對時，該張可重拍。",
+      "fixed": ["取景", "手機位置"],
+      "shots": [
+        {"label": "低 3000K 拍攝時", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 3000, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "拍攝時色溫設為 3000K，取景與位置固定。"},
+        {"label": "高 5500K 原圖", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 5500, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把色溫改為 5500K，其餘不動；這一張供下一張後製使用。"},
+        {"label": "5500K + 暖度 -40", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": 0, "highlights": 0, "exposure": 0, "warmth": -40}, "hint": "以 5500K 原圖為底，暖度調到 -40，其餘項目維持 0。"}
+      ],
+      "observe": ["拍攝時設定與後製調整，哪一張的顏色更自然", "後製調整是否讓某些顏色變得不對"],
+      "reflect": ["顏色要在拍攝現場決定，還是拍完再調整？"],
+      "needs": ["manualWB", "develop"],
+      "checks": [],
+      "sources": ["Tom Ang, Digital Photography Masterclass", "揚安攝影教室, 白平衡教學懶人包"]
+    },
+    {
+      "id": "04-white-balance-06-two-lights",
+      "title": "同一色溫，兩種光源",
+      "level": 2,
+      "goal": "看懂固定同一個色溫設定時，不同光源下的白色物體會呈現不同顏色。",
+      "scene": "白紙或白色物品，先放在窗光下，再移到檯燈下。沒有檯燈時，改用天花板燈。照片顏色看起來不對時，該張可重拍。",
+      "fixed": ["物品與取景", "手機與物品的距離", "曝光"],
+      "shots": [
+        {"label": "窗光 5000K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 5000, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "白紙在窗光下，色溫設為 5000K 拍攝。"},
+        {"label": "檯燈 5000K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 5000, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "白紙移到檯燈下，色溫維持 5000K，取景與距離不動。"},
+        {"label": "檯燈 3500K", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": 3500, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "白紙留在檯燈下，只把色溫改為 3500K。"}
+      ],
+      "observe": ["同樣的色溫設定，白紙在窗光與檯燈下有什麼不同", "改變色溫後，檯燈下的白紙變得更接近肉眼所見還是更遠", "哪一組設定與光源的搭配最自然"],
+      "reflect": ["換一個光源後，需要重新調整色溫嗎？"],
+      "needs": ["manualWB"],
+      "checks": [],
+      "sources": ["Tom Ang, Digital Photography Masterclass", "Cool3c, 掌心的攝影課：色溫與白平衡"]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "chapter": {"id": "01-ability-check", "order": 1, "title": "程度檢測", "blurb": "五個短練習，確認目前熟悉哪些設定，作為後續章節的起點。", "level": 1},
+  "exercises": [
+    {
+      "id": "01-ability-check-01-tap-focus",
+      "title": "點哪裡就清楚哪裡",
+      "level": 1,
+      "goal": "確認能以點選畫面控制對焦點，讓想強調的物品變清楚。",
+      "scene": "桌面上一近一遠兩個物品（如杯子與書），相距約 50 公分。沒有兩件物品時，改以一根手指與後方牆面。",
+      "fixed": ["手機位置", "取景", "光線"],
+      "shots": [
+        {"label": "對焦近物", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "點選近處的物品，待對焦框穩定後拍攝。手機位置與取景保持不動。"},
+        {"label": "對焦遠物", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機維持原位，只改點選遠處的物品，待對焦框穩定後拍攝。"}
+      ],
+      "observe": ["兩張照片各自清楚的是哪一個物品", "另一個物品模糊到什麼程度", "哪一張的主角較明確"],
+      "reflect": ["平常拍照是否會刻意選擇對焦點？", "點選之後畫面亮度是否也跟著改變？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "01-ability-check-02-steady-hands",
+      "title": "手震測試",
+      "level": 1,
+      "goal": "找出手持時快門 1/15 的清晰程度，以及不同姿勢造成的差別。",
+      "scene": "室內明亮處或窗邊的靜物。光線偏暗時，ISO 400 會使照片偏暗，屬正常結果。沒有窗邊時，改在開燈的桌面上拍。",
+      "fixed": ["快門 1/15", "ISO 400", "取景", "與靜物的距離"],
+      "shots": [
+        {"label": "1/15 站著單手", "capture": {"shutterSec": 0.0667, "iso": 400, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "雙腳站開，單手持機直接按快門。此張刻意不靠任何物體，作為手持對照，其餘張數才靠穩。"},
+        {"label": "1/15 雙手貼身", "capture": {"shutterSec": 0.0667, "iso": 400, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "雙手握機、手肘夾緊身體，吐氣時輕按快門。此張仍為手持，用來與上一張比較姿勢的差別。"},
+        {"label": "1/15 靠著撐住", "capture": {"shutterSec": 0.0667, "iso": 400, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門較慢，手機需靠在桌面或牆上等穩固處，手肘也貼著支撐面，再輕按快門。"}
+      ],
+      "observe": ["三張的清晰度差別", "放大後邊緣是否出現拖影", "哪一種姿勢的拖影最少"],
+      "reflect": ["哪一種姿勢適合作為手持拍攝的預設？"],
+      "needs": ["manualExposure"],
+      "checks": [{"shot": 0, "field": "shutterSec", "op": "between", "value": [0.05, 0.085]}, {"shot": 0, "field": "iso", "op": "==", "value": 400}],
+      "sources": ["Tom Ang, Digital Photography Masterclass", "Ansel Adams, The Camera"]
+    },
+    {
+      "id": "01-ability-check-03-brighter-darker",
+      "title": "調亮與調暗",
+      "level": 1,
+      "goal": "確認能以曝光補償調整整張照片的亮度。",
+      "scene": "光線中等的場景，如窗邊桌面。沒有窗邊時，改以開燈的室內一角。",
+      "fixed": ["手機位置", "取景"],
+      "shots": [
+        {"label": "曝光補償 -1", "capture": {"shutterSec": null, "iso": null, "ev": -1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償設為 -1 後拍攝，手機位置與取景不動。"},
+        {"label": "曝光補償 0", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償設為 0，亮度由手機自動決定，作為基準。"},
+        {"label": "曝光補償 +1", "capture": {"shutterSec": null, "iso": null, "ev": 1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償設為 +1 後拍攝，其餘與前兩張相同。"}
+      ],
+      "observe": ["哪一張最接近肉眼看到的亮度", "最亮的一張，哪個部分開始過曝發白", "最暗的一張，陰影還剩多少細節"],
+      "reflect": ["手機自動決定的亮度是否符合預期？"],
+      "needs": ["exposureComp"],
+      "checks": [],
+      "sources": ["Bryan Peterson, Understanding Exposure"]
+    },
+    {
+      "id": "01-ability-check-04-same-bright-two-ways",
+      "title": "同樣亮，兩種做法",
+      "level": 2,
+      "goal": "確認能以快門與 ISO 的搭配做出相同的亮度。",
+      "scene": "明亮室內的靜物。快門每慢一級，ISO 降一級，兩張亮度才會接近；亮度仍有落差時，微調 ISO。沒有明亮的窗邊時，改在開燈的桌面上拍。",
+      "fixed": ["取景", "光線", "手機位置（靠在穩固處）"],
+      "shots": [
+        {"label": "1/60 + ISO 800", "capture": {"shutterSec": 0.0167, "iso": 800, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機靠在穩固處，快門 1/60、ISO 800 拍攝，作為亮度基準。"},
+        {"label": "1/15 + ISO 200", "capture": {"shutterSec": 0.0667, "iso": 200, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "此快門較慢，手機必須靠在穩固處。快門慢兩級、ISO 降兩級，亮度應與上一張接近，其餘不動。"}
+      ],
+      "observe": ["兩張亮度是否接近", "雜訊較多的是哪一張", "較模糊的是哪一張"],
+      "reflect": ["兩張亮度不一致時，應調整快門還是 ISO？"],
+      "needs": ["manualExposure", "tripodOrRest"],
+      "checks": [{"shot": 0, "field": "iso", "op": "==", "value": 800}, {"shot": 1, "field": "iso", "op": "==", "value": 200}],
+      "sources": ["Bryan Peterson, Understanding Exposure"]
+    },
+    {
+      "id": "01-ability-check-05-my-best-shot",
+      "title": "同一場景，三種意圖",
+      "level": 3,
+      "goal": "檢視是否能有目的地組合設定，並說明每個選擇的理由。",
+      "scene": "任何喜歡的場景，同一處拍三個意圖不同的版本。場景不限，室內無窗時，改以桌面上的擺設。",
+      "fixed": ["同一場景", "同一段時間內拍完"],
+      "shots": [
+        {"label": "偏亮明快", "capture": {"shutterSec": null, "iso": null, "ev": 1, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "曝光補償 +1，做出明亮輕盈的版本；倍率與角度自選，之後兩張沿用。"},
+        {"label": "偏暗沉穩", "capture": {"shutterSec": null, "iso": null, "ev": -1, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "曝光補償 -1，做出暗一些、有重量感的版本；倍率與角度與上一張相同。"},
+        {"label": "自選", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "曝光補償回到 0，倍率、角度擇一改變，另做出第三種意圖。"}
+      ],
+      "observe": ["三張傳達的情緒差在哪裡", "為了做出差別，調整了哪些設定"],
+      "reflect": ["哪個設定用起來最沒把握，就從對應章節開始練習。"],
+      "needs": ["exposureComp"],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Photography Launchpad, 25 Photography Exercises"]
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "chapter": {"id": "11-motion", "order": 11, "title": "動態", "blurb": "以快門決定移動的東西是被凍結，還是被拉出軌跡。", "level": 2},
+  "exercises": [
+    {
+      "id": "11-motion-01-freeze-walk",
+      "title": "凍結走路與跳躍",
+      "level": 1,
+      "goal": "找到凍結人物動作所需的最慢快門。",
+      "scene": "明亮的戶外或窗邊，取得同意的朋友反覆走過或跳一下。亮度不足時，ISO 由手機自動拉高。沒有模特時，改拍自己丟擲並接住一個小球。",
+      "fixed": ["站位", "取景", "動作一致"],
+      "shots": [
+        {"label": "1/60", "capture": {"shutterSec": 0.0167, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/60，在動作進行中按下快門，手腳預期會有模糊。"},
+        {"label": "1/250", "capture": {"shutterSec": 0.004, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把快門改為 1/250，站位、取景與動作維持一致。"},
+        {"label": "1/1000", "capture": {"shutterSec": 0.001, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把快門改為 1/1000，動作幾乎定格，其餘不變。"}
+      ],
+      "observe": ["手腳的模糊在哪一張消失", "亮度或雜訊是否改變"],
+      "reflect": ["走路、跑步、跳躍各需要多快的快門？"],
+      "needs": ["manualExposure", "movingSubject", "person"],
+      "checks": [{"shot": 1, "field": "shutterSec", "op": "between", "value": [0.003, 0.005]}, {"shot": 2, "field": "shutterSec", "op": "<=", "value": 0.0012}],
+      "sources": ["Bryan Peterson, Understanding Exposure", "Henri Cartier-Bresson, The Decisive Moment", "Oh My Camera, 6 Exercises to Master Shutter Speed"]
+    },
+    {
+      "id": "11-motion-02-panning",
+      "title": "搖攝追焦",
+      "level": 2,
+      "goal": "學會跟著移動物體轉動手機，讓主體清楚、背景拉出線條。",
+      "scene": "傍晚或有遮蔭的路旁，拍騎腳踏車、跑步或滾動的球，不拍陌生人的臉。白天強光下，慢快門會過曝，因此選陰暗處。沒有移動物體時，改由取得同意的朋友在走廊快步走過。",
+      "fixed": ["拍攝位置", "移動方向與速度"],
+      "shots": [
+        {"label": "1/250 不搖", "capture": {"shutterSec": 0.004, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機不動，拍下物體經過的瞬間，作為對照。"},
+        {"label": "1/60 搖攝", "capture": {"shutterSec": 0.0167, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "雙腳站開，以腰部轉動身體跟著物體移動，在轉動中按快門，按完後繼續轉一小段。"},
+        {"label": "1/30 搖攝", "capture": {"shutterSec": 0.0333, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把快門改為 1/30，動作與速度維持一致，背景線條會更長。"}
+      ],
+      "observe": ["主體是否仍然清楚", "背景線條的長度差別", "成功張數如何隨快門變化"],
+      "reflect": ["平均拍幾次才有一張成功？"],
+      "needs": ["manualExposure", "movingSubject"],
+      "checks": [{"shot": 2, "field": "shutterSec", "op": "between", "value": [0.025, 0.042]}],
+      "sources": ["Bryan Peterson, Understanding Exposure", "Digital Photo Mentor, Panning", "Markus Hagner, Slow Shutter Speed Panning"]
+    },
+    {
+      "id": "11-motion-03-silky-water",
+      "title": "水的絲綢感",
+      "level": 2,
+      "goal": "看懂慢快門如何把水拉成柔順的線。",
+      "scene": "陰暗處或室內的水龍頭、噴泉或水流。光線太亮時，慢快門會過曝，因此選昏暗處或天色暗時。沒有水流時，改用倒水入杯，並把房間燈光調暗。",
+      "fixed": ["取景", "手機位置", "手機靠在穩固處"],
+      "shots": [
+        {"label": "1/125", "capture": {"shutterSec": 0.008, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/125，水滴形狀清楚，作為對照。取景固定。"},
+        {"label": "1/15", "capture": {"shutterSec": 0.0667, "iso": 30, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/15、ISO 30。此快門較慢，手機必須靠在穩固處，取景不變。"},
+        {"label": "1/4", "capture": {"shutterSec": 0.25, "iso": 30, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/4、ISO 30。手機必須放在穩固處，並以計時拍攝，避免按快門時晃動。"}
+      ],
+      "observe": ["水的質感如何變化", "背景的靜止物是否也跟著模糊", "亮度是否改變"],
+      "reflect": ["哪一種水感最接近記憶中的樣子？"],
+      "needs": ["manualExposure", "movingSubject", "tripodOrRest"],
+      "checks": [{"shot": 2, "field": "shutterSec", "op": ">=", "value": 0.2}, {"shot": 2, "field": "iso", "op": "<=", "value": 50}],
+      "sources": ["Bryan Peterson, Understanding Exposure", "Ansel Adams, The Camera", "Oh My Camera, 6 Exercises to Master Shutter Speed"]
+    },
+    {
+      "id": "11-motion-04-camera-blur",
+      "title": "刻意移動手機",
+      "level": 3,
+      "goal": "把晃動變成創作手法，畫出光的軌跡。",
+      "scene": "傍晚或夜晚有光點的地方（路燈、招牌、車燈），拍攝前先擦乾淨鏡頭。手機靠在桌沿或欄杆上，以沿著支撐面輕推的方式移動。沒有戶外光點時，改在暗房間拍向檯燈。",
+      "fixed": ["取景", "起始位置", "ISO 100"],
+      "shots": [
+        {"label": "1/4 靜止", "capture": {"shutterSec": 0.25, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/4，手機必須靠在穩固處，完全不動，作為對照。"},
+        {"label": "1/4 垂直晃", "capture": {"shutterSec": 0.25, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機靠在穩固處起拍，按下快門後，沿著支撐面平順地輕推手機上下移動，取景相同。"},
+        {"label": "1/2 旋轉", "capture": {"shutterSec": 0.5, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門改為 1/2，手機平放在穩固的桌面，按下快門後用指尖輕轉手機。"}
+      ],
+      "observe": ["光線拉出什麼形狀", "哪一張有抽象畫的感覺", "哪一張不只是模糊"],
+      "reflect": ["如何分辨一張照片是創作，還是失敗？"],
+      "needs": ["manualExposure", "night", "movingSubject", "tripodOrRest"],
+      "checks": [{"shot": 1, "field": "shutterSec", "op": ">=", "value": 0.2}],
+      "sources": ["Bryan Peterson, Learning to See Creatively", "Motion Array, Motion Blur Photography Tips"]
+    },
+    {
+      "id": "11-motion-05-peak-moment",
+      "title": "抓動作的頂點",
+      "level": 3,
+      "goal": "練習預判動作，並在最高點按下快門。",
+      "scene": "重複發生的動作，如拋接球、跳躍或倒水，明亮處，由取得同意的朋友配合。獨自一人時，改為自己拋接小球，手機靠穩並以計時連拍。",
+      "fixed": ["快門 1/1000", "取景", "手機位置"],
+      "shots": [
+        {"label": "起始", "capture": {"shutterSec": 0.001, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/1000，動作剛開始離手的瞬間拍下。"},
+        {"label": "上升", "capture": {"shutterSec": 0.001, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "同一個動作重做，在物體上升途中拍下，取景不變。"},
+        {"label": "頂點", "capture": {"shutterSec": 0.001, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "重做動作，在最高點、速度接近零的瞬間拍下。"},
+        {"label": "下落", "capture": {"shutterSec": 0.001, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "重做動作，在物體落回途中拍下，其餘不變。"}
+      ],
+      "observe": ["哪一張的時機最有張力", "頂點那一張有多難拍到"],
+      "reflect": ["按快門之前，看的是哪裡、預測的是什麼？"],
+      "needs": ["manualExposure", "movingSubject", "person"],
+      "checks": [{"shot": 2, "field": "shutterSec", "op": "<=", "value": 0.0012}],
+      "sources": ["Henri Cartier-Bresson, The Decisive Moment"]
+    },
+    {
+      "id": "11-motion-06-traffic-shutter",
+      "title": "車流的三種快門",
+      "level": 2,
+      "goal": "以同一段車流，比較快門凍結、拖影與光軌的差別。",
+      "scene": "傍晚或夜晚的路口、天橋或馬路邊，手機靠在欄杆等穩固處，站在安全位置。天色太亮時，慢快門會過曝，因此選日落後。沒有車流時，改拍樓下走動的行人腳步，不拍可辨識的臉。",
+      "fixed": ["取景", "手機位置（靠在穩固處）"],
+      "shots": [
+        {"label": "1/1000", "capture": {"shutterSec": 0.001, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/1000，車輛被定格，ISO 由手機自動決定。取景固定。"},
+        {"label": "1/15", "capture": {"shutterSec": 0.0667, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/15。此快門較慢，手機必須靠在穩固處，車輛會出現拖影，取景不變。"},
+        {"label": "1 秒", "capture": {"shutterSec": 1, "iso": 30, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1 秒、ISO 30。手機必須靠在穩固處，並以計時拍攝，車燈會拉成連續光軌。"}
+      ],
+      "observe": ["車輛在三張中的形態", "光軌何時出現", "背景的靜止建築是否仍然清楚"],
+      "reflect": ["同一段車流，最想呈現速度、擁擠，還是光的軌跡？"],
+      "needs": ["manualExposure", "movingSubject", "night", "tripodOrRest"],
+      "checks": [{"shot": 2, "field": "shutterSec", "op": ">=", "value": 0.8}, {"shot": 2, "field": "iso", "op": "<=", "value": 50}],
+      "sources": ["Oh My Camera, 6 Exercises to Master Shutter Speed", "Motion Array, Motion Blur Photography Tips"]
+    }
+  ]
+}

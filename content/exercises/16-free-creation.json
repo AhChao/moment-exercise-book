@@ -1,0 +1,97 @@
+{
+  "chapter": {"id": "16-free-creation", "order": 16, "title": "自由創作", "blurb": "沒有固定答案，重點是記錄為什麼這樣設定。", "level": 3},
+  "exercises": [
+    {
+      "id": "16-free-creation-01-free-landscape",
+      "title": "自由創作",
+      "level": 3,
+      "goal": "把學過的設定全部用上，並說出每一個設定的理由。",
+      "scene": "自選風景。選 0.5x 時，以手機內建相機拍攝後匯入，快門、ISO 等設定由手機自動決定；選 1x 或 5x 時，可自行設定快門、ISO、曝光補償與色溫。沒有風景時，改拍窗外或桌面一角。",
+      "fixed": ["同一處風景", "同一段時間內拍完"],
+      "shots": [
+        {"label": "版本 1", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "自選倍率（0.5x、1x、5x）與拍攝設定，寫下每一項為什麼這樣選。"},
+        {"label": "版本 2", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "取景相同，換另一組想試的設定，並寫下與版本 1 的差異。"},
+        {"label": "版本 3", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": 0, "highlights": 0, "exposure": 0, "warmth": 0}, "hint": "以版本 1 或版本 2 為底，後製調整陰影、曝光或暖度，各調多少自行決定並記下數值。"}
+      ],
+      "observe": ["三個版本中哪一個最接近心裡想像的畫面", "哪一個設定猶豫最久"],
+      "reflect": ["我為什麼這樣設定？每個決定各寫一句。"],
+      "needs": ["ultrawide", "tele", "manualExposure", "manualWB", "develop"],
+      "checks": [],
+      "sources": ["Bryan Peterson, Learning to See Creatively"]
+    },
+    {
+      "id": "16-free-creation-02-one-constraint",
+      "title": "只准用一種限制",
+      "level": 3,
+      "goal": "以限制逼出創意：整組只用一個倍率、一種角度或一個色調。",
+      "scene": "一條熟悉的路，或一個房間。選一個限制：只用 5x、只用低角度，或只拍紅色。限制在現場找不到對象時，改選另一個限制。",
+      "fixed": ["限制條件"],
+      "shots": [
+        {"label": "第 1 張", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "先寫下選定的限制，在限制內找第一個畫面。"},
+        {"label": "第 2 張", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "換一個拍攝對象，限制不變。"},
+        {"label": "第 3 張", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "再換一個拍攝對象，限制不變。"},
+        {"label": "第 4 張", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "最後一張，仍在限制內，選一個最出乎意料的畫面。"}
+      ],
+      "observe": ["限制讓人注意到哪些平常沒看見的東西", "哪一張最受益於限制"],
+      "reflect": ["哪些創作習慣可以被限制打破？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Bryan Peterson, Learning to See Creatively"]
+    },
+    {
+      "id": "16-free-creation-03-reshoot",
+      "title": "重拍最不滿意的一題",
+      "level": 3,
+      "goal": "回顧並帶著新的理解重拍，看見自己的進步。",
+      "scene": "回到最不滿意的一組練習，在相同或類似的場景重拍。原場景已無法回去時，改在光線與距離相似的地方重拍。",
+      "fixed": ["同一場景或題目", "只改變一個上次想不通的變數"],
+      "shots": [
+        {"label": "上次做法", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "使用上次的設定，再拍一張作為對照。"},
+        {"label": "調整後", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "取景相同，只改變一個認為出問題的設定，其餘與上一張一致。"}
+      ],
+      "observe": ["只改變一個變數，差別有多大", "現在是否能看出上次的問題"],
+      "reflect": ["這次學到的一件事是什麼？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "16-free-creation-04-my-style",
+      "title": "四個主題，一種風格",
+      "level": 3,
+      "goal": "找出反覆偏好的設定，形成自己的預設風格。",
+      "scene": "選一組喜歡的設定（曝光補償、色溫、倍率），拍四個完全不同的主題。沒有戶外主題時，改拍家中四個不同的房間角落。",
+      "fixed": ["選定的設定組合"],
+      "shots": [
+        {"label": "主題 1", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "寫下選定的設定組合，用它拍第一個主題。"},
+        {"label": "主題 2", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "設定組合不變，換一個主題。"},
+        {"label": "主題 3", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "設定組合不變，再換一個主題。"},
+        {"label": "主題 4", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "設定組合不變，選一個與前三張最不相似的主題。"}
+      ],
+      "observe": ["四張是否像同一個人拍的", "哪個主題與這個風格最不搭"],
+      "reflect": ["用一句話形容自己的風格。"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "16-free-creation-05-theme-draw",
+      "title": "十分鐘四個主題",
+      "level": 2,
+      "goal": "在時間限制內，以四個給定的主題各找出一個畫面。",
+      "scene": "戶外街區、公園或家中任一房間，總共十分鐘。四個主題依序為：影子、重複、圓形、斜線。主題在戶外找不到時，改在家中尋找。",
+      "fixed": ["總時間十分鐘", "每個主題只拍一張"],
+      "shots": [
+        {"label": "影子", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "找一個影子清楚的位置，倍率自選，構圖時讓影子占畫面主要面積。"},
+        {"label": "重複", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "找三個以上相同的東西排成一列，如窗格、椅子或磁磚，構圖時讓重複占滿畫面。"},
+        {"label": "圓形", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "找一個明顯的圓形，如杯口、輪子或標誌，構圖時讓圓形成為視覺中心。"},
+        {"label": "斜線", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "找一條貫穿畫面的斜線，如階梯邊緣或屋簷，手機保持水平，讓線條從角落延伸。"}
+      ],
+      "observe": ["哪一個主題最快找到", "哪一個主題最需要換角度", "四張放在一起的節奏"],
+      "reflect": ["時間限制讓取捨有什麼不同？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["500px, 12 Photography Exercises You Can Do in 30 Minutes", "PetaPixel, 40 Practical Photography Assignments", "PhotoJeepers, 52 Week Photography Challenge List"]
+    }
+  ]
+}

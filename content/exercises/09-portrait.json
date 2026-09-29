@@ -1,0 +1,114 @@
+{
+  "chapter": {"id": "09-portrait", "order": 9, "title": "人像", "blurb": "以朋友、家人或自己為對象，練習光線、框取與時機。", "level": 2},
+  "exercises": [
+    {
+      "id": "09-portrait-01-window-light",
+      "title": "窗光下的臉",
+      "level": 1,
+      "goal": "看懂臉朝向窗光的角度如何塑造立體感與眼神光。",
+      "scene": "白天窗邊，模特為取得同意的朋友或家人，或拍自己。窗簾半透最理想。沒有窗邊時，改用一盞檯燈加薄紙擴散。",
+      "fixed": ["人物位置", "與模特的距離", "倍率 1x"],
+      "shots": [
+        {"label": "正對窗", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "模特臉朝向窗，拍攝者背對窗，距離與倍率固定。"},
+        {"label": "45 度", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "模特轉身，讓臉相對窗呈約 45 度，拍攝位置不動。"},
+        {"label": "側面 90 度", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "模特側身對窗，光從一側照來，拍攝位置不動。"}
+      ],
+      "observe": ["哪一張最有立體感", "陰影落在臉的哪個位置", "眼睛裡的亮點在哪一張最明顯"],
+      "reflect": ["模特覺得哪個角度最自然？"],
+      "needs": ["person"],
+      "checks": [],
+      "sources": ["Light Science & Magic", "Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "09-portrait-02-framing",
+      "title": "特寫、半身、全身",
+      "level": 1,
+      "goal": "練習人像的框取，並避免把畫面切在關節上。",
+      "scene": "光線好的地方，模特站著配合，或拍自己。全身需要退後空間，空間不足時，改用坐姿的特寫與半身。",
+      "fixed": ["人物位置", "光線", "背景"],
+      "shots": [
+        {"label": "特寫", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "倍率 2x，畫面只到肩膀以上，人物站位固定。"},
+        {"label": "半身", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，畫面到腰部，邊緣避開手肘與手腕。"},
+        {"label": "全身", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，往後退到拍進腳，腳下留一點地面。"}
+      ],
+      "observe": ["哪一張最能看見表情", "全身照中背景占多少"],
+      "reflect": ["想讓觀看者看到人物本身，還是人物所在的故事？"],
+      "needs": ["person"],
+      "checks": [],
+      "sources": ["Tom Ang, Digital Photography Masterclass"]
+    },
+    {
+      "id": "09-portrait-03-eyes-focus",
+      "title": "眼睛在哪裡對焦",
+      "level": 2,
+      "goal": "看懂人像中的對焦位置，決定觀看者的第一眼落在哪裡。",
+      "scene": "近距離（約 0.5 m）拍朋友的臉，對方稍微側身，讓兩隻眼睛一近一遠。沒有模特時，改拍自己在鏡子中的臉。",
+      "fixed": ["人物位置", "倍率 2x"],
+      "shots": [
+        {"label": "對焦近眼", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "點選靠近手機的那隻眼睛，待對焦框穩定後拍攝，位置固定。"},
+        {"label": "對焦耳朵", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "只改點選耳朵或頭髮，人物與手機都不動。"},
+        {"label": "對焦背景", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "只改點選背景，其餘不動。"}
+      ],
+      "observe": ["哪一張人像最有生命力", "眼睛模糊時，觀看者的感受"],
+      "reflect": ["拍人時，第一個要確認的是什麼？"],
+      "needs": ["person"],
+      "checks": [],
+      "sources": ["Tom Ang, Digital Photography Masterclass"]
+    },
+    {
+      "id": "09-portrait-04-timing",
+      "title": "表情的四個時刻",
+      "level": 2,
+      "goal": "練習觀察並抓住表情的差別。",
+      "scene": "與朋友聊天時，取得同意後拍四張，不要求擺姿勢。獨自一人時，改拍自己閱讀或喝水時的四個時刻，手機靠穩。",
+      "fixed": ["位置", "光線", "倍率"],
+      "shots": [
+        {"label": "剛坐下", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "對方剛坐下、還在準備的時候拍，倍率 2x。"},
+        {"label": "聽的時候", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "對方專心聽話的時候拍，位置與光線不變。"},
+        {"label": "笑的瞬間", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "聊到好笑的事、對方笑開的瞬間拍，設定不變。"},
+        {"label": "放鬆後", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "笑完之後恢復平靜的那一秒拍，設定不變。"}
+      ],
+      "observe": ["哪一張最像對方本人", "眼神、嘴角、肩膀的變化"],
+      "reflect": ["最動人的表情，通常發生在按下快門之前還是之後？"],
+      "needs": ["person"],
+      "checks": [],
+      "sources": ["Henri Cartier-Bresson, The Decisive Moment", "Neil Milton, 5 Assignments for Street Photography Beginners"]
+    },
+    {
+      "id": "09-portrait-05-self-portrait-light",
+      "title": "自拍與光",
+      "level": 3,
+      "goal": "以自己當模特，試出光位如何影響臉部的氣質。",
+      "scene": "窗邊，手機用支架或靠著書本固定，以計時或藍牙快門拍攝。沒有窗邊時，改用檯燈從單側照射。",
+      "fixed": ["手機位置", "表情", "倍率 2x"],
+      "shots": [
+        {"label": "面向光", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "臉正對窗光，手機靠穩，以計時拍攝。"},
+        {"label": "半邊光", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "轉身讓光落在半邊臉，手機位置與表情不變。"},
+        {"label": "背光", "capture": {"shutterSec": null, "iso": null, "ev": 1, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "背對窗，曝光補償設為 +1，其餘不變。"}
+      ],
+      "observe": ["哪一張的氣質最接近想呈現的樣子", "背光補償後，臉部是否還有細節"],
+      "reflect": ["自己的最佳光位是哪一個？"],
+      "needs": ["person", "exposureComp", "tripodOrRest"],
+      "checks": [],
+      "sources": ["Light Science & Magic", "Tom Ang, Digital Photography Masterclass"]
+    },
+    {
+      "id": "09-portrait-06-nose-shadow",
+      "title": "鼻影的三種形狀",
+      "level": 2,
+      "goal": "以鼻子下方陰影的形狀，分辨三種常見的人像光位。",
+      "scene": "窗邊或一盞檯燈，模特為取得同意的人，或拍自己。窗光需在臉的斜上方，沒有斜上方光源時，改把檯燈舉高。",
+      "fixed": ["人物位置", "表情", "倍率 2x", "曝光補償 0"],
+      "shots": [
+        {"label": "光在正前上方", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "光源在臉的正前方偏上，鼻子下方出現一小塊短陰影，人物位置固定。"},
+        {"label": "光偏 45 度", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "光源移到約 45 度，鼻影斜向臉頰，其餘不動。"},
+        {"label": "光偏 60 度以上", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "光源再往側面並抬高，讓遠側臉頰出現一塊亮三角，其餘不動。"}
+      ],
+      "observe": ["鼻影的形狀在三張中如何變化", "臉的立體感在哪一張最強", "遠側臉頰的亮區有多大"],
+      "reflect": ["想呈現柔和還是戲劇性的臉，應選哪一種光位？"],
+      "needs": ["person", "exposureComp"],
+      "checks": [],
+      "sources": ["Digital Photography School, 6 Portrait Lighting Patterns", "Westcott University, 4 Essential Portrait Lighting Patterns"]
+    }
+  ]
+}

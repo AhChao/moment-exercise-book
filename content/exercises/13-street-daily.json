@@ -1,0 +1,133 @@
+{
+  "chapter": {"id": "13-street-daily", "order": 13, "title": "街頭與日常", "blurb": "在熟悉的地方練習觀察與等待，拍攝時不打擾陌生人。", "level": 2},
+  "exercises": [
+    {
+      "id": "13-street-daily-01-one-object",
+      "title": "同一物件四個視角",
+      "level": 1,
+      "goal": "圍繞一件日常物件，找出四種不同的畫面。",
+      "scene": "家裡或路上一個平常的物件（椅子、杯子、腳踏車、郵筒）。四張在同一段時間內拍完。沒有合適物件時，改用桌上的水杯。",
+      "fixed": ["物件", "同一段時間內拍完"],
+      "shots": [
+        {"label": "全貌", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，站遠一些，拍出物件完整的樣子。"},
+        {"label": "細節", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "倍率 2x，走近物件，拍一個有趣的局部，例如紋理或磨損處。"},
+        {"label": "低角度", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率回到 1x，蹲低或把手機貼近地面，由下往上拍。"},
+        {"label": "與環境", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，退到遠處，讓周圍環境一起入鏡，物件只占畫面一小部分。"}
+      ],
+      "observe": ["哪一張最出乎意料", "哪一張最能說明這件物件的個性"],
+      "reflect": ["還有哪個角度尚未嘗試？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Bryan Peterson, Learning to See Creatively"]
+    },
+    {
+      "id": "13-street-daily-02-shadow-subject",
+      "title": "影子當主角",
+      "level": 1,
+      "goal": "把影子當成構圖元素使用。",
+      "scene": "陽光明亮的地面、牆面或樓梯，有清晰的影子。陰天或室內時，改用檯燈照向物品，在牆上製造影子。",
+      "fixed": ["拍攝位置附近", "倍率 1x"],
+      "shots": [
+        {"label": "影子入畫", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "影子與投影它的物體一起入鏡，倍率 1x。"},
+        {"label": "只拍影子", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "位置不動，取景只留影子，讓物體本身出畫。"},
+        {"label": "壓暗", "capture": {"shutterSec": null, "iso": null, "ev": -1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "取景與上一張相同，只把曝光補償設為 -1，讓影子更濃。"}
+      ],
+      "observe": ["只拍影子時，主角是否仍看得出來", "影子的形狀是否有趣"],
+      "reflect": ["一天中哪個時段的影子最好？"],
+      "needs": ["exposureComp"],
+      "checks": [],
+      "sources": ["Henri Cartier-Bresson, The Decisive Moment", "Michael Freeman, The Photographer's Eye", "Neil Milton, 5 Assignments for Street Photography Beginners"]
+    },
+    {
+      "id": "13-street-daily-03-wait-for-it",
+      "title": "固定取景，等它進來",
+      "level": 2,
+      "goal": "練習先定好畫面，再等元素進入的時機。",
+      "scene": "巷口、轉角或窗邊，固定取景，等腳踏車、鳥、車或朋友經過，避免拍到可辨識的陌生人正臉。沒有人車經過時，改在窗邊等雲或光影移動。",
+      "fixed": ["手機位置", "取景", "曝光"],
+      "shots": [
+        {"label": "空景", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機靠穩，先拍一張沒有人事物的空景。"},
+        {"label": "剛進畫面", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機不動，在元素剛進入畫面邊緣的瞬間拍下。"},
+        {"label": "最佳位置", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機不動，在元素走到預先設想的位置時拍下。"},
+        {"label": "剛離開", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機不動，在元素將要離開畫面時拍下。"}
+      ],
+      "observe": ["哪一刻的畫面最平衡", "多等幾秒，畫面有什麼不同"],
+      "reflect": ["按下快門的最佳時機，比預期的早還是晚？"],
+      "needs": ["movingSubject"],
+      "checks": [],
+      "sources": ["Henri Cartier-Bresson, The Decisive Moment", "Neil Milton, 5 Assignments for Street Photography Beginners"]
+    },
+    {
+      "id": "13-street-daily-04-reflection",
+      "title": "倒影與玻璃",
+      "level": 2,
+      "goal": "利用倒影建立一張有兩層的畫面。",
+      "scene": "水窪、櫥窗、玻璃帷幕或桌面上的水。沒有這類反射面時，改用手機螢幕熄滅後的反光，或盛水的深色盤子。",
+      "fixed": ["拍攝位置附近", "倍率 1x"],
+      "shots": [
+        {"label": "直視", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "站在反射面正前方，由正面拍攝，倍率 1x。"},
+        {"label": "壓低角度", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "把手機壓低，貼近水面或反射面，取景中心不變。"},
+        {"label": "對焦倒影", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "位置維持壓低，點選倒影內的細節，待對焦框穩定後拍攝。"}
+      ],
+      "observe": ["倒影與實體，哪一個更吸引視線", "哪個角度的倒影最完整"],
+      "reflect": ["城市中有哪些常被忽略的反射面？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Bryan Peterson, Learning to See Creatively"]
+    },
+    {
+      "id": "13-street-daily-05-wide-mid-detail",
+      "title": "全景、中景、特寫",
+      "level": 2,
+      "goal": "在同一地點以三種距離，說完一個場景。",
+      "scene": "市場攤位、咖啡桌、公園長椅等有細節的地方，不對陌生人特寫。沒有這類地點時，改用家中的餐桌或書桌。",
+      "fixed": ["同一地點", "光線"],
+      "shots": [
+        {"label": "全景", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，拍出整個場域，讓人看得出這是哪裡。"},
+        {"label": "中景", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "倍率 2x，站位不動，只留下一個區塊。"},
+        {"label": "特寫", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "倍率 5x，站位不動，拍一個小細節，例如一件物品的質地。"}
+      ],
+      "observe": ["三張各自說了什麼", "少了哪一張，這個場景就說不完整"],
+      "reflect": ["平常最常漏拍哪一種距離？"],
+      "needs": ["tele"],
+      "checks": [{"shot": 2, "field": "lens", "op": "==", "value": "tele"}],
+      "sources": ["Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "13-street-daily-06-remnants",
+      "title": "人留下的痕跡",
+      "level": 1,
+      "goal": "不拍人，只拍人留下的物品與痕跡，讓畫面說出這裡剛發生過什麼。",
+      "scene": "巷子、公園、教室或家裡的角落，尋找被遺落、被使用過的東西，例如落單的雨傘、磨損的階梯、桌上的咖啡杯。沒有戶外場景時，改在家中餐桌收拾前拍。",
+      "fixed": ["同一地點附近", "同一段時間內拍完"],
+      "shots": [
+        {"label": "遺落的物品", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，拍一件被留下的物品，連同它所在的位置，畫面中不含人物。"},
+        {"label": "使用的痕跡", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "倍率 2x，拍磨損、摺痕或水漬等使用過的細節。"},
+        {"label": "新舊對比", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率回到 1x，找一處新東西與舊東西並排的地方，一起入鏡。"}
+      ],
+      "observe": ["不看人，哪一張最能讓人想像這裡剛發生什麼", "哪一個細節透露了使用者的習慣"],
+      "reflect": ["這個地方平常有誰經過，從畫面能看出來嗎？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Neil Milton, 5 Assignments for Street Photography Beginners", "Eric Kim, 15 Street Photography Assignments"]
+    },
+    {
+      "id": "13-street-daily-07-hands",
+      "title": "手在做什麼",
+      "level": 2,
+      "goal": "以手部動作代替臉部，練習拍出人的行為與情緒。",
+      "scene": "拍自己或取得同意的朋友的手，正在倒水、寫字、削水果或按手機的時候。沒有他人時，改拍自己的手，手機靠在穩固處。",
+      "fixed": ["光線", "背景", "倍率 2x"],
+      "shots": [
+        {"label": "倒水", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "倍率 2x，拍手拿著杯子或水壺倒水的瞬間，取景只到手腕。"},
+        {"label": "書寫或打字", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "同樣的倍率與光線，拍手在寫字或打字的瞬間。"},
+        {"label": "削切或整理", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "同樣的倍率與光線，拍手在削水果或整理東西的瞬間。"}
+      ],
+      "observe": ["不看臉，哪一張最能讓人感覺到動作的心情", "手指的姿勢傳達什麼", "背景是否干擾手部"],
+      "reflect": ["手部特寫與臉部特寫，哪一個更適合說故事？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Neil Milton, 5 Assignments for Street Photography Beginners", "Eric Kim, 15 Street Photography Assignments"]
+    }
+  ]
+}

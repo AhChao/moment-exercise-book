@@ -1,0 +1,94 @@
+{
+  "chapter": {"id": "03-exposure-and-shadows", "order": 3, "title": "曝光與陰影", "blurb": "在亮部與陰影之間取捨，比較拍攝時與後製各自能做到的程度。", "level": 2},
+  "exercises": [
+    {
+      "id": "03-exposure-and-shadows-01-exposure-comp",
+      "title": "曝光補償",
+      "level": 1,
+      "goal": "看懂曝光補償如何在天空、亮部與陰影之間移動取捨。",
+      "scene": "戶外的高反差場景（明亮天空加上陰影下的建築或樹）。沒有戶外場景時，改從室內拍向明亮的窗外。",
+      "fixed": ["取景", "手機位置", "白平衡"],
+      "shots": [
+        {"label": "曝光補償 -1", "capture": {"shutterSec": null, "iso": null, "ev": -1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償 -1，觀察天空的雲與顏色是否保留。取景與位置固定。"},
+        {"label": "曝光補償 0", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償 0，由手機自動決定亮度，作為基準；這一張也供下一題使用。"},
+        {"label": "曝光補償 +1", "capture": {"shutterSec": null, "iso": null, "ev": 1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償 +1，觀察陰影中的細節是否浮現，其餘不動。"}
+      ],
+      "observe": ["天空的雲與顏色在哪一張最完整", "亮部從哪一張開始過曝發白", "陰影細節在哪一張最多"],
+      "reflect": ["這個場景要保留亮部還是陰影？"],
+      "needs": ["exposureComp"],
+      "checks": [],
+      "sources": ["Ansel Adams, The Camera", "Bryan Peterson, Understanding Exposure"]
+    },
+    {
+      "id": "03-exposure-and-shadows-02-shadows",
+      "title": "陰影",
+      "level": 2,
+      "goal": "看懂後製調整陰影能救回多少暗部細節，以及付出的代價。",
+      "scene": "使用上一題曝光補償 0 的那一張，只調整陰影。手邊沒有上一題的照片時，改用任一張陰影偏暗的照片。",
+      "fixed": ["同一張原圖", "只調整陰影"],
+      "shots": [
+        {"label": "陰影 -50", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": -50, "highlights": 0, "exposure": 0, "warmth": 0}, "hint": "以原圖為底，陰影調到 -50，其餘項目維持 0。"},
+        {"label": "陰影 0", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": 0, "highlights": 0, "exposure": 0, "warmth": 0}, "hint": "原圖不做調整，作為對照。"},
+        {"label": "陰影 +50", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": 50, "highlights": 0, "exposure": 0, "warmth": 0}, "hint": "以同一張原圖為底，陰影調到 +50，其餘項目維持 0。"}
+      ],
+      "observe": ["陰影細節的變化", "整體是否變平、失去立體感", "陰影中是否出現雜訊"],
+      "reflect": ["哪一種陰影力道最合適，原因為何？"],
+      "needs": ["develop"],
+      "checks": [],
+      "sources": ["Ansel Adams, The Camera", "Tom Ang, Digital Photography Masterclass"]
+    },
+    {
+      "id": "03-exposure-and-shadows-03-shadow-limit",
+      "title": "陰影的極限",
+      "level": 2,
+      "goal": "知道陰影提亮到極限時會失去什麼。",
+      "scene": "室內拍向窗外的陽光，人或物在室內側形成陰影。沒有窗戶時，改用門口的逆光。",
+      "fixed": ["取景", "手機位置"],
+      "shots": [
+        {"label": "正常", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償 0，直接拍下逆光畫面，室內側會偏暗。"},
+        {"label": "陰影 +50", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": 50, "highlights": 0, "exposure": 0, "warmth": 0}, "hint": "以上一張為底，陰影調到 +50，其餘項目維持 0。"}
+      ],
+      "observe": ["陰影細節增加多少", "雜訊是否變明顯", "畫面是否變平，像蒙上一層霧"],
+      "reflect": ["這樣的亮暗差距，拍攝時可以怎麼處理才更好？"],
+      "needs": ["develop", "exposureComp"],
+      "checks": [],
+      "sources": ["Ansel Adams, The Camera"]
+    },
+    {
+      "id": "03-exposure-and-shadows-04-highlight-rescue",
+      "title": "亮部：拍攝時壓還是後製壓",
+      "level": 3,
+      "goal": "比較拍攝時降低曝光與後製壓低亮部，哪一種保住較多天空。",
+      "scene": "天空明亮、接近過曝的場景，如逆光的窗外。沒有窗外景色時，改拍白牆與燈的組合。",
+      "fixed": ["取景", "手機位置"],
+      "shots": [
+        {"label": "曝光補償 0 原圖", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償 0 拍一張，觀察天空是否過曝發白。"},
+        {"label": "原圖 + 亮部 -60", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": 0, "highlights": -60, "exposure": 0, "warmth": 0}, "hint": "以第一張為底，亮部調到 -60，其餘項目維持 0。"},
+        {"label": "曝光補償 -1", "capture": {"shutterSec": null, "iso": null, "ev": -1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "取景與位置與第一張相同，拍攝時直接把曝光補償設為 -1。"}
+      ],
+      "observe": ["過曝的天空能否救回", "拍攝時壓低與後製壓低，天空層次有什麼差別", "陰影付出的代價"],
+      "reflect": ["遇到明亮的天空，先在拍攝時處理還是留到後製？"],
+      "needs": ["exposureComp", "develop"],
+      "checks": [],
+      "sources": ["Ansel Adams, The Camera", "Bryan Peterson, Understanding Exposure"]
+    },
+    {
+      "id": "03-exposure-and-shadows-05-silhouette",
+      "title": "剪影",
+      "level": 2,
+      "goal": "刻意讓曝光對著亮處，把主體壓成剪影。",
+      "scene": "人、樹或物體站在明亮天空或窗前。人物以取得同意者為限，或拍自己的影子。沒有明亮背景時，改以檯燈照向牆面當背景。",
+      "fixed": ["取景", "手機位置"],
+      "shots": [
+        {"label": "曝光補償 0", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "主體在逆光位置，曝光補償 0 直接拍，作為對照。"},
+        {"label": "曝光補償 -1", "capture": {"shutterSec": null, "iso": null, "ev": -1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "主體與取景不動，曝光補償設為 -1。"},
+        {"label": "曝光補償 -2", "capture": {"shutterSec": null, "iso": null, "ev": -2, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償設為 -2，輪廓最乾淨的一張通常在這裡。"}
+      ],
+      "observe": ["哪一張的輪廓最清楚", "背景顏色的變化", "主體形狀是否容易辨認"],
+      "reflect": ["什麼樣的形狀適合做成剪影？"],
+      "needs": ["exposureComp"],
+      "checks": [],
+      "sources": ["Bryan Peterson, Understanding Exposure", "Michael Freeman, The Photographer's Eye"]
+    }
+  ]
+}

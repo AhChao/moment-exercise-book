@@ -1,0 +1,113 @@
+{
+  "chapter": {"id": "10-landscape", "order": 10, "title": "風景", "blurb": "對焦由手機自動決定，重點放在取景、層次與取捨。", "level": 3},
+  "exercises": [
+    {
+      "id": "10-landscape-01-horizon",
+      "title": "地平線放哪裡",
+      "level": 1,
+      "goal": "看懂地平線的位置如何決定畫面的主角是天空還是地面。",
+      "scene": "有天空與地面分界的場景，如公園、海邊、屋頂。沒有開闊場景時，改從窗戶拍向窗外的屋頂與天空。",
+      "fixed": ["站位", "倍率 1x", "曝光"],
+      "shots": [
+        {"label": "地平線偏上", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機向下傾，讓地平線落在畫面上三分之一，站位與倍率不變。"},
+        {"label": "地平線置中", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機轉回水平，讓地平線落在畫面正中間，其餘不變。"},
+        {"label": "地平線偏下", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機向上傾，讓地平線落在畫面下三分之一，其餘不變。"}
+      ],
+      "observe": ["哪一張像在講天空，哪一張像在講地面", "地平線是否保持水平"],
+      "reflect": ["這個景色真正想呈現的是天空還是地面？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "10-landscape-02-layers",
+      "title": "前景、中景、遠景",
+      "level": 2,
+      "goal": "看懂加入前景能為風景帶來深度。",
+      "scene": "有遠山、樹或建築的開闊場景，旁邊有石頭、花或欄杆可當前景。沒有前景物時，改用自己的鞋尖或背包放在畫面下方。0.5x 以手機內建相機拍攝後匯入。",
+      "fixed": ["遠景位置", "曝光"],
+      "shots": [
+        {"label": "只有遠景", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，站在原位拍遠景，畫面下方不放前景。"},
+        {"label": "加入前景", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率仍為 1x，蹲低靠近前景物，讓它落在畫面下方，遠景維持原位。"},
+        {"label": "前景放大", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機的 0.5x 拍攝後匯入，前景物更近、更大，遠景位置與上一張相同。"}
+      ],
+      "observe": ["哪一張的空間感最強", "前景是幫忙還是搶戲"],
+      "reflect": ["身邊的每個景色，是否都找得到前景？"],
+      "needs": ["ultrawide"],
+      "checks": [{"shot": 2, "field": "lens", "op": "==", "value": "ultrawide"}],
+      "sources": ["Bryan Peterson, Learning to See Creatively", "Ansel Adams, The Camera", "Photzy, Layering and Foreground Interest in Landscape Photography"]
+    },
+    {
+      "id": "10-landscape-03-tele-landscape",
+      "title": "用高倍率拍風景",
+      "level": 2,
+      "goal": "看懂高倍率如何把遠景疊在一起，並從大場景中找出局部畫面。",
+      "scene": "重疊的遠山、連棟建築、樹林或城市天際線。沒有遠景時，改拍窗外遠處的屋頂與樹。對焦由手機自動決定。",
+      "fixed": ["站位", "曝光"],
+      "shots": [
+        {"label": "1x 全景", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，先拍下完整景色，站位固定。"},
+        {"label": "2x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "倍率改為 2x，站位不動，框出一個區塊。"},
+        {"label": "5x 局部", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "倍率改為 5x，站位不動，找出層層疊疊的局部。"}
+      ],
+      "observe": ["層次是否疊起來了", "局部畫面是否比全景更好看", "遠處空氣的霧感是否更明顯"],
+      "reflect": ["這個景色裡藏著哪些小畫面？"],
+      "needs": ["tele"],
+      "checks": [{"shot": 2, "field": "lens", "op": "==", "value": "tele"}],
+      "sources": ["Ansel Adams, The Camera", "Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "10-landscape-04-exposure-tradeoff",
+      "title": "風景曝光取捨",
+      "level": 3,
+      "goal": "面對天空、樹、建築的亮度落差，決定要保留哪一個。",
+      "scene": "同時有天空、樹與建築的戶外場景。沒有戶外場景時，從窗邊拍向窗外的天空與對面建築。",
+      "fixed": ["取景", "手機位置", "白平衡"],
+      "shots": [
+        {"label": "曝光補償 -1", "capture": {"shutterSec": null, "iso": null, "ev": -1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償設為 -1，偏向保住天空，取景與位置固定。"},
+        {"label": "曝光補償 0", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償 0，由手機自動決定亮度，下一題會使用這一張。"},
+        {"label": "曝光補償 +1", "capture": {"shutterSec": null, "iso": null, "ev": 1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償設為 +1，偏向保住樹與建築的陰影，其餘不動。"}
+      ],
+      "observe": ["天空、樹、建築各在哪一張最好", "想保留的是哪一個", "放棄的部分是否可以接受"],
+      "reflect": ["選定的那一張，最想留住的是什麼？寫成一句話。"],
+      "needs": ["exposureComp"],
+      "checks": [],
+      "sources": ["Ansel Adams, The Camera", "Bryan Peterson, Understanding Exposure"]
+    },
+    {
+      "id": "10-landscape-05-shadow-tradeoff",
+      "title": "風景陰影取捨",
+      "level": 3,
+      "goal": "判斷後製提亮陰影能換來多少細節，又失去多少立體感。",
+      "scene": "使用上一題曝光補償 0 的那一張。沒有上一題的照片時，改用任一張有明顯陰影的風景照。",
+      "fixed": ["同一張原圖", "只調整陰影"],
+      "shots": [
+        {"label": "陰影 -50", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": -50, "highlights": 0, "exposure": 0, "warmth": 0}, "hint": "以原圖為底，陰影調到 -50，壓深暗部，其餘項目維持 0。"},
+        {"label": "陰影 0", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": 0, "highlights": 0, "exposure": 0, "warmth": 0}, "hint": "原圖不做調整，作為對照。"},
+        {"label": "陰影 +50", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": 50, "highlights": 0, "exposure": 0, "warmth": 0}, "hint": "以同一張原圖為底，陰影調到 +50，提亮暗部，其餘項目維持 0。"}
+      ],
+      "observe": ["立體感如何變化", "暗部細節與雜訊的取捨", "哪一張的重量感最合喜好"],
+      "reflect": ["想要看得清楚，還是有氣氛？"],
+      "needs": ["develop"],
+      "checks": [],
+      "sources": ["Ansel Adams, The Camera"]
+    },
+    {
+      "id": "10-landscape-06-leading-lines",
+      "title": "步道與引導線",
+      "level": 2,
+      "goal": "比較線條橫切、筆直匯向遠方與斜向蜿蜒三種構圖，觀察視線的走向。",
+      "scene": "步道、河岸、道路、鐵欄杆或長長的圍牆。沒有戶外場景時，改用室內走廊或樓梯。同一處連拍三種站位，倍率相同。",
+      "fixed": ["場景", "倍率 1x", "曝光"],
+      "shots": [
+        {"label": "線條橫切", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "站在線條側面，讓線條橫過畫面，手機保持水平。"},
+        {"label": "筆直匯向遠方", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "站到線條正前方，讓兩側線條在遠處匯合，倍率與曝光不變。"},
+        {"label": "斜向蜿蜒", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "站到偏一側的位置，讓線條從畫面下緣角落斜向延伸，其餘不變。"}
+      ],
+      "observe": ["視線先被帶到哪裡", "哪一張的縱深最強", "線條的終點是否有值得看的東西"],
+      "reflect": ["同一條路，哪一種站位最能表現它的長度？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Alan Ranger, Landscapes Photography Practise Assignment", "Digital Photography School, How to Use Leading Lines"]
+    }
+  ]
+}

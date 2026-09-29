@@ -1,0 +1,98 @@
+{
+  "chapter": {"id": "14-color-mood", "order": 14, "title": "色彩與情緒", "blurb": "顏色、明暗與冷暖，決定照片給人的第一感覺。", "level": 2},
+  "exercises": [
+    {
+      "id": "14-color-mood-01-one-color",
+      "title": "找一個主色",
+      "level": 1,
+      "goal": "練習以單一顏色統整畫面。",
+      "scene": "一段路或一個房間內，選一個顏色（紅、綠或藍），找出四個以它為主的畫面。房間內顏色不足時，改在衣櫃或書架前找。",
+      "fixed": ["同一個主色", "同一段時間內拍完"],
+      "shots": [
+        {"label": "主色 1 大面積", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，主色占畫面一半以上，如整面牆或大片招牌。"},
+        {"label": "主色 2 小面積", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "倍率 2x，主色只占一小塊，但位置搶眼，如一朵花或一把雨傘。"},
+        {"label": "主色 3 搭中性色", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，主色搭配灰、白或黑等中性色一起入鏡。"},
+        {"label": "主色 4 意外發現", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，找一處平常不會注意到的主色，如角落的標示或影子中的反光。"}
+      ],
+      "observe": ["四張放在一起是否有整體感", "主色占多少比例最搶眼"],
+      "reflect": ["平常拍照時，是否會注意顏色？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Bryan Peterson, Learning to See Creatively", "Creative Photographer, How to Use a Limited Color Palette"]
+    },
+    {
+      "id": "14-color-mood-02-complementary",
+      "title": "對比色",
+      "level": 2,
+      "goal": "看懂對比色（如藍與橘、紅與綠）並排時的視覺衝擊。",
+      "scene": "有兩種對比色的場景：藍天配橘牆、綠葉配紅花。室內沒有這類場景時，改把兩件對比色的物品並排放在桌上。",
+      "fixed": ["場景", "站位"],
+      "shots": [
+        {"label": "只拍一色", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "倍率 2x，取景只留其中一種顏色，站位固定。"},
+        {"label": "兩色各半", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，兩種顏色各占畫面約一半，站位不變。"},
+        {"label": "小面積對比", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，一種顏色占大部分畫面，另一種只占一小塊，站位不變。"}
+      ],
+      "observe": ["哪一張最抓眼", "小面積的顏色是否成為視覺焦點"],
+      "reflect": ["偏好和諧的配色，還是對比的配色？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "PhotoWorkout, Colors in Photography"]
+    },
+    {
+      "id": "14-color-mood-03-high-low-key",
+      "title": "明亮調與低沉調",
+      "level": 2,
+      "goal": "刻意把整張照片做亮或做暗，改變情緒。",
+      "scene": "明亮窗邊的靜物，淺色物品與深色物品各一。沒有窗邊時，改在開燈的桌面上拍。",
+      "fixed": ["物品", "手機位置", "白平衡"],
+      "shots": [
+        {"label": "低沉 曝光補償 -1.5", "capture": {"shutterSec": null, "iso": null, "ev": -1.5, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償設為 -1.5，手機位置與物品固定。"},
+        {"label": "標準 曝光補償 0", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把曝光補償改為 0，作為基準。"},
+        {"label": "明亮 曝光補償 +1.5", "capture": {"shutterSec": null, "iso": null, "ev": 1.5, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把曝光補償改為 +1.5，其餘不動。"}
+      ],
+      "observe": ["哪一張給人輕盈感，哪一張有重量感", "細節在哪一邊損失最少"],
+      "reflect": ["想營造的情緒屬於哪一種？"],
+      "needs": ["exposureComp"],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Bryan Peterson, Understanding Exposure"]
+    },
+    {
+      "id": "14-color-mood-04-warmth-mood",
+      "title": "冷暖與情緒",
+      "level": 3,
+      "goal": "以後製調整暖度，讓同一張照片講出不同的故事。",
+      "scene": "任何一張已拍好的照片，建議選有人或有街景的。手邊沒有合適照片時，改用前面章節拍的任一張。",
+      "fixed": ["同一張原圖"],
+      "shots": [
+        {"label": "暖度 -40", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": 0, "highlights": 0, "exposure": 0, "warmth": -40}, "hint": "以原圖為底，暖度調到 -40，其餘項目維持 0。"},
+        {"label": "原圖", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": 0, "highlights": 0, "exposure": 0, "warmth": 0}, "hint": "原圖不做調整，作為對照。"},
+        {"label": "暖度 +40", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": 0, "highlights": 0, "exposure": 0, "warmth": 40}, "hint": "以同一張原圖為底，暖度調到 +40，其餘項目維持 0。"},
+        {"label": "暖度 +40 並壓暗", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": {"shadows": 0, "highlights": 0, "exposure": -30, "warmth": 40}, "hint": "以同一張原圖為底，暖度 +40，曝光調到 -30，其餘項目維持 0。"}
+      ],
+      "observe": ["每一張像發生在什麼時刻、什麼心情", "是否有一張的顏色變得不真實"],
+      "reflect": ["想要接近真實，還是有氣氛？"],
+      "needs": ["develop"],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Shotkit, Warm and Cool Colors in Photography"]
+    },
+    {
+      "id": "14-color-mood-05-time-of-day",
+      "title": "同一地點，不同時段",
+      "level": 2,
+      "goal": "看懂同一個場景在不同時段的光，會呈現不同的顏色與情緒。",
+      "scene": "一個一天內都能回到的固定地點，如窗邊、陽台或家門口。在早晨、正午、傍晚與夜晚各拍一張。手機位置固定困難時，在地面或窗框上做記號。",
+      "fixed": ["拍攝位置與取景", "倍率 1x", "曝光補償 0"],
+      "shots": [
+        {"label": "早晨", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "日出後一小時內，從記號處拍攝，曝光補償 0。"},
+        {"label": "正午", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "中午前後回到同一記號處，取景與曝光補償相同。"},
+        {"label": "傍晚", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "日落前後回到同一記號處，取景與曝光補償相同。"},
+        {"label": "夜晚", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "天黑後回到同一記號處，取景與曝光補償相同，燈光亮起的畫面一併入鏡。"}
+      ],
+      "observe": ["四張的顏色與明暗如何變化", "陰影的長度與方向如何改變", "哪一個時段給人的情緒最強"],
+      "reflect": ["平常最少拍的是哪一個時段？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Creative Photographer, How To Create Mood In Color Photos", "Shotkit, Warm and Cool Colors in Photography"]
+    }
+  ]
+}

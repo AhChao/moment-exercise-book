@@ -1,0 +1,112 @@
+{
+  "chapter": {"id": "12-night", "order": 12, "title": "夜景", "blurb": "光線少的時候，快門、ISO 與穩定度需要重新取捨。", "level": 2},
+  "exercises": [
+    {
+      "id": "12-night-01-dark-is-dark",
+      "title": "夜景的黑要多黑",
+      "level": 1,
+      "goal": "看懂自動曝光會把夜晚提亮，需要用曝光補償找回夜晚的氛圍。",
+      "scene": "夜晚有路燈、招牌或窗光的街角或社區。沒有戶外場景時，改在關燈的房間內拍向一盞檯燈。",
+      "fixed": ["站位", "取景"],
+      "shots": [
+        {"label": "曝光補償 -2", "capture": {"shutterSec": null, "iso": null, "ev": -2, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償設為 -2，手機靠穩，取景固定。"},
+        {"label": "曝光補償 -1", "capture": {"shutterSec": null, "iso": null, "ev": -1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把曝光補償改為 -1，站位不動。"},
+        {"label": "曝光補償 0", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "曝光補償 0，由手機自動決定亮度，觀察夜晚被提亮的程度。"},
+        {"label": "曝光補償 +1", "capture": {"shutterSec": null, "iso": null, "ev": 1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把曝光補償改為 +1，其餘不動。"}
+      ],
+      "observe": ["哪一張最接近肉眼看到的夜晚", "光源周圍是否過曝", "暗處雜訊在哪一張最明顯"],
+      "reflect": ["想呈現的夜晚是明亮的還是沉靜的？"],
+      "needs": ["exposureComp", "night"],
+      "checks": [],
+      "sources": ["Bryan Peterson, Understanding Exposure", "Tom Ang, Digital Photography Masterclass", "Android Central, How to take the best Night Sight photos"]
+    },
+    {
+      "id": "12-night-02-shutter-vs-iso",
+      "title": "夜景快門 x ISO",
+      "level": 2,
+      "goal": "在夜晚選擇用雜訊還是用手震風險換取亮度。",
+      "scene": "夜晚固定的景物（路燈下的招牌或建築）。兩張亮度盡量接近，不接近時微調 ISO。沒有戶外場景時，改拍暗房間內的擺設，只留一盞燈。",
+      "fixed": ["取景", "手機位置", "亮度"],
+      "shots": [
+        {"label": "1/250 + 高 ISO", "capture": {"shutterSec": 0.004, "iso": 3200, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/250，ISO 從 3200 起，亮度不足再往上調。取景固定。"},
+        {"label": "1/15 + 低 ISO", "capture": {"shutterSec": 0.0667, "iso": 200, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/15，ISO 從 200 起。此快門較慢，手機必須靠在穩固處，取景與上一張相同。"}
+      ],
+      "observe": ["雜訊與手震，哪一個更影響照片", "兩張亮度是否接近", "細節在哪一張更多"],
+      "reflect": ["夜晚拍攝時，寧可承擔手震風險還是雜訊？"],
+      "needs": ["manualExposure", "night", "tripodOrRest"],
+      "checks": [{"shot": 0, "field": "iso", "op": ">=", "value": 1600}, {"shot": 1, "field": "iso", "op": "<=", "value": 400}],
+      "sources": ["Bryan Peterson, Understanding Exposure"]
+    },
+    {
+      "id": "12-night-03-night-motion",
+      "title": "夜景動態",
+      "level": 2,
+      "goal": "看懂夜晚拍走動的人時，亮度與凍結動作之間的取捨。",
+      "scene": "晚上，取得同意的朋友在有路燈的地方走動。光線不足時，ISO 會被推得很高。沒有戶外路燈時，改在室內只開一盞燈，由朋友在燈下來回走。",
+      "fixed": ["站位", "取景", "人物動作"],
+      "shots": [
+        {"label": "1/30", "capture": {"shutterSec": 0.0333, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/30，ISO 自行調整到亮度適中，動作會出現拖影。"},
+        {"label": "1/250", "capture": {"shutterSec": 0.004, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把快門改為 1/250，ISO 調到與上一張亮度接近，動作與站位相同。"}
+      ],
+      "observe": ["哪一張亮度較足", "哪一張的動作被凍結", "雜訊的代價有多大"],
+      "reflect": ["夜晚拍人時，優先選亮度還是凍結動作？"],
+      "needs": ["manualExposure", "night", "movingSubject", "person"],
+      "checks": [{"shot": 0, "field": "shutterSec", "op": "between", "value": [0.025, 0.042]}, {"shot": 1, "field": "shutterSec", "op": "between", "value": [0.003, 0.005]}],
+      "sources": ["Bryan Peterson, Understanding Exposure", "Henri Cartier-Bresson, The Decisive Moment"]
+    },
+    {
+      "id": "12-night-04-long-exposure",
+      "title": "靠穩拍一秒",
+      "level": 2,
+      "goal": "體驗手機靠穩之後，加長快門能換來更乾淨的畫面。",
+      "scene": "夜晚有燈的靜止景物，手機靠在穩固物體上（牆、欄杆、書堆）。沒有戶外場景時，改在暗房間內拍向桌上一盞燈與擺設。",
+      "fixed": ["取景", "手機位置（靠在穩固處）", "ISO 100"],
+      "shots": [
+        {"label": "1/15 靠穩", "capture": {"shutterSec": 0.0667, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "快門 1/15、ISO 100。手機必須靠在穩固處，並以計時拍攝，作為亮度與雜訊的基準。"},
+        {"label": "1/2 靠穩", "capture": {"shutterSec": 0.5, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把快門改為 1/2，手機必須靠在穩固處，並以計時拍攝。"},
+        {"label": "1 秒 靠穩", "capture": {"shutterSec": 1, "iso": 100, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只把快門改為 1 秒，手機必須靠在穩固處，並以計時拍攝，拍攝期間身體不碰桌面。"}
+      ],
+      "observe": ["亮度、雜訊與清晰度如何變化", "光點是否變得更飽滿", "畫面中移動的東西如何呈現"],
+      "reflect": ["身邊有哪些可靠的臨時支撐？"],
+      "needs": ["manualExposure", "night", "tripodOrRest"],
+      "checks": [{"shot": 2, "field": "shutterSec", "op": ">=", "value": 0.8}, {"shot": 2, "field": "iso", "op": "<=", "value": 200}],
+      "sources": ["Tom Ang, Digital Photography Masterclass", "Ansel Adams, The Camera", "Pixel Camera Help, Take photos in low light"]
+    },
+    {
+      "id": "12-night-05-clean-lens",
+      "title": "光暈與鏡頭",
+      "level": 2,
+      "goal": "看懂擦拭鏡頭這個小動作，會改變夜景光源周圍的光暈。",
+      "scene": "夜晚有點光源的地方（路燈、招牌）。拍第一張前，鏡頭表面保持有指紋的狀態。沒有戶外光源時，改在暗房間拍向一盞檯燈。",
+      "fixed": ["站位", "取景"],
+      "shots": [
+        {"label": "鏡頭髒", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "鏡頭維持有指紋的狀態，對著光源拍一張，取景固定。"},
+        {"label": "擦乾淨", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "用乾淨的衣角或眼鏡布擦拭鏡頭後，取景與站位相同再拍一張。"},
+        {"label": "擦乾淨 曝光補償 -1", "capture": {"shutterSec": null, "iso": null, "ev": -1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "鏡頭維持乾淨，只把曝光補償改為 -1，觀察光源周圍過曝的程度。"}
+      ],
+      "observe": ["光源周圍的霧感如何變化", "對比與細節的改變"],
+      "reflect": ["擦拭鏡頭是否適合成為拍攝前的固定動作？"],
+      "needs": ["exposureComp", "night"],
+      "checks": [],
+      "sources": ["Tom Ang, Digital Photography Masterclass", "Android Central, How to take the best Night Sight photos"]
+    },
+    {
+      "id": "12-night-06-tap-exposure",
+      "title": "夜景點哪裡",
+      "level": 1,
+      "goal": "看懂夜景中點選的位置，會改變整張照片的亮度。",
+      "scene": "夜晚有路燈與暗處同時入鏡的街景。手機靠在穩固處，按下快門後保持不動直到拍攝完成。沒有戶外場景時，改在暗房間內拍向一盞燈與旁邊的牆角。",
+      "fixed": ["取景", "手機位置（靠在穩固處）", "曝光補償 0"],
+      "shots": [
+        {"label": "點亮部", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "點選畫面中最亮的光源，手機靠穩，保持不動直到拍攝完成。"},
+        {"label": "點中間調", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只改點選有微光的牆面或地面，取景不變，保持不動直到拍攝完成。"},
+        {"label": "點暗處", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "只改點選畫面中最暗的角落，其餘不變，保持不動直到拍攝完成。"}
+      ],
+      "observe": ["整體亮度如何隨點選位置變化", "光源周圍是否過曝", "暗處的細節與雜訊變化"],
+      "reflect": ["夜景通常該先點選亮部還是暗處？"],
+      "needs": ["night", "tripodOrRest"],
+      "checks": [],
+      "sources": ["Android Central, How to take the best Night Sight photos", "Pixel Camera Help, Take photos in low light"]
+    }
+  ]
+}

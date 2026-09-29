@@ -1,0 +1,98 @@
+{
+  "chapter": {"id": "15-storytelling", "order": 15, "title": "故事與系列", "blurb": "從單張照片延伸到幾張彼此呼應的照片。", "level": 3},
+  "exercises": [
+    {
+      "id": "15-storytelling-01-three-distance",
+      "title": "遠、中、近三張",
+      "level": 2,
+      "goal": "以三種距離拼出一個小場景的敘事。",
+      "scene": "一個有事發生的地方：咖啡店、廚房、桌遊桌。沒有合適場景時，改拍家中正在準備的一頓飯。",
+      "fixed": ["同一場景", "同一段時間內拍完"],
+      "shots": [
+        {"label": "遠：地點", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，退到能看出這是哪裡的位置，交代場景。"},
+        {"label": "中：事件", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "倍率 2x，站位不動，拍正在發生的事，例如手上的動作。"},
+        {"label": "近：細節", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "倍率 5x，站位不動，拍一個能代表氛圍的小細節，如冒煙的杯口。"}
+      ],
+      "observe": ["三張連起來是否像一小段故事", "少了哪一張，故事會缺什麼"],
+      "reflect": ["把三張給別人看，對方是否能理解發生了什麼？"],
+      "needs": ["tele"],
+      "checks": [{"shot": 2, "field": "lens", "op": "==", "value": "tele"}],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Alan Ranger, Storytelling Narrative Photography Assignment"]
+    },
+    {
+      "id": "15-storytelling-02-consistent-series",
+      "title": "一致的系列",
+      "level": 2,
+      "goal": "看懂統一設定與取景，就能讓四張不同內容的照片成為一組。",
+      "scene": "選一個主題（如早餐、窗邊、通勤），在同一個小時內拍四個不同對象。色溫固定在 5500K，照片顏色看起來不對時，該張可重拍。無法外出時，主題改為桌面上的四件日用品。",
+      "fixed": ["倍率 1x", "色溫 5500K", "曝光補償 0"],
+      "shots": [
+        {"label": "第 1 張", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": 5500, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "色溫設為 5500K、曝光補償 0、倍率 1x，之後三張都不再更改。"},
+        {"label": "第 2 張", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": 5500, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "換一個對象，色溫、曝光補償與倍率維持不動。"},
+        {"label": "第 3 張", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": 5500, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "再換一個對象，設定維持不動，拍攝距離與前兩張相近。"},
+        {"label": "第 4 張", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": 5500, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "最後換一個對象，設定維持不動，構圖方式與前三張保持一致。"}
+      ],
+      "observe": ["並排時哪一張最不合群", "設定一致後，內容不同的照片是否仍能成為一組"],
+      "reflect": ["一組照片的共通點來自主題、顏色，還是構圖？"],
+      "needs": ["exposureComp", "manualWB"],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Wherewonderwaits, What a 52-Week Photography Challenge Can Teach You"]
+    },
+    {
+      "id": "15-storytelling-03-before-after",
+      "title": "前與後",
+      "level": 2,
+      "goal": "以三張照片記錄一件事的變化。",
+      "scene": "吃完的餐桌、整理房間前後、日落前後、咖啡被喝完。選一件會變化的事，手機靠在穩固處。沒有合適的事件時，改拍桌上冰塊融化的過程。",
+      "fixed": ["手機位置與取景", "倍率 1x"],
+      "shots": [
+        {"label": "之前", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機靠穩，在事情發生之前拍下，記住手機的位置。"},
+        {"label": "之中", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機回到同一位置，在事情進行到一半時拍下。"},
+        {"label": "之後", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機回到同一位置，在事情結束後拍下，取景與第一張一致。"}
+      ],
+      "observe": ["變化是否一眼就看得出", "取景一致是否讓差異更明顯"],
+      "reflect": ["還想記錄哪些會消失的東西？"],
+      "needs": ["tripodOrRest"],
+      "checks": [],
+      "sources": ["Henri Cartier-Bresson, The Decisive Moment", "Princeton McGraw Center, Photo Essay Assignments"]
+    },
+    {
+      "id": "15-storytelling-04-one-place-four-moods",
+      "title": "同一地點，四種情緒",
+      "level": 3,
+      "goal": "刻意用構圖、光與色彩，在同一地點做出四種截然不同的情緒。",
+      "scene": "任何熟悉的角落，情緒可選：孤單、溫暖、混亂、寧靜。四張在同一小時內拍完。色溫的效果因光線而異，照片顏色與情緒不符時，該張可重拍。",
+      "fixed": ["同一地點", "同一小時內拍完"],
+      "shots": [
+        {"label": "孤單", "capture": {"shutterSec": null, "iso": null, "ev": -1, "wbKelvin": 6500, "zoom": null, "focusMeters": null}, "develop": null, "hint": "曝光補償 -1、色溫 6500K，留出大片空白，主體放在畫面一角。"},
+        {"label": "溫暖", "capture": {"shutterSec": null, "iso": null, "ev": 0.5, "wbKelvin": 3500, "zoom": null, "focusMeters": null}, "develop": null, "hint": "曝光補償 +0.5、色溫 3500K，光線柔和，與上一張比較冷暖差異。"},
+        {"label": "混亂", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "不限定曝光與色溫，讓元素多、擁擠，手機刻意傾斜構圖。"},
+        {"label": "寧靜", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": null, "focusMeters": null}, "develop": null, "hint": "不限定曝光與色溫，畫面簡化、對稱、留白，手機保持水平。"}
+      ],
+      "observe": ["旁人是否看得出想表達的情緒", "哪一種情緒用得最順手"],
+      "reflect": ["情緒主要由光、色彩還是構圖決定？"],
+      "needs": ["exposureComp", "manualWB"],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Bryan Peterson, Learning to See Creatively", "Shotkit, Warm and Cool Colors in Photography"]
+    },
+    {
+      "id": "15-storytelling-05-week-series",
+      "title": "同一處，四天四張",
+      "level": 2,
+      "goal": "以固定地點連續拍幾天，讓時間的變化成為一組照片的主題。",
+      "scene": "每天都會經過的固定地點，如窗外、樓下的樹或桌面一角。連續四天，在相近的時間各拍一張。不方便外出時，改拍窗台上的植物。",
+      "fixed": ["拍攝位置與取景", "倍率 1x", "每天相近的時間"],
+      "shots": [
+        {"label": "第 1 天", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "在地面或窗框上做記號，從記號處拍下第一張，記下拍攝時間。"},
+        {"label": "第 2 天", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "同一時間回到記號處，取景與倍率相同。"},
+        {"label": "第 3 天", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "同一時間回到記號處，取景與倍率相同。"},
+        {"label": "第 4 天", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "同一時間回到記號處，取景與倍率相同，四張並排比較。"}
+      ],
+      "observe": ["四張中什麼在變、什麼沒變", "光線與天氣如何影響畫面", "哪一天的畫面最值得留下"],
+      "reflect": ["連續拍幾天後，是否開始注意到先前忽略的細節？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Photo Jeepers, 52 Week Photography Challenge List", "Princeton McGraw Center, Photo Essay Assignments"]
+    }
+  ]
+}

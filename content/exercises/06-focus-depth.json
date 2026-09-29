@@ -1,0 +1,95 @@
+{
+  "chapter": {"id": "06-focus-depth", "order": 6, "title": "對焦與景深", "blurb": "以對焦距離、拍攝距離與倍率，控制畫面哪裡清楚、哪裡模糊。", "level": 2},
+  "exercises": [
+    {
+      "id": "06-focus-depth-01-focus-distance",
+      "title": "對焦距離",
+      "level": 1,
+      "goal": "以固定的對焦距離，看懂清楚的位置如何隨距離移動。",
+      "scene": "桌上依序排三個物品，分別距離手機約 15、50、150 公分，物品之間留出空隙。桌面不夠長時，改在地板上排列，手機貼近地面拍。",
+      "fixed": ["手機位置", "取景", "光線"],
+      "shots": [
+        {"label": "對焦距離 0.15 m", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": 0.15}, "develop": null, "hint": "對焦距離設為 0.15 m，最近的物品應最清楚。手機位置與取景固定。"},
+        {"label": "對焦距離 0.5 m", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": 0.5}, "develop": null, "hint": "只把對焦距離改為 0.5 m，其餘不動。"},
+        {"label": "對焦距離 1.5 m", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": 1.5}, "develop": null, "hint": "只把對焦距離改為 1.5 m，最遠的物品應最清楚。"}
+      ],
+      "observe": ["每一張清楚的是哪一個物品", "清楚的範圍有多深", "對焦距離越近，清楚的範圍變深還是變淺"],
+      "reflect": ["自動對焦是否曾選錯物品？"],
+      "needs": ["manualFocus"],
+      "checks": [],
+      "sources": ["Bryan Peterson, Understanding Exposure", "Tom Ang, Digital Photography Masterclass"]
+    },
+    {
+      "id": "06-focus-depth-02-subject-distance",
+      "title": "靠近，背景就糊",
+      "level": 2,
+      "goal": "看懂主體越近，背景越容易變模糊。",
+      "scene": "一個小物（水杯、花、玩偶），後方遠處是有雜物的牆面或房間。房間太小拉不出距離時，改在客廳最長的一側，小物放在近處，背景取遠端。",
+      "fixed": ["主體在畫面中的大小約相同", "背景不動"],
+      "shots": [
+        {"label": "1x 貼近 0.2 m", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": 0.2}, "develop": null, "hint": "倍率 1x，貼近小物，對焦距離設為 0.2 m，主體占畫面約一半。"},
+        {"label": "2x 0.4 m", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": 0.4}, "develop": null, "hint": "倍率改為 2x，往後退到主體大小與第一張相同，對焦距離設為 0.4 m。"},
+        {"label": "5x 1 m", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": 1}, "develop": null, "hint": "倍率改為 5x，再退到約 1 m，主體大小仍與第一張相同，對焦距離設為 1 m。"}
+      ],
+      "observe": ["背景模糊程度如何變化", "三張的主體大小是否接近", "哪一張的主體最突出"],
+      "reflect": ["要讓背景更模糊，應靠近、放大，還是拉開背景？"],
+      "needs": ["manualFocus", "tele"],
+      "checks": [],
+      "sources": ["Bryan Peterson, Understanding Exposure"]
+    },
+    {
+      "id": "06-focus-depth-03-background-gap",
+      "title": "背景離多遠",
+      "level": 2,
+      "goal": "看懂主體與背景之間的距離，對模糊程度的影響比想像中更大。",
+      "scene": "一個小物放在手邊，背景是牆面或雜物，可移動小物來改變它與背景的距離。牆面前空間不足時，改把手機與小物一起往前移，維持兩者間距不變。",
+      "fixed": ["手機到小物的距離", "倍率", "取景"],
+      "shots": [
+        {"label": "背景貼著", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": 0.3}, "develop": null, "hint": "小物緊貼牆面，手機距小物約 0.3 m，對焦距離設為 0.3 m。"},
+        {"label": "背景 1 m", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": 0.3}, "develop": null, "hint": "小物離牆約 1 m，手機與小物的距離仍是 0.3 m，其餘不動。"},
+        {"label": "背景 3 m", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": 0.3}, "develop": null, "hint": "小物離牆約 3 m，手機與小物的距離仍是 0.3 m，取景與倍率不變。"}
+      ],
+      "observe": ["背景模糊程度如何變化", "距離拉到多遠後，差別開始變小"],
+      "reflect": ["想虛化背景時，應先改變哪一個距離？"],
+      "needs": ["manualFocus"],
+      "checks": [],
+      "sources": ["Bryan Peterson, Understanding Exposure"]
+    },
+    {
+      "id": "06-focus-depth-04-choose-hero",
+      "title": "對焦點決定主角",
+      "level": 2,
+      "goal": "看懂同一個畫面裡，對焦位置會讓觀看者的視線落在不同地方。",
+      "scene": "近處放一個物品（花、杯子），遠處是人或另一個物品，兩者相距約 1 m。沒有人時，遠處改放一個玩偶。",
+      "fixed": ["取景", "手機位置"],
+      "shots": [
+        {"label": "對焦近處", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "點選近處的物品，待對焦框穩定後拍攝，手機位置與取景固定。"},
+        {"label": "對焦遠處", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機維持原位，只改點選遠處的物品。"},
+        {"label": "對焦兩者之間", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "點選兩者之間的地面或空隙，觀察近處與遠處是否都有些模糊。"}
+      ],
+      "observe": ["三張傳達的故事是否相同", "視線先落在哪裡", "對焦在中間時，兩個物品各損失多少清晰度"],
+      "reflect": ["希望誰成為主角，原因為何？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "06-focus-depth-05-close-focus-error",
+      "title": "近距離對焦有多薄",
+      "level": 3,
+      "goal": "體會近拍時，對焦距離差幾公分，清晰度就差很多。",
+      "scene": "一個有立體細節的小物（螺絲、花蕊、硬幣邊緣），放在距離手機約 10 公分處。手邊沒有小物時，改拍筆尖或鑰匙的齒紋。手機靠在穩固處。",
+      "fixed": ["手機與物品的位置", "倍率 1x"],
+      "shots": [
+        {"label": "對焦距離 0.07 m", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": 0.07}, "develop": null, "hint": "手機靠穩，對焦距離設為 0.07 m，物品與手機距離約 10 cm 固定。"},
+        {"label": "對焦距離 0.10 m", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": 0.1}, "develop": null, "hint": "只把對焦距離改為 0.10 m，手機與物品不動。"},
+        {"label": "對焦距離 0.15 m", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": 0.15}, "develop": null, "hint": "只把對焦距離改為 0.15 m，其餘不動。"}
+      ],
+      "observe": ["哪一張最清楚", "只差幾公分，清晰度如何改變", "自動對焦是否會選到最好的位置"],
+      "reflect": ["近拍時，固定對焦距離與自動對焦哪一個較可靠？"],
+      "needs": ["manualFocus", "tripodOrRest"],
+      "checks": [],
+      "sources": ["Tom Ang, Digital Photography Masterclass"]
+    }
+  ]
+}

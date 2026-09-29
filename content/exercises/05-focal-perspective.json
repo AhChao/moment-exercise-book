@@ -1,0 +1,96 @@
+{
+  "chapter": {"id": "05-focal-perspective", "order": 5, "title": "焦段與視角", "blurb": "倍率決定看到多少，拍攝距離決定透視。", "level": 2},
+  "exercises": [
+    {
+      "id": "05-focal-perspective-01-zoom-fixed",
+      "title": "不同倍率，不移動",
+      "level": 1,
+      "goal": "看懂倍率只改變視野大小，不改變透視。",
+      "scene": "人站在固定位置，手機靠在架子或書堆上固定不動。人物以取得同意者為限；沒有人時，改用一個擺件。0.5x 以手機內建相機拍攝後匯入。",
+      "fixed": ["人與手機的位置", "取景中心"],
+      "shots": [
+        {"label": "0.5x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機切到 0.5x 拍攝，再匯入。手機位置與人物站位不動。"},
+        {"label": "1x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "手機維持原位，只把倍率改為 1x，人物站位不動。"},
+        {"label": "5x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "手機維持原位，只把倍率改為 5x，取景中心仍對準同一點。"}
+      ],
+      "observe": ["視野如何逐張變窄", "人物與背景的大小比例是否改變", "哪一張最能看見周圍環境"],
+      "reflect": ["什麼情況需要看到更多環境，什麼情況需要聚焦？"],
+      "needs": ["ultrawide", "tele", "tripodOrRest"],
+      "checks": [{"shot": 0, "field": "lens", "op": "==", "value": "ultrawide"}, {"shot": 1, "field": "lens", "op": "==", "value": "main"}, {"shot": 2, "field": "lens", "op": "==", "value": "tele"}],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Tom Ang, Digital Photography Masterclass"]
+    },
+    {
+      "id": "05-focal-perspective-02-zoom-move",
+      "title": "不同倍率，移動位置",
+      "level": 2,
+      "goal": "看懂讓人物大小一致時，倍率如何改變臉型、背景大小與透視。",
+      "scene": "拍同一個人（取得同意），身後有明顯的背景物，如牆面、樹或建築。沒有人時，改用一盆植物，背景放一排書。0.5x 以手機內建相機拍攝後匯入。",
+      "fixed": ["人物在畫面中的大小", "人物位置", "姿勢"],
+      "shots": [
+        {"label": "0.5x 靠近", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機的 0.5x 拍攝後匯入，走近到人物約占畫面高度三分之二。"},
+        {"label": "1x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率改為 1x，往後退到人物大小與第一張相同，人物站位與姿勢不動。"},
+        {"label": "5x 遠離", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "倍率改為 5x，再往後退到人物大小仍與第一張相同。"}
+      ],
+      "observe": ["臉型的差別（鼻子、下巴、臉寬）", "背景物變大還是變小", "人物與背景之間的距離感如何改變"],
+      "reflect": ["偏好哪一種臉的樣子與背景感？"],
+      "needs": ["ultrawide", "tele", "person"],
+      "checks": [{"shot": 2, "field": "lens", "op": "==", "value": "tele"}],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Tom Ang, Digital Photography Masterclass", "Bryan Peterson, Learning to See Creatively"]
+    },
+    {
+      "id": "05-focal-perspective-03-object-move",
+      "title": "靜物距離與透視",
+      "level": 2,
+      "goal": "以靜物比較靠近拍與遠距離拍，立體感有何差別。",
+      "scene": "桌上一個方盒或書本，旁邊再放兩三個物品排成一列。桌面空間不足時，改在地板上排列，並退到走廊另一端拍。",
+      "fixed": ["主體在畫面中的大小", "物品擺放", "光線"],
+      "shots": [
+        {"label": "1x 靠近", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率 1x，靠近方盒，讓方盒約占畫面一半。"},
+        {"label": "2x 中距", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "倍率改為 2x，往後退到方盒大小與第一張相同，物品擺放不動。"},
+        {"label": "5x 遠距", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "倍率改為 5x，再往後退到方盒大小仍與第一張相同。"}
+      ],
+      "observe": ["方盒的邊線收斂程度有何不同", "物品前後距離看起來拉近還是拉遠"],
+      "reflect": ["想要立體感時，應靠近還是退後？"],
+      "needs": ["tele"],
+      "checks": [{"shot": 2, "field": "lens", "op": "==", "value": "tele"}],
+      "sources": ["Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "05-focal-perspective-04-digital-vs-optical",
+      "title": "放大到多少仍然清楚",
+      "level": 2,
+      "goal": "比較不同倍率下遠處細節的清晰度，找出可接受的放大上限。",
+      "scene": "遠處有細節的目標，例如招牌、樹葉或建築窗戶。沒有遠景時，改拍走廊盡頭牆上的文字。手機靠在穩固處。",
+      "fixed": ["手機位置", "取景中心"],
+      "shots": [
+        {"label": "2x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 2, "focusMeters": null}, "develop": null, "hint": "倍率 2x，取景中心對準目標，手機靠穩。"},
+        {"label": "4x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 4, "focusMeters": null}, "develop": null, "hint": "只把倍率改為 4x，位置與取景中心不動。"},
+        {"label": "5x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "只把倍率改為 5x，其餘不動，與 4x 比較細節。"},
+        {"label": "10x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 10, "focusMeters": null}, "develop": null, "hint": "只把倍率改為 10x，手機必須靠穩，否則細節無法比較。"}
+      ],
+      "observe": ["4x 與 5x 的細節差別", "10x 出現哪些變化", "哪個倍率是可接受的上限"],
+      "reflect": ["想拍遠處的東西時，應走近還是放大？"],
+      "needs": ["tele"],
+      "checks": [{"shot": 1, "field": "lens", "op": "==", "value": "main"}, {"shot": 2, "field": "lens", "op": "==", "value": "tele"}, {"shot": 3, "field": "lens", "op": "==", "value": "tele"}],
+      "sources": ["Tom Ang, Digital Photography Masterclass"]
+    },
+    {
+      "id": "05-focal-perspective-05-compression",
+      "title": "望遠的壓縮感",
+      "level": 3,
+      "goal": "以一排重複的物體，看懂高倍率如何把前後距離壓扁。",
+      "scene": "一排路燈、樹、柱子或車輛，由近到遠排列。沒有戶外場景時，改用室內一列椅子。0.5x 以手機內建相機拍攝後匯入。",
+      "fixed": ["第一個物體在畫面中的大小", "取景方向"],
+      "shots": [
+        {"label": "0.5x 廣角", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 0.5, "focusMeters": null}, "develop": null, "hint": "以手機內建相機的 0.5x 拍攝後匯入，貼近第一個物體，讓後方物體排成縱深。"},
+        {"label": "1x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "倍率改為 1x，往後退到第一個物體與上一張同樣大，取景方向不變。"},
+        {"label": "5x", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 5, "focusMeters": null}, "develop": null, "hint": "倍率改為 5x，再往後退到第一個物體仍同樣大。"}
+      ],
+      "observe": ["後方物體相對第一個物體變大還是變小", "物體之間看起來更疏還是更擠", "哪一張的空間深度最強"],
+      "reflect": ["想要壓縮的密集感，還是拉開的縱深感？"],
+      "needs": ["ultrawide", "tele"],
+      "checks": [{"shot": 2, "field": "lens", "op": "==", "value": "tele"}],
+      "sources": ["Michael Freeman, The Photographer's Eye", "Bryan Peterson, Learning to See Creatively"]
+    }
+  ]
+}

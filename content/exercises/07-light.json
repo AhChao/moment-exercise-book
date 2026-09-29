@@ -1,0 +1,96 @@
+{
+  "chapter": {"id": "07-light", "order": 7, "title": "光線品質與方向", "blurb": "同一個主體，光位改變，照片就不同。", "level": 2},
+  "exercises": [
+    {
+      "id": "07-light-01-light-direction",
+      "title": "順光、側光、逆光",
+      "level": 1,
+      "goal": "看懂光從哪個方向來，會改變立體感與質感。",
+      "scene": "窗邊或戶外，主體為有質感的物體（水果、麵包、盆栽）。主體不動，拍攝者繞著主體換位置。沒有窗邊時，改用一盞檯燈當單一光源。",
+      "fixed": ["主體位置", "與主體的距離", "倍率"],
+      "shots": [
+        {"label": "順光", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "站在光源與主體之間，光從拍攝者背後照向主體。與主體距離固定。"},
+        {"label": "側光", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "繞到主體側面，光從主體左側或右側照來，距離與倍率不變。"},
+        {"label": "逆光", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "繞到主體對面，鏡頭朝向光源，距離與倍率不變。"},
+        {"label": "逆光 曝光補償 +1", "capture": {"shutterSec": null, "iso": null, "ev": 1, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "位置維持逆光，只把曝光補償設為 +1，與上一張比較主體暗部。"}
+      ],
+      "observe": ["哪一張最有立體感", "質感在哪一張最明顯", "逆光時主體暗部的情況，補償後是否改善"],
+      "reflect": ["拍同一個物體時，應先找光還是先找角度？"],
+      "needs": ["exposureComp"],
+      "checks": [],
+      "sources": ["Light Science & Magic", "Michael Freeman, The Photographer's Eye"]
+    },
+    {
+      "id": "07-light-02-hard-soft",
+      "title": "硬光與柔光",
+      "level": 2,
+      "goal": "看懂光源大小與擴散如何決定陰影邊緣的軟硬。",
+      "scene": "晴天陽光直射處，與同一時間的樹蔭或窗簾後。沒有日光時，改用檯燈直射，再隔一張薄紙擴散。",
+      "fixed": ["物體", "拍攝角度", "倍率"],
+      "shots": [
+        {"label": "直射硬光", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "讓光直接照到物體，觀察陰影的邊緣。角度與倍率固定。"},
+        {"label": "陰影柔光", "capture": {"shutterSec": null, "iso": null, "ev": null, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "把物體移到樹蔭或窗簾後，角度與倍率不變，再拍一張。"}
+      ],
+      "observe": ["陰影邊緣的差別", "質感與顏色在哪一張更飽滿", "皮膚或物體表面適合哪一種光"],
+      "reflect": ["哪些題材適合硬光？"],
+      "needs": [],
+      "checks": [],
+      "sources": ["Light Science & Magic"]
+    },
+    {
+      "id": "07-light-03-window-distance",
+      "title": "離窗越遠，光越暗",
+      "level": 2,
+      "goal": "看懂窗光隨距離減弱，以及主體與背景亮度的關係。",
+      "scene": "白天窗邊，取景方向不變，只移動物體（或取得同意的人）與窗的距離。沒有窗邊時，改以檯燈為光源，移動物體與檯燈的距離。",
+      "fixed": ["拍攝角度", "倍率", "曝光補償 0"],
+      "shots": [
+        {"label": "距窗 0.3 m", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "物體貼近窗，距窗約 0.3 m，曝光補償 0。"},
+        {"label": "距窗 1 m", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "物體移到距窗約 1 m，手機位置與取景不變。"},
+        {"label": "距窗 3 m", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "物體移到距窗約 3 m，其餘不變。"}
+      ],
+      "observe": ["主體亮度與陰影如何變化", "光的方向感在哪一張最強", "雜訊是否出現"],
+      "reflect": ["家中最好的光位在哪裡？"],
+      "needs": ["exposureComp"],
+      "checks": [],
+      "sources": ["Light Science & Magic", "Tom Ang, Digital Photography Masterclass"]
+    },
+    {
+      "id": "07-light-04-reflector",
+      "title": "用白紙補光",
+      "level": 2,
+      "goal": "看懂白紙反光能提亮暗面，黑色物品則使暗面更深。",
+      "scene": "側光窗邊的物體，暗面旁準備一張白紙與一件黑色物品（衣服或紙）。沒有側光窗邊時，改用檯燈從單側照射。",
+      "fixed": ["物體與手機位置", "曝光補償 0"],
+      "shots": [
+        {"label": "無補光", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "維持原本的側光，曝光補償 0，作為對照。"},
+        {"label": "白紙反光", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "白紙立在物體暗面旁，由另一人舉著或以書本撐住，手機與物體不動。"},
+        {"label": "黑紙吸光", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "把白紙換成黑色物品，放在同一位置，其餘不動。"}
+      ],
+      "observe": ["暗面亮度如何變化", "白紙補光是否讓立體感變平", "黑色物品是否讓陰影更深"],
+      "reflect": ["這個題材需要多少明暗對比？"],
+      "needs": ["exposureComp"],
+      "checks": [],
+      "sources": ["Light Science & Magic"]
+    },
+    {
+      "id": "07-light-05-lamp-angles",
+      "title": "檯燈四個位置",
+      "level": 3,
+      "goal": "以單一光源，理解光位如何塑造物體與情緒。",
+      "scene": "暗處放一個物體（蘋果或杯子），以一盞檯燈當光源。沒有檯燈時，改用另一支手機的手電筒。",
+      "fixed": ["物體與手機位置", "曝光補償 0", "光源與物體的距離"],
+      "shots": [
+        {"label": "前方光", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "光源放在手機旁，從拍攝方向照向物體，光源與物體的距離固定。"},
+        {"label": "側光", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "光源移到物體側面約 90 度，距離不變。"},
+        {"label": "頂光", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "光源舉到物體正上方，距離不變。"},
+        {"label": "底光", "capture": {"shutterSec": null, "iso": null, "ev": 0, "wbKelvin": null, "zoom": 1, "focusMeters": null}, "develop": null, "hint": "光源放在物體下方，往上照，距離不變。"}
+      ],
+      "observe": ["哪一個角度最自然", "哪一個最戲劇性", "陰影落在哪裡"],
+      "reflect": ["想傳達的情緒需要哪一種光位？"],
+      "needs": ["exposureComp"],
+      "checks": [],
+      "sources": ["Light Science & Magic", "Michael Freeman, The Photographer's Eye"]
+    }
+  ]
+}
